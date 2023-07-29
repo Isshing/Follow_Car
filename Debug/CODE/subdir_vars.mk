@@ -120,4 +120,27 @@ C_DEPS__QUOTED += \
 "CODE\timer.d" \
 "CODE\uart.d" 
 
+C_SRCS__QUOTED += \
+"../CODE/Back_Wheel.c" \
+"../CODE/Beep.c" \
+"../CODE/Light.c" \
+"../CODE/NRF24L01.c" \
+"../CODE/Oled.c" \
+"../CODE/PM_Control.c" \
+"../CODE/QMath.c" \
+"../CODE/TOF.c" \
+"../CODE/WIRELESS.c" \
+"../CODE/all_init.c" \
+"../CODE/button.c" \
+"../CODE/delay.c" \
+"../CODE/distance.c" \
+"../CODE/encoder.c" \
+"../CODE/gy86.c" \
+"../CODE/gyroscope.c" \
+"../CODE/key.c" \
+"../CODE/main.c" \
+"../CODE/pwm.c" \
+"../CODE/timer.c" \
+"../CODE/uart.c" 
+
 

@@ -5,17 +5,17 @@ CODE/PM_Control.obj: ../CODE/PM_Control.h
 CODE/PM_Control.obj: ../CODE/headfile.h
 CODE/PM_Control.obj: E:/Ti/ccs/ccs_base/msp430/include/msp430f5529.h
 CODE/PM_Control.obj: E:/Ti/ccs/ccs_base/msp430/include/in430.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/intrinsics.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/intrinsics_legacy_undefs.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/intrinsics.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/intrinsics_legacy_undefs.h
 CODE/PM_Control.obj: E:/Ti/ccs/ccs_base/msp430/include/msp430.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/math.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/_ti_config.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/linkage.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/_defs.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/sys/_types.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/sys/cdefs.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/machine/_types.h
-CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/machine/_limits.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/math.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/_ti_config.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/linkage.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/_defs.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/sys/_types.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/sys/cdefs.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_types.h
+CODE/PM_Control.obj: E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h
 CODE/PM_Control.obj: ../CODE/all_init.h
 CODE/PM_Control.obj: ../CODE/headfile.h
 CODE/PM_Control.obj: ../CODE/delay.h
@@ -47,27 +47,27 @@ E:/Ti/ccs/ccs_base/msp430/include/msp430f5529.h:
 
 E:/Ti/ccs/ccs_base/msp430/include/in430.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/intrinsics.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/intrinsics.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/intrinsics_legacy_undefs.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/intrinsics_legacy_undefs.h:
 
 E:/Ti/ccs/ccs_base/msp430/include/msp430.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/math.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/math.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/_ti_config.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/_ti_config.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/linkage.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/linkage.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/_defs.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/_defs.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/sys/_types.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/sys/_types.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/sys/cdefs.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/sys/cdefs.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/machine/_types.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_types.h:
 
-E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include/machine/_limits.h:
+E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 
 ../CODE/all_init.h:
 

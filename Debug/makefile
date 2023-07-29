@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS
+CG_TOOL_ROOT := E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -148,12 +148,6 @@ TJ.out \
 EXE_OUTPUTS__QUOTED += \
 "TJ.out" \
 
-BIN_OUTPUTS += \
-TJ.hex \
-
-BIN_OUTPUTS__QUOTED += \
-"TJ.hex" \
-
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
@@ -163,20 +157,13 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 TJ.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/bin/cl430" -vmspx --data_model=restricted --use_hw_mpy=F5 --advice:power=all --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 -z -m"TJ.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"E:/Ti/ccs/ccs_base/msp430/include" -i"E:/Ti/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/lib" -i"E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="TJ_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "TJ.out" $(ORDERED_OBJS)
+	"E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmspx --data_model=restricted -O2 --use_hw_mpy=F5 --advice:power="all" --define=__MSP430F5529__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number --silicon_errata=CPU21 --silicon_errata=CPU22 --silicon_errata=CPU23 --silicon_errata=CPU40 --fp_reassoc=on -z -m"TJ.map" --heap_size=160 --stack_size=160 --cinit_hold_wdt=on -i"E:/Ti/ccs/ccs_base/msp430/include" -i"E:/Ti/ccs/ccs_base/msp430/lib/5xx_6xx_FRxx" -i"E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="TJ_linkInfo.xml" --use_hw_mpy=F5 --rom_model -o "TJ.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
-	@echo ' '
-
-TJ.hex: $(EXE_OUTPUTS)
-	@echo 'Building secondary target: "$@"'
-	@echo 'Invoking: MSP430 Hex Utility'
-	"E:/Ti/ccs/tools/compiler/ti-cgt-msp430_20.2.5.LTS/bin/hex430" --memwidth=8 --romwidth=8 --diag_wrap=off -o "TJ.hex" $(EXE_OUTPUTS__QUOTED)
-	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
+	-$(RM) $(EXE_OUTPUTS__QUOTED)
 	-$(RM) "CODE\Back_Wheel.obj" "CODE\Beep.obj" "CODE\Light.obj" "CODE\NRF24L01.obj" "CODE\Oled.obj" "CODE\PM_Control.obj" "CODE\QMath.obj" "CODE\TOF.obj" "CODE\WIRELESS.obj" "CODE\all_init.obj" "CODE\button.obj" "CODE\delay.obj" "CODE\distance.obj" "CODE\encoder.obj" "CODE\gy86.obj" "CODE\gyroscope.obj" "CODE\key.obj" "CODE\main.obj" "CODE\pwm.obj" "CODE\timer.obj" "CODE\uart.obj" 
 	-$(RM) "CODE\Back_Wheel.d" "CODE\Beep.d" "CODE\Light.d" "CODE\NRF24L01.d" "CODE\Oled.d" "CODE\PM_Control.d" "CODE\QMath.d" "CODE\TOF.d" "CODE\WIRELESS.d" "CODE\all_init.d" "CODE\button.d" "CODE\delay.d" "CODE\distance.d" "CODE\encoder.d" "CODE\gy86.d" "CODE\gyroscope.d" "CODE\key.d" "CODE\main.d" "CODE\pwm.d" "CODE\timer.d" "CODE\uart.d" 
 	-@echo 'Finished clean'

@@ -15,411 +15,391 @@
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 				<configuration artifactExtension="out" artifactName="${ProjName}" buildProperties="" cleanCommand="${CG_CLEAN_CMD}" description="" id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875" name="Debug" parent="com.ti.ccstudio.buildDefinitions.MSP430.Debug">
 					<folderInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875." name="/" resourcePath="">
-						<toolChain id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.DebugToolchain.497882690" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.linkerDebug.1803371319">
-							<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.701138631" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+						<toolChain id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.DebugToolchain.2077120326" name="TI Build Tools" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.linkerDebug.92795683">
+							<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.2132638751" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
 								<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=MSP430F5529"/>
 								<listOptionValue builtIn="false" value="DEVICE_CORE_ID="/>
 								<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
 								<listOptionValue builtIn="false" value="OUTPUT_FORMAT=ELF"/>
-								<listOptionValue builtIn="false" value="CCS_MBS_VERSION=6.1.3"/>
 								<listOptionValue builtIn="false" value="LINKER_COMMAND_FILE=lnk_msp430f5529.cmd"/>
 								<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=libc.a"/>
-								<listOptionValue builtIn="false" value="OUTPUT_TYPE=executable"/>
+								<listOptionValue builtIn="false" value="CCS_MBS_VERSION=6.1.3"/>
 								<listOptionValue builtIn="false" value="PRODUCTS="/>
 								<listOptionValue builtIn="false" value="PRODUCT_MACRO_IMPORTS={}"/>
+								<listOptionValue builtIn="false" value="OUTPUT_TYPE=executable"/>
 							</option>
-							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.1548849538" name="Compiler version" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="20.2.5.LTS" valueType="string"/>
-							<targetPlatform id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.targetPlatformDebug.1012427070" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.targetPlatformDebug"/>
-							<builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.builderDebug.70410477" keepEnvironmentInBuildfile="false" name="GNU Make" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.builderDebug"/>
-							<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug">
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DEFINE.276379172" name="Pre-define NAME (--define, -D)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DEFINE" valueType="definedSymbols">
+							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.615326816" name="Compiler version" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="21.6.1.LTS" valueType="string"/>
+							<targetPlatform id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.targetPlatformDebug.626217966" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.targetPlatformDebug"/>
+							<builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.builderDebug.1849394922" keepEnvironmentInBuildfile="false" name="GNU Make" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.builderDebug"/>
+							<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DEFINE.750803463" name="Pre-define NAME (--define, -D)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DEFINE" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__MSP430F5529__"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DATA_MODEL.722369113" name="Specify the data memory model. (--data_model)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DATA_MODEL" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DATA_MODEL.restricted" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.USE_HW_MPY.1727659170" name="Inline hardware multiply version of RTS mpy routine (--use_hw_mpy)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.USE_HW_MPY" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.USE_HW_MPY.F5" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU21.291237169" name="Workaround specified silicon errata (--silicon_errata) [CPU21]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU21" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU22.1390039447" name="Workaround specified silicon errata (--silicon_errata) [CPU22]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU22" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU23.227999804" name="Workaround specified silicon errata (--silicon_errata) [CPU23]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU23" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU40.415835488" name="Workaround specified silicon errata (--silicon_errata) [CPU40]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU40" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_VERSION.788619678" name="Silicon version (--silicon_version, -v)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_VERSION" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_VERSION.mspx" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.PRINTF_SUPPORT.1456612842" name="Level of printf/scanf support required (--printf_support)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.PRINTF_SUPPORT" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.PRINTF_SUPPORT.minimal" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DEBUGGING_MODEL.544768526" name="Debugging model" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DEBUGGING_MODEL" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DEBUGGING_MODEL.SYMDEBUG__DWARF" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WARNING.649555111" name="Treat diagnostic &lt;id&gt; as warning (--diag_warning, -pdsw)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WARNING" useByScannerDiscovery="false" valueType="stringList">
-									<listOptionValue builtIn="false" value="225"/>
-								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DISPLAY_ERROR_NUMBER.360015509" name="Emit diagnostic identifier numbers (--display_error_number, -pden)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DISPLAY_ERROR_NUMBER" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WRAP.453526176" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WRAP" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.INCLUDE_PATH.1695633198" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.INCLUDE_PATH" valueType="includePath">
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DATA_MODEL.322653145" name="Specify the data memory model. (--data_model)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DATA_MODEL" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DATA_MODEL.restricted" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.USE_HW_MPY.723839986" name="Inline hardware multiply version of RTS mpy routine (--use_hw_mpy)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.USE_HW_MPY" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.USE_HW_MPY.F5" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_ERRATA.CPU21.1977625408" name="Workaround specified silicon errata (--silicon_errata) [CPU21]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_ERRATA.CPU21" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_ERRATA.CPU22.8042835" name="Workaround specified silicon errata (--silicon_errata) [CPU22]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_ERRATA.CPU22" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_ERRATA.CPU23.1920329744" name="Workaround specified silicon errata (--silicon_errata) [CPU23]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_ERRATA.CPU23" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_ERRATA.CPU40.330395355" name="Workaround specified silicon errata (--silicon_errata) [CPU40]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_ERRATA.CPU40" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_VERSION.2057964082" name="Silicon version (--silicon_version, -v)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_VERSION" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.SILICON_VERSION.mspx" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.PRINTF_SUPPORT.1304200031" name="Level of printf/scanf support required (--printf_support)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.PRINTF_SUPPORT" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.PRINTF_SUPPORT.minimal" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.OPT_LEVEL.1127510141" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.OPT_LEVEL.3" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.INCLUDE_PATH.1282339485" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="${CCS_BASE_ROOT}/msp430/include"/>
 									<listOptionValue builtIn="false" value="${PROJECT_ROOT}"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/include"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.ADVICE__POWER.1264371344" name="Enable checking of ULP power rules (--advice:power)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.ADVICE__POWER" useByScannerDiscovery="false" value="all" valueType="string"/>
-								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.2114597547" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.35860514" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1578833157" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1798893893" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.ADVICE__POWER.2878279" name="Enable checking of ULP power rules (--advice:power)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.ADVICE__POWER" value="&quot;all&quot;" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DEBUGGING_MODEL.216446283" name="Debugging model" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DEBUGGING_MODEL" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DEBUGGING_MODEL.SYMDEBUG__DWARF" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DIAG_WARNING.1140129948" name="Treat diagnostic &lt;id&gt; as warning (--diag_warning, -pdsw)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DIAG_WARNING" valueType="stringList">
+									<listOptionValue builtIn="false" value="225"/>
+								</option>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DIAG_WRAP.241278789" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DISPLAY_ERROR_NUMBER.1782137309" name="Emit diagnostic identifier numbers (--display_error_number, -pden)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.FP_REASSOC.1393657501" name="Allow reassociation of FP arithmetic (--fp_reassoc)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.FP_REASSOC" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.FP_REASSOC.on" valueType="enumerated"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.1695992168" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1589489507" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.847340364" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1531476331" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 							</tool>
-							<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.linkerDebug.1803371319" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.linkerDebug">
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.LIBRARY.296935971" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.LIBRARY" useByScannerDiscovery="false" valueType="libs">
+							<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.linkerDebug.92795683" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.linkerDebug">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.LIBRARY.178167488" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.LIBRARY" valueType="libs">
 									<listOptionValue builtIn="false" value="libmath.a"/>
 									<listOptionValue builtIn="false" value="libc.a"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.SEARCH_PATH.403250232" name="Add &lt;dir&gt; to library search path (--search_path, -i)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.SEARCH_PATH" valueType="libPaths">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.SEARCH_PATH.926753907" name="Add &lt;dir&gt; to library search path (--search_path, -i)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.SEARCH_PATH" valueType="libPaths">
 									<listOptionValue builtIn="false" value="${CCS_BASE_ROOT}/msp430/include"/>
 									<listOptionValue builtIn="false" value="${CCS_BASE_ROOT}/msp430/lib/5xx_6xx_FRxx"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/lib"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/include"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.USE_HW_MPY.438587534" name="Deprecated: Now a compiler option instead of linker option (--use_hw_mpy)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.USE_HW_MPY" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.USE_HW_MPY.F5" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.CINIT_HOLD_WDT.17434117" name="Hold watchdog timer during cinit auto-initialization (--cinit_hold_wdt)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.CINIT_HOLD_WDT" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.CINIT_HOLD_WDT.on" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.HEAP_SIZE.50710827" name="Heap size for C/C++ dynamic memory allocation (--heap_size, -heap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.HEAP_SIZE" useByScannerDiscovery="false" value="160" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.STACK_SIZE.41555910" name="Set C system stack size (--stack_size, -stack)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.STACK_SIZE" useByScannerDiscovery="false" value="160" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.OUTPUT_FILE.642229033" name="Specify output file name (--output_file, -o)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.OUTPUT_FILE" useByScannerDiscovery="false" value="${ProjName}.out" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.MAP_FILE.85607195" name="Link information (map) listed into &lt;file&gt; (--map_file, -m)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.MAP_FILE" useByScannerDiscovery="false" value="${ProjName}.map" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.XML_LINK_INFO.637685322" name="Detailed link information data-base into &lt;file&gt; (--xml_link_info, -xml_link_info)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.XML_LINK_INFO" useByScannerDiscovery="false" value="${ProjName}_linkInfo.xml" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DISPLAY_ERROR_NUMBER.485162108" name="Emit diagnostic identifier numbers (--display_error_number)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DISPLAY_ERROR_NUMBER" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DIAG_WRAP.555228298" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DIAG_WRAP" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DIAG_WRAP.off" valueType="enumerated"/>
-								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__CMD_SRCS.736728035" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__CMD_SRCS"/>
-								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__CMD2_SRCS.780873861" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__CMD2_SRCS"/>
-								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__GEN_CMDS.880644217" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__GEN_CMDS"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.USE_HW_MPY.1226733196" name="Deprecated: Now a compiler option instead of linker option (--use_hw_mpy)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.USE_HW_MPY" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.USE_HW_MPY.F5" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.CINIT_HOLD_WDT.2008656635" name="Hold watchdog timer during cinit auto-initialization (--cinit_hold_wdt)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.CINIT_HOLD_WDT" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.CINIT_HOLD_WDT.on" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.HEAP_SIZE.909917799" name="Heap size for C/C++ dynamic memory allocation (--heap_size, -heap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.HEAP_SIZE" value="160" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.STACK_SIZE.1612469226" name="Set C system stack size (--stack_size, -stack)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.STACK_SIZE" value="160" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.MAP_FILE.206694002" name="Link information (map) listed into &lt;file&gt; (--map_file, -m)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.MAP_FILE" value="${ProjName}.map" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.OUTPUT_FILE.1175389048" name="Specify output file name (--output_file, -o)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.OUTPUT_FILE" value="${ProjName}.out" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.DIAG_WRAP.755444106" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.DIAG_WRAP" value="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.DIAG_WRAP.off" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.DISPLAY_ERROR_NUMBER.1867861676" name="Emit diagnostic identifier numbers (--display_error_number)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.DISPLAY_ERROR_NUMBER" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.XML_LINK_INFO.53153173" name="Detailed link information data-base into &lt;file&gt; (--xml_link_info, -xml_link_info)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.linkerID.XML_LINK_INFO" value="${ProjName}_linkInfo.xml" valueType="string"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exeLinker.inputType__CMD_SRCS.1165816860" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exeLinker.inputType__CMD_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exeLinker.inputType__CMD2_SRCS.19736548" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exeLinker.inputType__CMD2_SRCS"/>
+								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exeLinker.inputType__GEN_CMDS.632106622" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exeLinker.inputType__GEN_CMDS"/>
 							</tool>
-							<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.1691786136" name="MSP430 Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex">
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.ROMWIDTH.1457690205" name="Specify rom width (--romwidth, -romwidth=width)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.ROMWIDTH" useByScannerDiscovery="false" value="8" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.MEMWIDTH.25905694" name="Specify memory width (--memwidth, -memwidth=width)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.MEMWIDTH" useByScannerDiscovery="false" value="8" valueType="string"/>
+							<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.hex.1817234615" name="MSP430 Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.hex">
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.hex.ROMWIDTH.1916983924" name="Specify rom width (--romwidth, -romwidth)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.hex.ROMWIDTH" value="8" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.hex.MEMWIDTH.648764711" name="Specify memory width (--memwidth, -memwidth)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.hex.MEMWIDTH" value="8" valueType="string"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1667640411" name="Oled.c" rcbsApplicability="disable" resourcePath="CODE/Oled.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1747314865">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1747314865" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1570027735" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.2066173261" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1553856293" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1019921583" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1506941539" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/Oled.c" name="Oled.c" rcbsApplicability="disable" resourcePath="CODE/Oled.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.2075857296">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.2075857296" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.624189099" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.167327930" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.965502054" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.457814307" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1784825488" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1299921213" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1784825488.1386992915" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1299921213.771112682" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1255744880" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1255744880.29151159" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.665888279" name="Back_Wheel.c" rcbsApplicability="disable" resourcePath="CODE/Back_Wheel.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.483003609">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.483003609" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.500589452" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1814277117" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.2080230542" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.2011932324" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.336620787" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/Back_Wheel.c" name="Back_Wheel.c" rcbsApplicability="disable" resourcePath="CODE/Back_Wheel.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1771208919">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1771208919" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.224776114" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1415652884" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.996948789" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.25573965" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1346886355" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1372263675" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1346886355.957795426" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1372263675.1629207662" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1919436900" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1919436900.1062798465" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.510096161" name="gy86.c" rcbsApplicability="disable" resourcePath="CODE/gy86.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.115569715">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.115569715" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.387979316" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1113974368" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1112838713" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.469295390" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1819996541" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/gy86.c" name="gy86.c" rcbsApplicability="disable" resourcePath="CODE/gy86.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.882149715">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.882149715" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.1089000436" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.3343130" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1182928501" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.948598256" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.69869017" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.2103780298" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.69869017.738269328" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.2103780298.1721247589" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1940457089" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1940457089.640180671" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1783251245" name="PM_Control.c" rcbsApplicability="disable" resourcePath="CODE/PM_Control.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1721353390">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1721353390" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1553977076" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.419915974" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1946734123" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.149321092" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1125687544" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/PM_Control.c" name="PM_Control.c" rcbsApplicability="disable" resourcePath="CODE/PM_Control.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.690485305">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.690485305" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.2020489953" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.139589414" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.722361149" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1300862604" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.727772507" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.942013553" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.727772507.192123073" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.942013553.376829194" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1334796990" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1334796990.1069426466" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1047632276" name="TOF.c" rcbsApplicability="disable" resourcePath="CODE/TOF.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.148236208">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.148236208" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.777244354" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.77131030" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1345681006" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1302777909" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.2108141008" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/TOF.c" name="TOF.c" rcbsApplicability="disable" resourcePath="CODE/TOF.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1015578208">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1015578208" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.1168753035" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.727380222" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.375895007" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.273299111" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1525274547" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.532448796" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1525274547.1335183535" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.532448796.1872805416" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1944869664" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1944869664.528487945" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1018737945" name="QMath.c" rcbsApplicability="disable" resourcePath="CODE/QMath.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.37982496">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.37982496" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.339884478" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.2089953234" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.854446604" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1466409613" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1678425033" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/QMath.c" name="QMath.c" rcbsApplicability="disable" resourcePath="CODE/QMath.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.961838362">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.961838362" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.2114799830" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.796904250" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1719151768" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.755270792" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.278554636" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.870847603" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.278554636.935031953" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.870847603.1691453436" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1860379043" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1860379043.1212836997" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.57282160" name="main.c" rcbsApplicability="disable" resourcePath="CODE/main.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1271691534">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1271691534" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1430826227" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.186122055" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1880730643" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.2124533414" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.94476897" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/main.c" name="main.c" rcbsApplicability="disable" resourcePath="CODE/main.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.377589120">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.377589120" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.58376475" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1406563475" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.610568778" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.27922545" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1064764920" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1802731220" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1064764920.1366168591" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1802731220.1789190217" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1321796000" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1321796000.609127857" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1235057785" name="key.c" rcbsApplicability="disable" resourcePath="CODE/key.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.426315263">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.426315263" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1016261791" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1881369142" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1721216699" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.886033194" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.388284137" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/key.c" name="key.c" rcbsApplicability="disable" resourcePath="CODE/key.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1842618162">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1842618162" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.215508125" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1074347819" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.272812706" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1140661650" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.48326922" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.716650147" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.48326922.627465697" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.716650147.1718499583" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.567538650" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.567538650.702369399" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.219957113" name="NRF24L01.c" rcbsApplicability="disable" resourcePath="CODE/NRF24L01.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.598338099">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.598338099" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1166386233" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1145778685" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1206731085" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.2136441302" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1328896750" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/NRF24L01.c" name="NRF24L01.c" rcbsApplicability="disable" resourcePath="CODE/NRF24L01.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.375126280">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.375126280" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.1629408091" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1244904013" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.104571847" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1743730392" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1436257202" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.396636227" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1436257202.1782448020" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.396636227.1050000994" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.716885853" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.716885853.963512885" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.350968906" name="Light.c" rcbsApplicability="disable" resourcePath="CODE/Light.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1742464142">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1742464142" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.890214784" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.335778370" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1137481078" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1321502573" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.2097521162" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/Light.c" name="Light.c" rcbsApplicability="disable" resourcePath="CODE/Light.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1775740023">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1775740023" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.400721479" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1892498130" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.22533406" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1814271005" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.2074294531" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1411583112" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.2074294531.847983737" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1411583112.324908003" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1449822515" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1449822515.1946748726" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.231914693" name="all_init.c" rcbsApplicability="disable" resourcePath="CODE/all_init.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.752046004">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.752046004" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2113685553" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1382017263" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.429583419" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1650165309" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.756454131" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/all_init.c" name="all_init.c" rcbsApplicability="disable" resourcePath="CODE/all_init.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1356279057">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1356279057" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.1779008202" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.395560073" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1105203742" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1690169102" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1568020321" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.281800942" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1568020321.6885548" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.281800942.2002831103" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.2114541357" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.2114541357.260938860" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.505682796" name="delay.c" rcbsApplicability="disable" resourcePath="CODE/delay.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.663734869">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.663734869" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1884597778" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1126089236" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.2009206851" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1652796739" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1479026213" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/delay.c" name="delay.c" rcbsApplicability="disable" resourcePath="CODE/delay.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.2022850527">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.2022850527" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.1553401463" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.627125203" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1673159698" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1313059939" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.2142016654" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.866118309" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.2142016654.466511595" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.866118309.2147374668" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1526339013" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1526339013.632829802" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1710914499" name="uart.c" rcbsApplicability="disable" resourcePath="CODE/uart.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.379617010">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.379617010" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.294555864" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1048729385" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.658134769" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1722742648" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.786256212" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/uart.c" name="uart.c" rcbsApplicability="disable" resourcePath="CODE/uart.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.949830282">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.949830282" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.775219787" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1637561597" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1939773183" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1223217051" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.872095627" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.390024764" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.872095627.1711319656" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.390024764.1514784916" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1764395773" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1764395773.85647073" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1752510202" name="button.c" rcbsApplicability="disable" resourcePath="CODE/button.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.786750248">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.786750248" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1545579357" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1690037945" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.135973014" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1532696689" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.483765782" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/button.c" name="button.c" rcbsApplicability="disable" resourcePath="CODE/button.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.991961467">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.991961467" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.9750235" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1813564768" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1523495569" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1110144268" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.720205601" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.602535344" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.720205601.2043046513" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.602535344.360455965" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.2059862001" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.2059862001.1732776740" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1702201523" name="WIRELESS.h" rcbsApplicability="disable" resourcePath="CODE/WIRELESS.h" toolsToInvoke="">
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.545287352" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.708144866" name="Resource Custom Build Step Input Type">
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/WIRELESS.h" name="WIRELESS.h" rcbsApplicability="disable" resourcePath="CODE/WIRELESS.h" toolsToInvoke="">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.545287352.1338989711" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.708144866.782042039" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.360876964" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.360876964.787077574" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1699913489" name="NRF24L01.h" rcbsApplicability="disable" resourcePath="CODE/NRF24L01.h" toolsToInvoke="">
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.610036533" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.359941078" name="Resource Custom Build Step Input Type">
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/NRF24L01.h" name="NRF24L01.h" rcbsApplicability="disable" resourcePath="CODE/NRF24L01.h" toolsToInvoke="">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.610036533.1872877016" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.359941078.590382419" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.20495201" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.20495201.1915559775" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.80211995" name="distance.c" rcbsApplicability="disable" resourcePath="CODE/distance.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1699239252">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1699239252" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1875158844" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1748879523" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.202781460" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1377588451" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1036415502" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/distance.c" name="distance.c" rcbsApplicability="disable" resourcePath="CODE/distance.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.2101458665">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.2101458665" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.1357660012" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.408697402" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.137980474" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.2047620964" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.429866745" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1766213494" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.429866745.31553067" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1766213494.97281367" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.629559065" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.629559065.840742533" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.74812389" name="encoder.c" rcbsApplicability="disable" resourcePath="CODE/encoder.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.245391413">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.245391413" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.944845344" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.255530021" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.824576611" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1886501069" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.36428195" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/encoder.c" name="encoder.c" rcbsApplicability="disable" resourcePath="CODE/encoder.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.197758600">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.197758600" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.683250992" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1705236811" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1573248676" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.10992486" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.68122440" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1227458600" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.68122440.2084996809" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1227458600.2014482197" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.589322944" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.589322944.1834719537" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.135202181" name="timer.c" rcbsApplicability="disable" resourcePath="CODE/timer.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.118158555">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.118158555" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.980204611" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1937071187" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1680723273" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.800759013" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.558413117" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/timer.c" name="timer.c" rcbsApplicability="disable" resourcePath="CODE/timer.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1222474166">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1222474166" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.1659095777" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.833564881" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1086055173" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.716266681" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.531019061" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.570891363" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.531019061.1059727035" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.570891363.1896330546" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.261782788" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.261782788.1380011277" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1332401871" name="WIRELESS.c" rcbsApplicability="disable" resourcePath="CODE/WIRELESS.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.608482217">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.608482217" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1428061442" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.557671599" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.558030635" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1850884528" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1164303748" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/WIRELESS.c" name="WIRELESS.c" rcbsApplicability="disable" resourcePath="CODE/WIRELESS.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.878656915">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.878656915" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.2136692569" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.1681702782" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.685849822" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.417726509" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.881640333" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1938980734" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.881640333.1259669069" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.1938980734.1397387740" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1008281239" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1008281239.1527176232" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.2020348791" name="gyroscope.c" rcbsApplicability="disable" resourcePath="CODE/gyroscope.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1937348861">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1937348861" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.ADVICE__POWER.786476872" name="Enable checking of ULP power rules (--advice:power)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.ADVICE__POWER" value="&quot;all&quot;" valueType="string"/>
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.613793074" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.537113238" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.248913474" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.921966941" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1982335493" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/gyroscope.c" name="gyroscope.c" rcbsApplicability="disable" resourcePath="CODE/gyroscope.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1697856645">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1697856645" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.1372827104" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.713910949" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1122082771" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.739564327" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.278055802" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.982508837" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.278055802.1247283494" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.982508837.299603920" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.542168422" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.542168422.2143460225" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1001208846" name="pwm.c" rcbsApplicability="disable" resourcePath="CODE/pwm.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1052389236">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.1052389236" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.629783813" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1755587618" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.738023916" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1757232105" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1982972455" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/pwm.c" name="pwm.c" rcbsApplicability="disable" resourcePath="CODE/pwm.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1240420236">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.1240420236" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.2113784797" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.98120318" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.1699687934" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.1339041765" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.687405373" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.161602782" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.687405373.1860151426" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.161602782.1157143307" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1322968437" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1322968437.868615919" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.1470662477" name="Beep.c" rcbsApplicability="disable" resourcePath="CODE/Beep.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.888837822">
-						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915.888837822" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerDebug.707740915">
-							<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.1340799183" name="Optimization level (--opt_level, -O)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.OPT_LEVEL.2" valueType="enumerated"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.676812710" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1402854150" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.91347260" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
-							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1807814769" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.278138875.CODE/Beep.c" name="Beep.c" rcbsApplicability="disable" resourcePath="CODE/Beep.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.259654817">
+						<tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807.259654817" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.920397807">
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS.997981661" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS.104194365" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS.7823278" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS.371171063" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compiler.inputType__ASM2_SRCS"/>
 						</tool>
-						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.126823723" name="Resource Custom Build Step">
-							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.427189263" name="Resource Custom Build Step Input Type">
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.126823723.1726862245" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.427189263.487903872" name="Resource Custom Build Step Input Type">
 								<additionalInput kind="additionalinputdependency" paths=""/>
 							</inputType>
-							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1484414302" name="Resource Custom Build Step Output Type"/>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.1484414302.1577067675" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
 				</configuration>
@@ -453,64 +433,64 @@
 								<listOptionValue builtIn="false" value="PRODUCTS="/>
 								<listOptionValue builtIn="false" value="PRODUCT_MACRO_IMPORTS={}"/>
 							</option>
-							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.1810814280" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="20.2.5.LTS" valueType="string"/>
+							<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.1810814280" name="Compiler version" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="20.2.5.LTS" valueType="string"/>
 							<targetPlatform id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.targetPlatformRelease.7553128" name="Platform" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.targetPlatformRelease"/>
-							<builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.builderRelease.269631796" name="GNU Make.Release" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.builderRelease"/>
+							<builder buildPath="${BuildDirectory}" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.builderRelease.269631796" keepEnvironmentInBuildfile="false" name="GNU Make" parallelBuildOn="true" parallelizationNumber="optimal" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.builderRelease"/>
 							<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerRelease.228611340" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.compilerRelease">
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DEFINE.742932104" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DEFINE" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DEFINE.742932104" name="Pre-define NAME (--define, -D)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DEFINE" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__MSP430F5529__"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DATA_MODEL.26284046" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DATA_MODEL" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DATA_MODEL.restricted" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.USE_HW_MPY.782405433" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.USE_HW_MPY" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.USE_HW_MPY.F5" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU21.280082220" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU21" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU22.28446161" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU22" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU23.1377955544" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU23" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU40.1983597589" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU40" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_VERSION.1098084812" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_VERSION" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_VERSION.mspx" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.PRINTF_SUPPORT.1450342336" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.PRINTF_SUPPORT" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.PRINTF_SUPPORT.minimal" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WARNING.49050603" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WARNING" useByScannerDiscovery="false" valueType="stringList">
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DATA_MODEL.26284046" name="Specify the data memory model. (--data_model)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DATA_MODEL" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DATA_MODEL.restricted" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.USE_HW_MPY.782405433" name="Inline hardware multiply version of RTS mpy routine (--use_hw_mpy)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.USE_HW_MPY" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.USE_HW_MPY.F5" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU21.280082220" name="Workaround specified silicon errata (--silicon_errata) [CPU21]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU21" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU22.28446161" name="Workaround specified silicon errata (--silicon_errata) [CPU22]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU22" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU23.1377955544" name="Workaround specified silicon errata (--silicon_errata) [CPU23]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU23" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU40.1983597589" name="Workaround specified silicon errata (--silicon_errata) [CPU40]" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_ERRATA.CPU40" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_VERSION.1098084812" name="Silicon version (--silicon_version, -v)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_VERSION" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.SILICON_VERSION.mspx" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.PRINTF_SUPPORT.1450342336" name="Level of printf/scanf support required (--printf_support)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.PRINTF_SUPPORT" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.PRINTF_SUPPORT.minimal" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WARNING.49050603" name="Treat diagnostic &lt;id&gt; as warning (--diag_warning, -pdsw)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WARNING" useByScannerDiscovery="false" valueType="stringList">
 									<listOptionValue builtIn="false" value="225"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DISPLAY_ERROR_NUMBER.1615353482" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DISPLAY_ERROR_NUMBER" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WRAP.531535393" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WRAP" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.INCLUDE_PATH.92870685" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.INCLUDE_PATH" valueType="includePath">
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DISPLAY_ERROR_NUMBER.1615353482" name="Emit diagnostic identifier numbers (--display_error_number, -pden)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DISPLAY_ERROR_NUMBER" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WRAP.531535393" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WRAP" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.DIAG_WRAP.off" valueType="enumerated"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.INCLUDE_PATH.92870685" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="${CCS_BASE_ROOT}/msp430/include"/>
 									<listOptionValue builtIn="false" value="${PROJECT_ROOT}"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/include"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.ADVICE__POWER.291774554" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.ADVICE__POWER" useByScannerDiscovery="false" value="all" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.ADVICE__POWER.291774554" name="Enable checking of ULP power rules (--advice:power)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compilerID.ADVICE__POWER" useByScannerDiscovery="false" value="all" valueType="string"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS.1907992671" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__C_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS.1658838911" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__CPP_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS.1397015439" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS.1375295155" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.compiler.inputType__ASM2_SRCS"/>
 							</tool>
 							<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.linkerRelease.998154891" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exe.linkerRelease">
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.LIBRARY.1054380558" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.LIBRARY" useByScannerDiscovery="false" valueType="libs">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.LIBRARY.1054380558" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.LIBRARY" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="libmath.a"/>
 									<listOptionValue builtIn="false" value="libc.a"/>
 								</option>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.SEARCH_PATH.1924595348" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.SEARCH_PATH" valueType="libPaths">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.SEARCH_PATH.1924595348" name="Add &lt;dir&gt; to library search path (--search_path, -i)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.SEARCH_PATH" valueType="libPaths">
 									<listOptionValue builtIn="false" value="${CCS_BASE_ROOT}/msp430/include"/>
 									<listOptionValue builtIn="false" value="${CCS_BASE_ROOT}/msp430/lib/5xx_6xx_FRxx"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/lib"/>
 									<listOptionValue builtIn="false" value="${CG_TOOL_ROOT}/include"/>
 								</option>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.USE_HW_MPY.1486496094" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.USE_HW_MPY" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.USE_HW_MPY.F5" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.CINIT_HOLD_WDT.861714276" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.CINIT_HOLD_WDT" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.CINIT_HOLD_WDT.on" valueType="enumerated"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.HEAP_SIZE.958112577" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.HEAP_SIZE" useByScannerDiscovery="false" value="160" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.STACK_SIZE.770960530" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.STACK_SIZE" useByScannerDiscovery="false" value="160" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.OUTPUT_FILE.628586158" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.OUTPUT_FILE" useByScannerDiscovery="false" value="${ProjName}.out" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.MAP_FILE.1396397610" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.MAP_FILE" useByScannerDiscovery="false" value="${ProjName}.map" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.XML_LINK_INFO.862752712" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.XML_LINK_INFO" useByScannerDiscovery="false" value="${ProjName}_linkInfo.xml" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DISPLAY_ERROR_NUMBER.1181549620" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DISPLAY_ERROR_NUMBER" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DIAG_WRAP.2069517889" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DIAG_WRAP" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DIAG_WRAP.off" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.USE_HW_MPY.1486496094" name="Deprecated: Now a compiler option instead of linker option (--use_hw_mpy)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.USE_HW_MPY" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.USE_HW_MPY.F5" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.CINIT_HOLD_WDT.861714276" name="Hold watchdog timer during cinit auto-initialization (--cinit_hold_wdt)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.CINIT_HOLD_WDT" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.CINIT_HOLD_WDT.on" valueType="enumerated"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.HEAP_SIZE.958112577" name="Heap size for C/C++ dynamic memory allocation (--heap_size, -heap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.HEAP_SIZE" useByScannerDiscovery="false" value="160" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.STACK_SIZE.770960530" name="Set C system stack size (--stack_size, -stack)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.STACK_SIZE" useByScannerDiscovery="false" value="160" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.OUTPUT_FILE.628586158" name="Specify output file name (--output_file, -o)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.OUTPUT_FILE" useByScannerDiscovery="false" value="${ProjName}.out" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.MAP_FILE.1396397610" name="Link information (map) listed into &lt;file&gt; (--map_file, -m)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.MAP_FILE" useByScannerDiscovery="false" value="${ProjName}.map" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.XML_LINK_INFO.862752712" name="Detailed link information data-base into &lt;file&gt; (--xml_link_info, -xml_link_info)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.XML_LINK_INFO" useByScannerDiscovery="false" value="${ProjName}_linkInfo.xml" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DISPLAY_ERROR_NUMBER.1181549620" name="Emit diagnostic identifier numbers (--display_error_number)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DISPLAY_ERROR_NUMBER" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DIAG_WRAP.2069517889" name="Wrap diagnostic messages (--diag_wrap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DIAG_WRAP" useByScannerDiscovery="false" value="com.ti.ccstudio.buildDefinitions.MSP430_20.2.linkerID.DIAG_WRAP.off" valueType="enumerated"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__CMD_SRCS.1828645288" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__CMD_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__CMD2_SRCS.629922128" name="Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__CMD2_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__GEN_CMDS.211206415" name="Generated Linker Command Files" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.exeLinker.inputType__GEN_CMDS"/>
 							</tool>
 							<tool id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.1510598632" name="MSP430 Hex Utility" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex">
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.ROMWIDTH.1465059185" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.ROMWIDTH" useByScannerDiscovery="false" value="8" valueType="string"/>
-								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.MEMWIDTH.2089806458" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.MEMWIDTH" useByScannerDiscovery="false" value="8" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.ROMWIDTH.1465059185" name="Specify rom width (--romwidth, -romwidth)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.ROMWIDTH" useByScannerDiscovery="false" value="8" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.MEMWIDTH.2089806458" name="Specify memory width (--memwidth, -memwidth)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_20.2.hex.MEMWIDTH" useByScannerDiscovery="false" value="8" valueType="string"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
