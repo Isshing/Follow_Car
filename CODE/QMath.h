@@ -3,9 +3,6 @@
 #include "headfile.h"
 #include "math.h"
 
-
-
-
 float FSqrt(float x);
 float FExp(float x);
 float Fabs(float x);

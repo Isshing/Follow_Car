@@ -1,15 +1,15 @@
-//#include <CODE/gyroscope.h>
+// #include <CODE/gyroscope.h>
 //
-//#define int16_t  short
+// #define int16_t  short
 //
-//unsigned int Data_Gyroscope;
-//int count_Gyroscope=0;
-//int mode_Gyroscope;
-//int n_Gyroscope,t_Gyroscope;
-//int RollL,RollH,PitchL,PitchH,YawL,YawH;
-//int angle_Gyroscope_value[4];
-//unsigned int angle_Gyroscope[8];
-//float Roll,Pitch,Yaw;
+// unsigned int Data_Gyroscope;
+// int count_Gyroscope=0;
+// int mode_Gyroscope;
+// int n_Gyroscope,t_Gyroscope;
+// int RollL,RollH,PitchL,PitchH,YawL,YawH;
+// int angle_Gyroscope_value[4];
+// unsigned int angle_Gyroscope[8];
+// float Roll,Pitch,Yaw;
 ////unsigned int acc_Gyroscope[14];
 ////int AxL,GxL,AxH,GxH,AyL,GyL,AyH,GyH,AzL,GzL,AzH,GzH;
 ////int16_t Ax,Ay,Az,Gx,Gy,Gz;
@@ -22,19 +22,19 @@
 ////  @return     void
 ////  Sample usage:           gyroscope();
 ////-------------------------------------------------------------------------------------------------------------------
-//void gyroscope_init(void)
+// void gyroscope_init(void)
 //{
-//    OLED_ShowString(15,1," Angle  Acc  Gyro",15);
-//    OLED_ShowString(3,2,"x:",15);
-//    OLED_ShowString(3,3,"y:",15);
-//    OLED_ShowString(3,4,"z:",15);
-//    uart_init(10);
+//     OLED_ShowString(15,1," Angle  Acc  Gyro",15);
+//     OLED_ShowString(3,2,"x:",15);
+//     OLED_ShowString(3,3,"y:",15);
+//     OLED_ShowString(3,4,"z:",15);
+//     uart_init(10);
 //
-//    __bis_SR_register(GIE); // Enter LPM0, interrupts enabled
-//    __no_operation(); // For debugger
+//     __bis_SR_register(GIE); // Enter LPM0, interrupts enabled
+//     __no_operation(); // For debugger
 //
 //
-//}
+// }
 //
 //
 ////-------------------------------------------------------------------------------------------------------------------
@@ -43,54 +43,54 @@
 ////  Sample usage:           read_gyroscope();
 ////  @note                   �ڴ����ж��ж�ȡ��̬��
 ////-------------------------------------------------------------------------------------------------------------------
-//void gyroscope_read(void)
+// void gyroscope_read(void)
 //{
-//    count_Gyroscope++;
-//        if (Data_USCI_A0==0x55)
-//        {
-//            count_Gyroscope=0;
-//            mode_Gyroscope=0;
-//        }
+//     count_Gyroscope++;
+//         if (Data_USCI_A0==0x55)
+//         {
+//             count_Gyroscope=0;
+//             mode_Gyroscope=0;
+//         }
 //
-//        if ((mode_Gyroscope==0)&&(count_Gyroscope==1))
-//        {
-//            if (Data_USCI_A0==0x01){mode_Gyroscope=1;}
-//            if (Data_USCI_A0==0x03){mode_Gyroscope=2;}
-//        }
+//         if ((mode_Gyroscope==0)&&(count_Gyroscope==1))
+//         {
+//             if (Data_USCI_A0==0x01){mode_Gyroscope=1;}
+//             if (Data_USCI_A0==0x03){mode_Gyroscope=2;}
+//         }
 //
-//        if ((mode_Gyroscope==1)&&(count_Gyroscope>=3))
-//        {
-//            angle_Gyroscope[count_Gyroscope-2]=Data_USCI_A0;
-//            if (count_Gyroscope==8)
-//            {
-//                mode_Gyroscope=3;
-//                count_Gyroscope=0;
-//                RollL=angle_Gyroscope[1];
-//                RollH=angle_Gyroscope[2];
-//                PitchL=angle_Gyroscope[3];
-//                PitchH=angle_Gyroscope[4];
-//                YawL=angle_Gyroscope[5];
-//                YawH=angle_Gyroscope[6];
-//                Roll= (float)((int16_t)(RollH<<8)|(RollL))/32768*180;
-//                Pitch= (float)((int16_t)(PitchH<<8)|(PitchL))/32768*180;
-//                Yaw= (float)((int16_t)(YawH<<8)|(YawL))/32768*180;
-//                angle_Gyroscope_value[1] = (int)Roll;
-//                angle_Gyroscope_value[2] = (int)Pitch;
-//                angle_Gyroscope_value[3] = (int)Yaw;
-//                for (t_Gyroscope=1;t_Gyroscope<=3;t_Gyroscope++)
-//                {
-//                    if(angle_Gyroscope_value[t_Gyroscope]<=-1)
-//                    {
-//                        OLED_ShowChar(15,t_Gyroscope+1,'-',15);
-//                    }
-//                    else
-//                    {
-//                        OLED_ShowChar(15,t_Gyroscope+1,' ',15);
-//                    }
-//                    OLED_ShowNum(20,t_Gyroscope+1,abs(angle_Gyroscope_value[t_Gyroscope]),3,15);
-//                }
-//            }
-//        }
+//         if ((mode_Gyroscope==1)&&(count_Gyroscope>=3))
+//         {
+//             angle_Gyroscope[count_Gyroscope-2]=Data_USCI_A0;
+//             if (count_Gyroscope==8)
+//             {
+//                 mode_Gyroscope=3;
+//                 count_Gyroscope=0;
+//                 RollL=angle_Gyroscope[1];
+//                 RollH=angle_Gyroscope[2];
+//                 PitchL=angle_Gyroscope[3];
+//                 PitchH=angle_Gyroscope[4];
+//                 YawL=angle_Gyroscope[5];
+//                 YawH=angle_Gyroscope[6];
+//                 Roll= (float)((int16_t)(RollH<<8)|(RollL))/32768*180;
+//                 Pitch= (float)((int16_t)(PitchH<<8)|(PitchL))/32768*180;
+//                 Yaw= (float)((int16_t)(YawH<<8)|(YawL))/32768*180;
+//                 angle_Gyroscope_value[1] = (int)Roll;
+//                 angle_Gyroscope_value[2] = (int)Pitch;
+//                 angle_Gyroscope_value[3] = (int)Yaw;
+//                 for (t_Gyroscope=1;t_Gyroscope<=3;t_Gyroscope++)
+//                 {
+//                     if(angle_Gyroscope_value[t_Gyroscope]<=-1)
+//                     {
+//                         OLED_ShowChar(15,t_Gyroscope+1,'-',15);
+//                     }
+//                     else
+//                     {
+//                         OLED_ShowChar(15,t_Gyroscope+1,' ',15);
+//                     }
+//                     OLED_ShowNum(20,t_Gyroscope+1,abs(angle_Gyroscope_value[t_Gyroscope]),3,15);
+//                 }
+//             }
+//         }
 //
 ////          if ((mode_Gyroscope==2)&&(count2_Gyroscope>=3))
 ////          {

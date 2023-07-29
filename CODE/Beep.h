@@ -3,11 +3,8 @@
 
 #include "headfile.h"
 
-
 extern void Beep_Sing(void);
 extern void Light_On(void);
 extern void Light_Off(void);
-
-
 
 #endif /* HARDWARE_BEEP_H_ */

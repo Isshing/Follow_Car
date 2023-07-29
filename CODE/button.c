@@ -1,12 +1,13 @@
 #include "button.h"
 
-void button_init(void){
-    //°´¼üÒ»¶ËÁ¬½ÓIO¿ÚÒ»¶ËÁ¬½ÓGDN£¬°´ÏÂÊ±IO¶Ë¿Ú¶Áµ½µÄµÍµçÆ½
-    P1DIR &= ~BIT1; //³õÊ¼»¯°´¼ü1ËùÔÚIO¿ÚP1.1ÎªÊäÈë
-    P1REN |= BIT1; //´ò¿ªP1.1µÄÊ¹ÄÜ
-    P1OUT |= BIT1; //Ê¹ÄÜP1.1µÄÉÏÀ­µç×è
+void button_init(void)
+{
+    // æŒ‰é”®ä¸€ç«¯è¿žæŽ¥IOå£ä¸€ç«¯è¿žæŽ¥GDNï¼ŒæŒ‰ä¸‹æ—¶IOç«¯å£è¯»åˆ°çš„ä½Žç”µå¹³
+    P1DIR &= ~BIT1; // åˆå§‹åŒ–æŒ‰é”®1æ‰€åœ¨IOå£P1.1ä¸ºè¾“å…¥
+    P1REN |= BIT1;  // æ‰“å¼€P1.1çš„ä½¿èƒ½
+    P1OUT |= BIT1;  // ä½¿èƒ½P1.1çš„ä¸Šæ‹‰ç”µé˜»
 
-    P2DIR &= ~BIT1; //³õÊ¼»¯°´¼ü2ËùÔÚIO¿ÚP2.1ÎªÊäÈë
-    P2REN |= BIT1; //´ò¿ªP2.1µÄÊ¹ÄÜ
-    P2OUT |= BIT1; //Ê¹ÄÜP2.1µÄÉÏÀ­µç×è
+    P2DIR &= ~BIT1; // åˆå§‹åŒ–æŒ‰é”®2æ‰€åœ¨IOå£P2.1ä¸ºè¾“å…¥
+    P2REN |= BIT1;  // æ‰“å¼€P2.1çš„ä½¿èƒ½
+    P2OUT |= BIT1;  // ä½¿èƒ½P2.1çš„ä¸Šæ‹‰ç”µé˜»
 }

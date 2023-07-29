@@ -10,5 +10,4 @@ extern int key1_flag, key2_flag, key3_flag, key4_flag;
 
 void key_switch(void);
 
-
 #endif /* CODE_KEY_H_ */

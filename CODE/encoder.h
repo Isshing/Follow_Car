@@ -3,11 +3,8 @@
 #define ENCODER_H_
 #include "headfile.h"
 
-
-#define LEFTDIRECTION           BIT7
-#define RIGHTDIRECTION          BIT3
-
-
+#define LEFTDIRECTION BIT7
+#define RIGHTDIRECTION BIT3
 
 extern int speed_R;
 extern int speed_L;
@@ -27,8 +24,5 @@ void EncoderCount(void);
 float GetEncoder(void);
 void Encoder_clear(void);
 void Get_Speed(void);
-
-
-
 
 #endif /* ENCODER_H_ */

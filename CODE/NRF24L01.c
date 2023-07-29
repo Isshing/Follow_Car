@@ -1,215 +1,220 @@
 #include "NRF24L01.h"
 
-unsigned char TX_Address[5]={0x34,0x43,0x10,0x10,0x01};//ÉèÖÃ·¢ËÍ¶ËµÄµØÖ·
-unsigned char RX_Address[5]={0x34,0x43,0x10,0x10,0x01};//ÉèÖÃ½ÓÊÕ¶ËµÄµØÖ·
+unsigned char TX_Address[5] = {0x34, 0x43, 0x10, 0x10, 0x01}; // è®¾ç½®å‘é€ç«¯çš„åœ°å€
+unsigned char RX_Address[5] = {0x34, 0x43, 0x10, 0x10, 0x01}; // è®¾ç½®æ¥æ”¶ç«¯çš„åœ°å€
 
-unsigned char tx_buf[TX_PLOAD_WIDTH]={0x00};
-unsigned char rx_buf[RX_PLOAD_WIDTH]={0x00};
+unsigned char tx_buf[TX_PLOAD_WIDTH] = {0x00};
+unsigned char rx_buf[RX_PLOAD_WIDTH] = {0x00};
 
-/****************************STM32³ÌĞò***************************************/
-//³õÊ¼»¯24L01µÄIO¿Ú
+/****************************STM32ç¨‹åº***************************************/
+// åˆå§‹åŒ–24L01çš„IOå£
 void NRF_Init(void)
 {
-  P4SEL=0;
-  P4DIR |= CSN + MOSI + SCK ;  //SOMI , IRQ INPUT
-  P4OUT&=~(CSN + MOSI + SCK );
+  P4SEL = 0;
+  P4DIR |= CSN + MOSI + SCK; // SOMI , IRQ INPUT
+  P4OUT &= ~(CSN + MOSI + SCK);
   CSN_H;
 
-  P8DIR|=CE;
-  P8OUT&=~CE;
+  P8DIR |= CE;
+  P8OUT &= ~CE;
 
-  P3DIR&=~IRQ;
-  P3REN |= IRQ;//Ê¹ÄÜÉÏÏÂÀ­
-  P3OUT |= IRQ;//ÉÏÀ­
+  P3DIR &= ~IRQ;
+  P3REN |= IRQ; // ä½¿èƒ½ä¸Šä¸‹æ‹‰
+  P3OUT |= IRQ; // ä¸Šæ‹‰
 
-  P1DIR |= BIT0;        //LED
-  P1OUT |= BIT0;        //LED
+  P1DIR |= BIT0; // LED
+  P1OUT |= BIT0; // LED
 
-  P3SEL |= BIT0 + BIT1;                     // P3.0,1 option select
+  P3SEL |= BIT0 + BIT1; // P3.0,1 option select
 }
 
 void RX_Mode(void)
 {
   CE_L;
-  //ÉèÖÃ¶ËÖ·
-  //SPI_Write_Buf(WRITE_REG_NRF + TX_ADDR, TX_Address, TX_ADR_WIDTH);
+  // è®¾ç½®ç«¯å€
+  // SPI_Write_Buf(WRITE_REG_NRF + TX_ADDR, TX_Address, TX_ADR_WIDTH);
   SPI_Write_Buf(WRITE_REG_NRF + RX_ADDR_P0, TX_Address, TX_ADR_WIDTH);
 
-  //³õÊ¼»¯ÅäÖÃ×Ö
-  SPI_WR_Reg(WRITE_REG_NRF + EN_AA, 0x01); // Enable Auto.Ack:Pipe0
+  // åˆå§‹åŒ–é…ç½®å­—
+  SPI_WR_Reg(WRITE_REG_NRF + EN_AA, 0x01);     // Enable Auto.Ack:Pipe0
   SPI_WR_Reg(WRITE_REG_NRF + EN_RXADDR, 0x01); // Enable Pipe0
-  SPI_WR_Reg(WRITE_REG_NRF + SETUP_AW,0x03);
-  SPI_WR_Reg(WRITE_REG_NRF + SETUP_RETR,0x1a);
+  SPI_WR_Reg(WRITE_REG_NRF + SETUP_AW, 0x03);
+  SPI_WR_Reg(WRITE_REG_NRF + SETUP_RETR, 0x1a);
   SPI_WR_Reg(WRITE_REG_NRF + RF_CH, 40);
   SPI_WR_Reg(WRITE_REG_NRF + RX_PW_P0, TX_PLOAD_WIDTH);
   SPI_WR_Reg(WRITE_REG_NRF + RF_SETUP, 0x0f);
-  //PWR_UP¡¢TX_DS¡¢IRQ¡¢EN CRC¡¢rX
+  // PWR_UPã€TX_DSã€IRQã€EN CRCã€rX
   SPI_WR_Reg(WRITE_REG_NRF + CONFIG_1, 0x0f); // Set PWR_UP bit, enable CRC(2 bytes)& Prim:RX. RX_DR enabled..
-  //Çå³ı±êÖ¾Î»
-  uchar sta=SPI_RD_Reg(STATUS);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ
-  SPI_WR_Reg(WRITE_REG_NRF+STATUS,sta); //Çå³ıTX_DS,RX_DR»òMAX_RTÖĞ¶Ï±êÖ¾
-  CE_H; // Set CE pin high to enable RX device
+  // æ¸…é™¤æ ‡å¿—ä½
+  uchar sta = SPI_RD_Reg(STATUS);          // è¯»å–çŠ¶æ€å¯„å­˜å™¨çš„å€¼
+  SPI_WR_Reg(WRITE_REG_NRF + STATUS, sta); // æ¸…é™¤TX_DS,RX_DRæˆ–MAX_RTä¸­æ–­æ ‡å¿—
+  CE_H;                                    // Set CE pin high to enable RX device
 }
 
 void TX_Mode(void)
 {
   CE_L;
-   //ÉèÖÃ·¢ËÍ¶ËµÄµØÖ·
-  SPI_Write_Buf(WRITE_REG_NRF+TX_ADDR,TX_Address,TX_ADR_WIDTH);//Ğ´TX½ÚµãµØÖ·
-  SPI_Write_Buf(WRITE_REG_NRF+RX_ADDR_P0, RX_Address,RX_ADR_WIDTH); //ÉèÖÃTX½ÚµãµØÖ·,Ö÷ÒªÎªÁËÊ¹ÄÜACK
-   //³õÊ¼»¯ÅäÖÃ×Ö
-  SPI_WR_Reg(WRITE_REG_NRF + EN_AA, 0x01); // Enable Auto.Ack:Pipe0//
+  // è®¾ç½®å‘é€ç«¯çš„åœ°å€
+  SPI_Write_Buf(WRITE_REG_NRF + TX_ADDR, TX_Address, TX_ADR_WIDTH);    // å†™TXèŠ‚ç‚¹åœ°å€
+  SPI_Write_Buf(WRITE_REG_NRF + RX_ADDR_P0, RX_Address, RX_ADR_WIDTH); // è®¾ç½®TXèŠ‚ç‚¹åœ°å€,ä¸»è¦ä¸ºäº†ä½¿èƒ½ACK
+                                                                       // åˆå§‹åŒ–é…ç½®å­—
+  SPI_WR_Reg(WRITE_REG_NRF + EN_AA, 0x01);     // Enable Auto.Ack:Pipe0//
   SPI_WR_Reg(WRITE_REG_NRF + EN_RXADDR, 0x01); // Enable Pipe0
-  SPI_WR_Reg(WRITE_REG_NRF + SETUP_AW,0x03);
+  SPI_WR_Reg(WRITE_REG_NRF + SETUP_AW, 0x03);
   SPI_WR_Reg(WRITE_REG_NRF + SETUP_RETR, 0x1a); // 500us + 86us, 10 retrans...
-  SPI_WR_Reg(WRITE_REG_NRF + RF_CH, 40); // Select RF channel 2.45G
-  SPI_WR_Reg(WRITE_REG_NRF + RF_SETUP, 0x0f); // TX_PWR:0dBm, Datarate:2Mbps,LNA:HCURR
-  SPI_WR_Reg(WRITE_REG_NRF + CONFIG_1, 0x0e); // Set PWR_UP bit, enable CRC(2 bytes)& Prim:TX. MAX_RT & TX_DS enabled..//
-  //Çå³ıTX_DS±êÖ¾Î»
-  uchar sta=SPI_RD_Reg(STATUS);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ
-  SPI_WR_Reg(WRITE_REG_NRF+STATUS,sta); //Çå³ıTX_DS»òMAX_RTÖĞ¶Ï±êÖ¾
-//  CE_H;
+  SPI_WR_Reg(WRITE_REG_NRF + RF_CH, 40);        // Select RF channel 2.45G
+  SPI_WR_Reg(WRITE_REG_NRF + RF_SETUP, 0x0f);   // TX_PWR:0dBm, Datarate:2Mbps,LNA:HCURR
+  SPI_WR_Reg(WRITE_REG_NRF + CONFIG_1, 0x0e);     // Set PWR_UP bit, enable CRC(2 bytes)& Prim:TX. MAX_RT & TX_DS enabled..//
+  // æ¸…é™¤TX_DSæ ‡å¿—ä½
+  uchar sta = SPI_RD_Reg(STATUS);          // è¯»å–çŠ¶æ€å¯„å­˜å™¨çš„å€¼
+  SPI_WR_Reg(WRITE_REG_NRF + STATUS, sta); // æ¸…é™¤TX_DSæˆ–MAX_RTä¸­æ–­æ ‡å¿—
+  //  CE_H;
 }
 
-//¼ì²â24L01ÊÇ·ñ´æÔÚ
-//·µ»ØÖµ:0£¬³É¹¦;1£¬Ê§°Ü
+// æ£€æµ‹24L01æ˜¯å¦å­˜åœ¨
+// è¿”å›å€¼:0ï¼ŒæˆåŠŸ;1ï¼Œå¤±è´¥
 unsigned char NRF_Check(void)
 {
-    unsigned char buf[5]={0XA5,0XA5,0XA5,0XA5,0XA5};
-    unsigned char i;
-    SPI_Write_Buf(WRITE_REG_NRF+TX_ADDR,buf,5);//Ğ´Èë5¸ö×Ö½ÚµÄµØÖ·.
-    SPI_Read_Buf(TX_ADDR,buf,5); //¶Á³öĞ´ÈëµÄµØÖ·
-    for(i=0;i<5;i++)if(buf[i]!=0XA5)break;
-    if(i!=5)return 1;//¼ì²â24L01´íÎó
-    return 0;        //¼ì²âµ½24L01
+  unsigned char buf[5] = {0XA5, 0XA5, 0XA5, 0XA5, 0XA5};
+  unsigned char i;
+  SPI_Write_Buf(WRITE_REG_NRF + TX_ADDR, buf, 5); // å†™å…¥5ä¸ªå­—èŠ‚çš„åœ°å€.
+  SPI_Read_Buf(TX_ADDR, buf, 5);                  // è¯»å‡ºå†™å…¥çš„åœ°å€
+  for (i = 0; i < 5; i++)
+    if (buf[i] != 0XA5)
+      break;
+  if (i != 5)
+    return 1; // æ£€æµ‹24L01é”™è¯¯
+  return 0;   // æ£€æµ‹åˆ°24L01
 }
-
 
 unsigned char NRF_TxPacket(uchar *txbuf)
 {
-    unsigned char sta;
-    CE_L;
-    SPI_Write_Buf(WR_TX_PLOAD,txbuf,TX_PLOAD_WIDTH);//Ğ´Êı¾İµ½TX BUF  32¸ö×Ö½Ú
-    CE_H;//Æô¶¯·¢ËÍ
-    delay_us(10);
-    while((P3IN&IRQ)!=0);//µÈ´ı·¢ËÍÍê³É
-    sta=SPI_RD_Reg(STATUS);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ
-    SPI_WR_Reg(WRITE_REG_NRF+STATUS,sta); //Çå³ıTX_DS»òMAX_RTÖĞ¶Ï±êÖ¾
+  unsigned char sta;
+  CE_L;
+  SPI_Write_Buf(WR_TX_PLOAD, txbuf, TX_PLOAD_WIDTH); // å†™æ•°æ®åˆ°TX BUF  32ä¸ªå­—èŠ‚
+  CE_H;                                              // å¯åŠ¨å‘é€
+  delay_us(10);
+  while ((P3IN & IRQ) != 0)
+    ;                                      // ç­‰å¾…å‘é€å®Œæˆ
+  sta = SPI_RD_Reg(STATUS);                // è¯»å–çŠ¶æ€å¯„å­˜å™¨çš„å€¼
+  SPI_WR_Reg(WRITE_REG_NRF + STATUS, sta); // æ¸…é™¤TX_DSæˆ–MAX_RTä¸­æ–­æ ‡å¿—
 
-//    LED_J;
+  //    LED_J;
 
-    if(sta&MAX_TX!=0)//´ïµ½×î´óÖØ·¢´ÎÊı
-    {
-      SPI_WR_Reg(FLUSH_TX,0xff);//Çå³ıTX FIFO¼Ä´æÆ÷
-      return MAX_TX;
-    }
-    if(sta&TX_OK)//·¢ËÍÍê³É
-    {
-        LED_J;
+  if (sta & MAX_TX != 0) // è¾¾åˆ°æœ€å¤§é‡å‘æ¬¡æ•°
+  {
+    SPI_WR_Reg(FLUSH_TX, 0xff); // æ¸…é™¤TX FIFOå¯„å­˜å™¨
+    return MAX_TX;
+  }
+  if (sta & TX_OK) // å‘é€å®Œæˆ
+  {
+    LED_J;
 
-      return TX_OK;
-    }
-    return 0xff;//ÆäËûÔ­Òò·¢ËÍÊ§°Ü
+    return TX_OK;
+  }
+  return 0xff; // å…¶ä»–åŸå› å‘é€å¤±è´¥
 }
-
 
 unsigned char NRF_RxPacket(unsigned char *rxbuf)
 {
   unsigned char sta;
-  CE_H;       //CE ¸ßµçÆ½>=130us£¬½ÓÊÕÄ£Ê½
+  CE_H; // CE é«˜ç”µå¹³>=130usï¼Œæ¥æ”¶æ¨¡å¼
   delay_us(130);
 
-  sta=SPI_RD_Reg(STATUS);  //¶ÁÈ¡×´Ì¬¼Ä´æÆ÷µÄÖµ
-  SPI_WR_Reg(WRITE_REG_NRF+STATUS,sta); //Çå³ıTX_DS»òMAX_RTÖĞ¶Ï±êÖ¾
+  sta = SPI_RD_Reg(STATUS);                // è¯»å–çŠ¶æ€å¯„å­˜å™¨çš„å€¼
+  SPI_WR_Reg(WRITE_REG_NRF + STATUS, sta); // æ¸…é™¤TX_DSæˆ–MAX_RTä¸­æ–­æ ‡å¿—
 
-  if(sta&RX_OK)
+  if (sta & RX_OK)
   {
     CE_L;
     LED_J;
-    SPI_Read_Buf(RD_RX_PLOAD,rx_buf,RX_PLOAD_WIDTH);//¶ÁÈ¡Êı¾İ
-    SPI_WR_Reg(FLUSH_RX,0xff);//Çå³ıRX FIFO¼Ä´æÆ÷
-//    OLED_ShowNum(0, 8,1, 2, 12);
+    SPI_Read_Buf(RD_RX_PLOAD, rx_buf, RX_PLOAD_WIDTH); // è¯»å–æ•°æ®
+    SPI_WR_Reg(FLUSH_RX, 0xff);                        // æ¸…é™¤RX FIFOå¯„å­˜å™¨
+    //    OLED_ShowNum(0, 8,1, 2, 12);
     return 0;
   }
   else
   {
-//      OLED_ShowNum(0, 8,0, 2, 12);
-      return 1;
+    //      OLED_ShowNum(0, 8,0, 2, 12);
+    return 1;
   }
 }
 
-/***************************spi³ÌĞò**************************/
+/***************************spiç¨‹åº**************************/
 unsigned char SPI_RW(unsigned char data)
 {
   unsigned char bit;
-  for(bit=0;bit<8;bit++)
-  {                           //ÏÈ¸ßÎ»£¬ºóµÍÎ»
-    if(data & BIT7) MOSI_H;
-    else MOSI_L;
-    delay_us(2);  //Êı¾İ½¨Á¢Ê±¼ä 1us
+  for (bit = 0; bit < 8; bit++)
+  { // å…ˆé«˜ä½ï¼Œåä½ä½
+    if (data & BIT7)
+      MOSI_H;
+    else
+      MOSI_L;
+    delay_us(2); // æ•°æ®å»ºç«‹æ—¶é—´ 1us
     SCK_H;
     delay_us(2);
-    data <<= 1;     //Ò»ÌõÖ¸ÁîµÄÊ±¼ä
-    if(SPI_IN) data |= BIT0; // capture current MISO bit
-    else data &=~BIT0;
+    data <<= 1; // ä¸€æ¡æŒ‡ä»¤çš„æ—¶é—´
+    if (SPI_IN)
+      data |= BIT0; // capture current MISO bit
+    else
+      data &= ~BIT0;
     SCK_L;
     delay_us(1);
   }
   delay_us(1);
-  return(data); // return read data
+  return (data); // return read data
 }
 
 unsigned char SPI_WR_Reg(unsigned char reg, unsigned char value)
 {
   unsigned char status;
-  CSN_L; // CSN low, init SPI transaction
+  CSN_L;                // CSN low, init SPI transaction
   status = SPI_RW(reg); // select register
-  SPI_RW(value); // ..and write value to it..
-  CSN_H; // CSN high again
-  return(status); // return nRF24L01 status byte
+  SPI_RW(value);        // ..and write value to it..
+  CSN_H;                // CSN high again
+  return (status);      // return nRF24L01 status byte
 }
 
 uchar SPI_RD_Reg(uchar reg)
 {
   uchar reg_val;
-  CSN_L; // CSN low, initialize SPI communication
-  SPI_RW(reg); // Select register to read from..
+  CSN_L;               // CSN low, initialize SPI communication
+  SPI_RW(reg);         // Select register to read from..
   reg_val = SPI_RW(0); // ..then read registervalue
-  CSN_H; // CSN high, terminate SPI communication
-  return(reg_val); // return register value
+  CSN_H;               // CSN high, terminate SPI communication
+  return (reg_val);    // return register value
 }
 
-/*½ÓÊÕ»º³åÇø·ÃÎÊº¯Êı£ºÖ÷ÒªÓÃÀ´ÔÚ½ÓÊÕÊ±¶ÁÈ¡FIFO »º³åÇøÖĞµÄÖµ¡£
-»ù±¾Ë¼Â·¾ÍÊÇÍ¨¹ıREAD_REG ÃüÁî°ÑÊı¾İ´Ó½ÓÊÕFIFO£¨RD_RX_PLOAD£©ÖĞ¶Á³ö²¢´æµ½Êı×éÀïÃæÈ¥¡£*/
+/*æ¥æ”¶ç¼“å†²åŒºè®¿é—®å‡½æ•°ï¼šä¸»è¦ç”¨æ¥åœ¨æ¥æ”¶æ—¶è¯»å–FIFO ç¼“å†²åŒºä¸­çš„å€¼ã€‚
+åŸºæœ¬æ€è·¯å°±æ˜¯é€šè¿‡READ_REG å‘½ä»¤æŠŠæ•°æ®ä»æ¥æ”¶FIFOï¼ˆRD_RX_PLOADï¼‰ä¸­è¯»å‡ºå¹¶å­˜åˆ°æ•°ç»„é‡Œé¢å»ã€‚*/
 uchar SPI_Read_Buf(uchar reg, uchar *pBuf, uchar bytes)
 {
-  uchar status,byte_ctr;
-  CSN_L; // Set CSN low, init SPI tranaction
+  uchar status, byte_ctr;
+  CSN_L;                // Set CSN low, init SPI tranaction
   status = SPI_RW(reg); // Select register to write to and read status byte
-  for(byte_ctr=0;byte_ctr<bytes;byte_ctr++)
+  for (byte_ctr = 0; byte_ctr < bytes; byte_ctr++)
     pBuf[byte_ctr] = SPI_RW(0); // Perform SPI_RW to read byte from nRF24L01
-  CSN_H; // Set CSN high again
-  return(status); // return nRF24L01 status byte
+  CSN_H;                        // Set CSN high again
+  return (status);              // return nRF24L01 status byte
 }
-/*·¢Éä»º³åÇø·ÃÎÊº¯Êı£ºÖ÷ÒªÓÃÀ´°ÑÊı×éÀïµÄÊı·Åµ½·¢ÉäFIFO »º³åÇøÖĞ¡£
-»ù±¾Ë¼Â·¾ÍÊÇÍ¨¹ıWRITE_REG ÃüÁî°ÑÊı¾İ´æµ½·¢ÉäFIFO£¨WR_TX_PLOAD£©ÖĞÈ¥¡£*/
+/*å‘å°„ç¼“å†²åŒºè®¿é—®å‡½æ•°ï¼šä¸»è¦ç”¨æ¥æŠŠæ•°ç»„é‡Œçš„æ•°æ”¾åˆ°å‘å°„FIFO ç¼“å†²åŒºä¸­ã€‚
+åŸºæœ¬æ€è·¯å°±æ˜¯é€šè¿‡WRITE_REG å‘½ä»¤æŠŠæ•°æ®å­˜åˆ°å‘å°„FIFOï¼ˆWR_TX_PLOADï¼‰ä¸­å»ã€‚*/
 uchar SPI_Write_Buf(uchar reg, uchar *pBuf, uchar bytes)
 {
-  uchar status,byte_ctr;
-  CSN_L; // Set CSN low, init SPI tranaction
+  uchar status, byte_ctr;
+  CSN_L;                // Set CSN low, init SPI tranaction
   status = SPI_RW(reg); // Select register to write to and read status byte
   delay_us(1);
-  for(byte_ctr=0; byte_ctr<bytes; byte_ctr++) // then write all byte in buffer(*pBuf)
+  for (byte_ctr = 0; byte_ctr < bytes; byte_ctr++) // then write all byte in buffer(*pBuf)
     SPI_RW(*pBuf++);
-  CSN_H; // Set CSN high again
-  return(status); // return nRF24L01 status byte
+  CSN_H;           // Set CSN high again
+  return (status); // return nRF24L01 status byte
 }
 
-///***************************ÖĞ¶Ï³ÌĞò**************************/
-//#pragma vector=PORT2_VECTOR
+///***************************ä¸­æ–­ç¨‹åº**************************/
+// #pragma vector=PORT2_VECTOR
 //__interrupt void p2(void)
 //{
-//  LED_J;  //LED
-//  P2IFG =0;
-//}
-
+//   LED_J;  //LED
+//   P2IFG =0;
+// }

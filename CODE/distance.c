@@ -1,21 +1,21 @@
 //
-//#include "distance.h"
-//int TOF_Rx_Count;
+// #include "distance.h"
+// int TOF_Rx_Count;
 //
-//int DataL;
-//int DataH;
+// int DataL;
+// int DataH;
 //
-//unsigned char tx_buff[20];
+// unsigned char tx_buff[20];
 ////uint8   rx_buff[50];
 //
-////µ¥Æ¬»úÏò¼¤¹âÄ£¿é·¢ËÍÃüÁî
-//void my_uart_send(const unsigned char *str_send, unsigned char len)
+////å•ç‰‡æœºå‘æ¿€å…‰æ¨¡å—å‘é€å‘½ä»¤
+// void my_uart_send(const unsigned char *str_send, unsigned char len)
 //{
-//    int i;
-//    for(i=0;i<len;i++)  uart_sent(LASER_UART,str_send[i]);
-//}
+//     int i;
+//     for(i=0;i<len;i++)  uart_sent(LASER_UART,str_send[i]);
+// }
 //
-////µ¥Æ¬»ú´Ó¼¤¹âÄ£¿é½ÓÊÕÊı¾İ
+////å•ç‰‡æœºä»æ¿€å…‰æ¨¡å—æ¥æ”¶æ•°æ®
 ////void my_uart_receive(uint8 *data)
 ////{
 ////    int i;
@@ -23,12 +23,12 @@
 ////    IfxAsclin_Asc*  uart_handle;
 ////    uart_handle = uart_get_handle(uartn);
 ////
-////    while(count == 0)    //ÂÖÑ¯ µÈ´ıÓĞÊı¾İ·¢ËÍ¹ıÀ´
+////    while(count == 0)    //è½®è¯¢ ç­‰å¾…æœ‰æ•°æ®å‘é€è¿‡æ¥
 ////    {
 ////        count = IfxAsclin_Asc_getReadCount(uart_handle);
 ////    }
 ////
-////    delay(1);    //¼Ó¸öÑÓÊ± ÈÃ½ÓÊÕÍê³É ²»È»»áÃ»½ÓÊÕÈ«
+////    delay(1);    //åŠ ä¸ªå»¶æ—¶ è®©æ¥æ”¶å®Œæˆ ä¸ç„¶ä¼šæ²¡æ¥æ”¶å…¨
 ////    count = IfxAsclin_Asc_getReadCount(uart_handle);
 ////
 ////    for(i=0;i<count;i++)
@@ -38,26 +38,26 @@
 ////}
 //
 //
-//void distance(void)
+// void distance(void)
 //{
-//    //·¢ËÍ¶Á²âÁ¿Êı¾İÖ¸Áî
-//    //¶Á²âÁ¿Êı¾İÖ¸Áî 51 0B 00 01 00 05 02 00 64
-//    tx_buff[0] = 0x51;  /*Ö¡Í·*/
-//    tx_buff[1] = 0x0B;  /*MS53L1M´«¸ĞÆ÷*/
-//    tx_buff[2] = 0x00;  /*¸ßÎ»µØÖ·*/
-//    tx_buff[3] = 0x01;  /*µÍÎ»µØÖ·*/
-//    tx_buff[4] = 0x00;  /*¶ÁÊı¾İ*/
-//    tx_buff[5] = 0x05;  /*¹¦ÄÜÂë-²â¾à½á¹û*/
-//    tx_buff[6] = 0x02;  /*Êı¾İ³¤¶È*/
-//    tx_buff[7] = 0x00;  /*CRC1*/    //Õâ¿éÒª¼ÌĞøÍêÉÆ Ğ´¸öCRCº¯ÊıÀ´¼ÆËã
+//    //å‘é€è¯»æµ‹é‡æ•°æ®æŒ‡ä»¤
+//    //è¯»æµ‹é‡æ•°æ®æŒ‡ä»¤ 51 0B 00 01 00 05 02 00 64
+//    tx_buff[0] = 0x51;  /*å¸§å¤´*/
+//    tx_buff[1] = 0x0B;  /*MS53L1Mä¼ æ„Ÿå™¨*/
+//    tx_buff[2] = 0x00;  /*é«˜ä½åœ°å€*/
+//    tx_buff[3] = 0x01;  /*ä½ä½åœ°å€*/
+//    tx_buff[4] = 0x00;  /*è¯»æ•°æ®*/
+//    tx_buff[5] = 0x05;  /*åŠŸèƒ½ç -æµ‹è·ç»“æœ*/
+//    tx_buff[6] = 0x02;  /*æ•°æ®é•¿åº¦*/
+//    tx_buff[7] = 0x00;  /*CRC1*/    //è¿™å—è¦ç»§ç»­å®Œå–„ å†™ä¸ªCRCå‡½æ•°æ¥è®¡ç®—
 //    tx_buff[8] = 0x64;  /*CRC2*/
 //
 //    my_uart_send(tx_buff, 9);
-//    delay(1);  //ÑÓÊ±1ms, µÈ´ı·¢ËÍÍê³É
+//    delay(1);  //å»¶æ—¶1ms, ç­‰å¾…å‘é€å®Œæˆ
 //
 //}
 //
-//void Laser_Uart_Callback(unsigned char data)
+// void Laser_Uart_Callback(unsigned char data)
 //{
 //    TOF_Rx_Count++;
 //

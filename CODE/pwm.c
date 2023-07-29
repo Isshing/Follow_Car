@@ -1,120 +1,116 @@
 #include "pwm.h"
 
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      PWM ‰≥ˆ≥ı ºªØ
-//  @param      pin         —°‘Òµƒ“˝Ω≈£¨ø…—°‘Ò∑∂Œß£∫1_2£¨1_3£¨1_4£¨1_5£¨2_0£¨2_4£¨2_5£¨∂‘”¶12£¨13£¨14£¨15£¨20£¨24£¨25
-//  @param      freq         ‰≥ˆ∆µ¬ Hz
-//  @param      duty        PWM≤®≥ı ºªØ’ºø’±»0~100
+//  @brief      PWMËæìÂá∫ÂàùÂßãÂåñ
+//  @param      pin         ÈÄâÊã©ÁöÑÂºïËÑöÔºåÂèØÈÄâÊã©ËåÉÂõ¥Ôºö1_2Ôºå1_3Ôºå1_4Ôºå1_5Ôºå2_0Ôºå2_4Ôºå2_5ÔºåÂØπÂ∫î12Ôºå13Ôºå14Ôºå15Ôºå20Ôºå24Ôºå25
+//  @param      freq        ËæìÂá∫È¢ëÁéáHz
+//  @param      duty        PWMÊ≥¢ÂàùÂßãÂåñÂç†Á©∫ÊØî0~100
 //  @return     void
-//  Sample usage:           pwm_init("1_2", 100, 0);//P1_2≥ı ºªØŒ™PWM ‰≥ˆ£¨∆µ¬ 100Hz£¨≥ı º’ºø’±»0%
-//  @note                   π≤”√Õ¨“ª∏ˆ∂® ±∆˜µƒ“˝Ω≈”¶±£≥÷œ‡Õ¨∆µ¬ 
+//  Sample usage:           pwm_init("1_2", 100, 0);//P1_2ÂàùÂßãÂåñ‰∏∫PWMËæìÂá∫ÔºåÈ¢ëÁéá100HzÔºåÂàùÂßãÂç†Á©∫ÊØî0%
+//  @note                   ÂÖ±Áî®Âêå‰∏Ä‰∏™ÂÆöÊó∂Âô®ÁöÑÂºïËÑöÂ∫î‰øùÊåÅÁõ∏ÂêåÈ¢ëÁéá
 //-------------------------------------------------------------------------------------------------------------------
 void pwm_init(unsigned int pin, unsigned int freq, unsigned int duty)
 {
-    if(pin == 12)
+    if (pin == 12)
     {
-        P1DIR |=BIT2;
-        P1SEL |=BIT2;
-        TA0CCR0=1000/freq*32.89;
-        TA0CCTL1=OUTMOD_7;
-        TA0CCR1=duty*TA0CCR0/100;
-        TA0CTL =TASSEL_1+MC_1+TACLR;
+        P1DIR |= BIT2;
+        P1SEL |= BIT2;
+        TA0CCR0 = 1000 / freq * 32.89;
+        TA0CCTL1 = OUTMOD_7;
+        TA0CCR1 = duty * TA0CCR0 / 100;
+        TA0CTL = TASSEL_1 + MC_1 + TACLR;
     }
-    if(pin == 13)
+    if (pin == 13)
     {
-        P1DIR |=BIT3;
-        P1SEL |=BIT3;
-        TA0CCR0=1000/freq*32.89;
-        TA0CCTL2=OUTMOD_7;
-        TA0CCR2=duty*TA0CCR0/100;
-        TA0CTL =TASSEL_1+MC_1+TACLR;
+        P1DIR |= BIT3;
+        P1SEL |= BIT3;
+        TA0CCR0 = 1000 / freq * 32.89;
+        TA0CCTL2 = OUTMOD_7;
+        TA0CCR2 = duty * TA0CCR0 / 100;
+        TA0CTL = TASSEL_1 + MC_1 + TACLR;
     }
-    if(pin == 14)
+    if (pin == 14)
     {
-        P1DIR |=BIT4;
-        P1SEL |=BIT4;
-        TA0CCR0=1000/freq*32.89;
-        TA0CCTL3=OUTMOD_7;
-        TA0CCR3=duty*TA0CCR0/100;
-        TA0CTL =TASSEL_1+MC_1+TACLR;
+        P1DIR |= BIT4;
+        P1SEL |= BIT4;
+        TA0CCR0 = 1000 / freq * 32.89;
+        TA0CCTL3 = OUTMOD_7;
+        TA0CCR3 = duty * TA0CCR0 / 100;
+        TA0CTL = TASSEL_1 + MC_1 + TACLR;
     }
-    if(pin == 15)
+    if (pin == 15)
     {
-        P1DIR |=BIT5;
-        P1SEL |=BIT5;
-        TA0CCR0=1000/freq*32.89;
-        TA0CCTL4=OUTMOD_7;
-        TA0CCR4=duty*TA0CCR0/100;
-        TA0CTL =TASSEL_1+MC_1+TACLR;
+        P1DIR |= BIT5;
+        P1SEL |= BIT5;
+        TA0CCR0 = 1000 / freq * 32.89;
+        TA0CCTL4 = OUTMOD_7;
+        TA0CCR4 = duty * TA0CCR0 / 100;
+        TA0CTL = TASSEL_1 + MC_1 + TACLR;
     }
-    if(pin == 20)
+    if (pin == 20)
     {
-        P2DIR |=BIT0;
-        P2SEL |=BIT0;
-        TA1CCR0=1000/freq*32.89;
-        TA1CCTL1=OUTMOD_7;
-        TA1CCR1=duty*TA1CCR0/100;
-        TA1CTL =TASSEL_1+MC_1+TACLR;
+        P2DIR |= BIT0;
+        P2SEL |= BIT0;
+        TA1CCR0 = 1000 / freq * 32.89;
+        TA1CCTL1 = OUTMOD_7;
+        TA1CCR1 = duty * TA1CCR0 / 100;
+        TA1CTL = TASSEL_1 + MC_1 + TACLR;
     }
-    if(pin == 24)
+    if (pin == 24)
     {
-        P2DIR |=BIT4;
-        P2SEL |=BIT4;
-        TA2CCTL1=OUTMOD_7;
-        TA2CCR0=1000/freq*32.89;
-        TA2CCR1=duty*TA2CCR0/100;
-        TA2CTL =TASSEL_1+MC_1+TACLR;
+        P2DIR |= BIT4;
+        P2SEL |= BIT4;
+        TA2CCTL1 = OUTMOD_7;
+        TA2CCR0 = 1000 / freq * 32.89;
+        TA2CCR1 = duty * TA2CCR0 / 100;
+        TA2CTL = TASSEL_1 + MC_1 + TACLR;
     }
-    if(pin == 25)
+    if (pin == 25)
     {
-        P2DIR |=BIT5;
-        P2SEL |=BIT5;
-        TA2CCTL2=OUTMOD_7;
-        TA2CCR0=1000/freq*32.89;
-        TA2CCR2=duty*TA2CCR0/100;
-        TA2CTL =TASSEL_1+MC_1+TACLR;
+        P2DIR |= BIT5;
+        P2SEL |= BIT5;
+        TA2CCTL2 = OUTMOD_7;
+        TA2CCR0 = 1000 / freq * 32.89;
+        TA2CCR2 = duty * TA2CCR0 / 100;
+        TA2CTL = TASSEL_1 + MC_1 + TACLR;
     }
-
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      PWM ‰≥ˆ…Ë÷√
-//  @param      pin         —°‘Òµƒ“˝Ω≈£¨ø…—°‘Ò∑∂Œß£∫1_2, 1_3, 1_4, 1_5, 2_0, 2_4, 2_5
-//  @param      duty        PWM≤®’ºø’±»0~100
+//  @brief      PWMËæìÂá∫ËÆæÁΩÆ
+//  @param      pin         ÈÄâÊã©ÁöÑÂºïËÑöÔºåÂèØÈÄâÊã©ËåÉÂõ¥Ôºö1_2, 1_3, 1_4, 1_5, 2_0, 2_4, 2_5
+//  @param      duty        PWMÊ≥¢Âç†Á©∫ÊØî0~100
 //  @return     void
-//  Sample usage:           pwm_init("1_2", 50);//P1_2…Ë÷√PWM ‰≥ˆ’ºø’±»50%
+//  Sample usage:           pwm_init("1_2", 50);//P1_2ËÆæÁΩÆPWMËæìÂá∫Âç†Á©∫ÊØî50%
 //-------------------------------------------------------------------------------------------------------------------
 void pwm_duty(unsigned int pin, unsigned int duty)
 {
-    if(pin == 12)
+    if (pin == 12)
     {
-        TA0CCR1=(int)(duty*TA0CCR0/100.0);
+        TA0CCR1 = (int)(duty * TA0CCR0 / 100.0);
     }
-    if(pin == 13)
+    if (pin == 13)
     {
-        TA0CCR2=(int)(duty*TA0CCR0/100.0);
+        TA0CCR2 = (int)(duty * TA0CCR0 / 100.0);
     }
-    if(pin == 14)
+    if (pin == 14)
     {
-        TA0CCR3=(int)(duty*TA0CCR0/100.0);
+        TA0CCR3 = (int)(duty * TA0CCR0 / 100.0);
     }
-    if(pin == 15)
+    if (pin == 15)
     {
-        TA0CCR4=(int)(duty*TA0CCR0/100.0);
+        TA0CCR4 = (int)(duty * TA0CCR0 / 100.0);
     }
-    if(pin == 20)
+    if (pin == 20)
     {
-        TA1CCR1=duty*TA1CCR0/100;
+        TA1CCR1 = duty * TA1CCR0 / 100;
     }
-    if(pin == 24)
+    if (pin == 24)
     {
-        TA2CCR1=duty*TA2CCR0/100;
+        TA2CCR1 = duty * TA2CCR0 / 100;
     }
-    if(pin == 25)
+    if (pin == 25)
     {
-        TA2CCR2=duty*TA2CCR0/100;
+        TA2CCR2 = duty * TA2CCR0 / 100;
     }
 }
-
-

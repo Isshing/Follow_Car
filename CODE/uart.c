@@ -1,177 +1,171 @@
 #include "uart.h"
 
-int Data_USCI_A0;               //USCI_A0Ω” ’ƒ⁄»›‘≠ º
-int Data_USCI_A1;               //USCI_A1Ω” ’ƒ⁄»›‘≠ º
-int Data_USCI_A0_int;           //USCI_A0Ω” ’ƒ⁄»›int–Œ Ω
-int Data_USCI_A1_int;           //USCI_A1Ω” ’ƒ⁄»›int–Œ Ω
-char Data_USCI_A0_char;         //USCI_A0Ω” ’ƒ⁄»›char–Œ Ω
-char Data_USCI_A1_char;         //USCI_A1Ω” ’ƒ⁄»›char–Œ Ω
-
+int Data_USCI_A0;       // USCI_A0Êé•Êî∂ÂÜÖÂÆπÂéüÂßã
+int Data_USCI_A1;       // USCI_A1Êé•Êî∂ÂÜÖÂÆπÂéüÂßã
+int Data_USCI_A0_int;   // USCI_A0Êé•Êî∂ÂÜÖÂÆπintÂΩ¢Âºè
+int Data_USCI_A1_int;   // USCI_A1Êé•Êî∂ÂÜÖÂÆπintÂΩ¢Âºè
+char Data_USCI_A0_char; // USCI_A0Êé•Êî∂ÂÜÖÂÆπcharÂΩ¢Âºè
+char Data_USCI_A1_char; // USCI_A1Êé•Êî∂ÂÜÖÂÆπcharÂΩ¢Âºè
 
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      uart¥Æø⁄≥ı ºªØ
-//  @param      uart_pin        USCI_A0ªÚUSCI_A1
+//  @brief      uart‰∏≤Âè£ÂàùÂßãÂåñ
+//  @param      uart_pin        USCI_A0ÊàñUSCI_A1
 //  @return     void
-//  @note       P3.3,4 Œ™A0
-//              P4.4,5 Œ™A1
+//  @note       P3.3,4 ‰∏∫A0
+//              P4.4,5 ‰∏∫A1
 //-------------------------------------------------------------------------------------------------------------------
 void uart_init(unsigned int uart_pin)
 {
-    if (uart_pin == 10)//USCI_A0
+    if (uart_pin == 10) // USCI_A0
     {
-        P3SEL |= BIT3+BIT4; // P3.3,4 = USCI_A0 TXD/RXD
-        UCA0CTL1 |= UCSWRST; // **Put state machine in reset**
-        UCA0CTL1 |= UCSSEL_2; // SMCLK
-        UCA0BR0 = 9; // 1MHz 115200 (see User's Guide)
-        UCA0BR1 = 0; // 1MHz 115200
+        P3SEL |= BIT3 + BIT4;          // P3.3,4 = USCI_A0 TXD/RXD
+        UCA0CTL1 |= UCSWRST;           // **Put state machine in reset**
+        UCA0CTL1 |= UCSSEL_2;          // SMCLK
+        UCA0BR0 = 9;                   // 1MHz 115200 (see User's Guide)
+        UCA0BR1 = 0;                   // 1MHz 115200
         UCA0MCTL |= UCBRS_1 + UCBRF_0; // Modulation UCBRSx=1, UCBRFx=0
-        UCA0CTL1 &= ~UCSWRST; // **Initialize USCI state machine**
-        UCA0IE |= UCRXIE; // Enable USCI_A0 RX interrupt
+        UCA0CTL1 &= ~UCSWRST;          // **Initialize USCI state machine**
+        UCA0IE |= UCRXIE;              // Enable USCI_A0 RX interrupt
     }
-    if (uart_pin == 11)//USCI_A1
+    if (uart_pin == 11) // USCI_A1
     {
-        P4SEL |= BIT4+BIT5; // P4.4,5 = USCI_A1 TXD/RXD
-        UCA1CTL1 |= UCSWRST; // **Put state machine in reset**
-        UCA1CTL1 |= UCSSEL_2; // SMCLK
-        UCA1BR0 = 9; // 1MHz 115200 (see User's Guide)
-        UCA1BR1 = 0; // 1MHz 115200
+        P4SEL |= BIT4 + BIT5;          // P4.4,5 = USCI_A1 TXD/RXD
+        UCA1CTL1 |= UCSWRST;           // **Put state machine in reset**
+        UCA1CTL1 |= UCSSEL_2;          // SMCLK
+        UCA1BR0 = 9;                   // 1MHz 115200 (see User's Guide)
+        UCA1BR1 = 0;                   // 1MHz 115200
         UCA1MCTL |= UCBRS_1 + UCBRF_0; // Modulation UCBRSx=1, UCBRFx=0
-        UCA1CTL1 &= ~UCSWRST; // **Initialize USCI state machine**
-        UCA1IE |= UCRXIE; // Enable USCI_A1 RX interrupt
+        UCA1CTL1 &= ~UCSWRST;          // **Initialize USCI state machine**
+        UCA1IE |= UCRXIE;              // Enable USCI_A1 RX interrupt
     }
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      uart¥Æø⁄Ω” ’
+//  @brief      uart‰∏≤Âè£Êé•Êî∂
 //  @param      uart_pin        USCI_A0USCI_A1
 //  @return     void
-//  @note       P3.3,4 Œ™A0
-//              P4.4,5 Œ™A1
+//  @note       P3.3,4 ‰∏∫A0
+//              P4.4,5 ‰∏∫A1
 //
-//              ∂¡»°µΩŒ™int¿‡–Õ£∫Data_USCI_Ax_int
-//              ∂¡»°µΩŒ™char¿‡–Õ£∫Data_USCI_Ax_char
+//              ËØªÂèñÂà∞‰∏∫intÁ±ªÂûãÔºöData_USCI_Ax_int
+//              ËØªÂèñÂà∞‰∏∫charÁ±ªÂûãÔºöData_USCI_Ax_char
 //-------------------------------------------------------------------------------------------------------------------
 void uart_read(unsigned int uart_pin)
 {
-    if (uart_pin == 10)//USCI_A0
+    if (uart_pin == 10) // USCI_A0
     {
-        Data_USCI_A0=UCA0RXBUF;
-        Data_USCI_A0_int = Data_USCI_A0-'0';
+        Data_USCI_A0 = UCA0RXBUF;
+        Data_USCI_A0_int = Data_USCI_A0 - '0';
         Data_USCI_A0_char = Data_USCI_A0;
-//        OLED_ShowNum(15,2,Data_USCI_A0_int,3,10);
-//        OLED_ShowChar(15,3,Data_USCI_A0_char,10);
-        Data_USCI_A0=UCA0RXBUF;
+        //        OLED_ShowNum(15,2,Data_USCI_A0_int,3,10);
+        //        OLED_ShowChar(15,3,Data_USCI_A0_char,10);
+        Data_USCI_A0 = UCA0RXBUF;
     }
-    if (uart_pin == 11)//USCI_A1
+    if (uart_pin == 11) // USCI_A1
     {
-        Data_USCI_A1=UCA1RXBUF;
-        Data_USCI_A1_int = Data_USCI_A1-'0';
+        Data_USCI_A1 = UCA1RXBUF;
+        Data_USCI_A1_int = Data_USCI_A1 - '0';
         Data_USCI_A1_char = Data_USCI_A1;
-//        OLED_ShowNum(15,2,Data_USCI_A1_int,3,10);
-//        OLED_ShowChar(15,3,Data_USCI_A1_char,10);
-        Data_USCI_A1=UCA1RXBUF;
+        //        OLED_ShowNum(15,2,Data_USCI_A1_int,3,10);
+        //        OLED_ShowChar(15,3,Data_USCI_A1_char,10);
+        Data_USCI_A1 = UCA1RXBUF;
     }
-
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      uart¥Æø⁄∑¢ÀÕ
-//  @param      uart_pin        USCI_A0ªÚUSCI_A1
-//  @param      text            ∑¢ÀÕƒ⁄»›
+//  @brief      uart‰∏≤Âè£ÂèëÈÄÅ
+//  @param      uart_pin        USCI_A0ÊàñUSCI_A1
+//  @param      text            ÂèëÈÄÅÂÜÖÂÆπ
 //  @return     void
-//  @note       P3.3,4 Œ™A0
-//              P4.4,5 Œ™A1
+//  @note       P3.3,4 ‰∏∫A0
+//              P4.4,5 ‰∏∫A1
 //-------------------------------------------------------------------------------------------------------------------
 void uart_sent(unsigned int uart_pin, unsigned char text)
 {
-    if (uart_pin == 10)//USCI_A0
+    if (uart_pin == 10) // USCI_A0
     {
-        UCA0TXBUF=text;
-        while(!(UCA0IFG&UCTXIFG));
+        UCA0TXBUF = text;
+        while (!(UCA0IFG & UCTXIFG))
+            ;
     }
-    if (uart_pin == 11)//USCI_A1
+    if (uart_pin == 11) // USCI_A1
     {
-        UCA1TXBUF=text;
-        while(!(UCA1IFG&UCTXIFG));
+        UCA1TXBUF = text;
+        while (!(UCA1IFG & UCTXIFG))
+            ;
     }
-
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      ¥Æø⁄÷–∂œA0
+//  @brief      ‰∏≤Âè£‰∏≠Êñ≠A0
 //  @return     void
 //  @note       P3.3,4 = USCI_A0 TXD/RXD
-//              ∂¡»°µΩData_USCI_A0
+//              ËØªÂèñÂà∞Data_USCI_A0
 //-------------------------------------------------------------------------------------------------------------------
-#pragma vector=USCI_A0_VECTOR
+#pragma vector = USCI_A0_VECTOR
 __interrupt void USCI_A0_ISR(void)
 {
-    switch(__even_in_range(UCA0IV,4))
+    switch (__even_in_range(UCA0IV, 4))
     {
-        case 0:
-            break; // Vector 0 - no interrupt
-        case 2: // Vector 2 - RXIFG
-            Data_USCI_A0=UCA0RXBUF;
-//            uart_read(10);
-//            gyroscope_read_A0();
-//            wireless_uart_callback(UCA0RXBUF);
+    case 0:
+        break; // Vector 0 - no interrupt
+    case 2:    // Vector 2 - RXIFG
+        Data_USCI_A0 = UCA0RXBUF;
+        //            uart_read(10);
+        //            gyroscope_read_A0();
+        //            wireless_uart_callback(UCA0RXBUF);
 
+        //            Laser_Uart_Callback(UCA0RXBUF);
 
+        break;
 
-//            Laser_Uart_Callback(UCA0RXBUF);
-
-            break;
-
-        case 4:
-            break; // Vector 4 - TXIFG
-        default:
-            break;
+    case 4:
+        break; // Vector 4 - TXIFG
+    default:
+        break;
     }
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      ¥Æø⁄÷–∂œA0
+//  @brief      ‰∏≤Âè£‰∏≠Êñ≠A0
 //  @return     void
 //  @note       P4.4,5 = USCI_A0 TXD/RXD
-//              ∂¡»°µΩData_USCI_A1
+//              ËØªÂèñÂà∞Data_USCI_A1
 //-------------------------------------------------------------------------------------------------------------------
-#pragma vector=USCI_A1_VECTOR
+#pragma vector = USCI_A1_VECTOR
 __interrupt void USCI_A1_ISR(void)
 {
 
-    switch(__even_in_range(UCA1IV,4))
+    switch (__even_in_range(UCA1IV, 4))
     {
-        case 0:
-            break; // Vector 0 - no interrupt
-        case 2: // Vector 2 - RXIFG
-            while (!(UCA1IFG&UCTXIFG)); // USCI_A1 TX buffer ready?
-//            uart_read(11);
-//            Data_USCI_A1=UCA1RXBUF;
-//            Laser_Uart_Callback(UCA1RXBUF);
-//            gyroscope_read_A1();
-            break;
-        case 4:
-            break; // Vector 4 - TXIFG
-        default:
-            break;
+    case 0:
+        break; // Vector 0 - no interrupt
+    case 2:    // Vector 2 - RXIFG
+        while (!(UCA1IFG & UCTXIFG))
+            ; // USCI_A1 TX buffer ready?
+              //            uart_read(11);
+              //            Data_USCI_A1=UCA1RXBUF;
+              //            Laser_Uart_Callback(UCA1RXBUF);
+              //            gyroscope_read_A1();
+        break;
+    case 4:
+        break; // Vector 4 - TXIFG
+    default:
+        break;
     }
 }
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      uart¥Æø⁄∑¢ÀÕ ˝◊È
-//  @param      uart_pin        USCI_A0ªÚUSCI_A1
-//  @param      *buff           “™∑¢ÀÕµƒ ˝◊Èµÿ÷∑
-//  @param      len             ∑¢ÀÕ≥§∂»
+//  @brief      uart‰∏≤Âè£ÂèëÈÄÅÊï∞ÁªÑ
+//  @param      uart_pin        USCI_A0ÊàñUSCI_A1
+//  @param      *buff           Ë¶ÅÂèëÈÄÅÁöÑÊï∞ÁªÑÂú∞ÂùÄ
+//  @param      len             ÂèëÈÄÅÈïøÂ∫¶
 //  @return     void
-//  @note       P3.3,4 Œ™A0
-//              P4.4,5 Œ™A1
+//  @note       P3.3,4 ‰∏∫A0
+//              P4.4,5 ‰∏∫A1
 //-------------------------------------------------------------------------------------------------------------------
 void uart_putbuff(unsigned int uart_pin, unsigned char *buff, unsigned long len)
 {
-    while(len)
+    while (len)
     {
         uart_sent(uart_pin, *buff);
         len--;

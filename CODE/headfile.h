@@ -20,13 +20,9 @@
 #include "WIRELESS.h"
 #include "NRF24L01.h"
 #include "Beep.h"
-//#include <distance.h>
+// #include <distance.h>
 #include "button.h"
 #include "key.h"
 #include "Light.h"
 
-
-
-
 #endif /* HARDWARE_HEADFILE_H_ */
-

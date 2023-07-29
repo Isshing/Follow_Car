@@ -1,20 +1,18 @@
 #include "Back_Wheel.h"
 
-
 short left_dir = 1;
-short right_dir = 1; //1 + -1 -
+short right_dir = 1; // 1 + -1 -
 
-
-PID_2 Motor_Left;    // ×óÂÖµç»ú±äÁ¿
-PID_2 Motor_Right;   // ÓÒÂÖµç»ú±äÁ¿
-Motor_Para MOTOR;    // µç»ú²ÎÊý½á¹¹Ìå±äÁ¿
-Motor_Para LORDTEST; // ¼ì²âÉÏÔØÊÇ·ñÕý³£
+PID_2 Motor_Left;    // å·¦è½®ç”µæœºå˜é‡
+PID_2 Motor_Right;   // å³è½®ç”µæœºå˜é‡
+Motor_Para MOTOR;    // ç”µæœºå‚æ•°ç»“æž„ä½“å˜é‡
+Motor_Para LORDTEST; // æ£€æµ‹ä¸Šè½½æ˜¯å¦æ­£å¸¸
 
 void motor_init(int pwm_in_left, int pwm_in_right)
 {
-    P8DIR |= BIT1 + BIT2; //P8_1ºÍ P8_2
+    P8DIR |= BIT1 + BIT2; // P8_1å’Œ P8_2
     P8OUT &= ~BIT1;
-    P3DIR |= BIT0 + BIT1; //P7_1ºÍ P7_2
+    P3DIR |= BIT0 + BIT1; // P7_1å’Œ P7_2
     P3OUT &= ~BIT0;
     left_dir = -1;
     right_dir = 1;
@@ -27,40 +25,37 @@ void motor_init(int pwm_in_left, int pwm_in_right)
 void run(int left, int right)
 {
 
-    if (right >= 0)  //Õý´«
+    if (right >= 0) // æ­£ä¼ 
     {
         pwm_duty(MOTOR_R_PWM, right);
-        P8OUT &= ~BIT2; //µÍ
-        P8OUT |= BIT1; //¸ß
+        P8OUT &= ~BIT2; // ä½Ž
+        P8OUT |= BIT1;  // é«˜
         right_dir = 1;
-
     }
     else
     {
         pwm_duty(MOTOR_R_PWM, -right);
-        P8OUT |=BIT2; //µÍ
-        P8OUT &= ~BIT1; //¸ß
+        P8OUT |= BIT2;  // ä½Ž
+        P8OUT &= ~BIT1; // é«˜
 
         right_dir = -1;
-
     }
     if (left >= 0)
     {
         pwm_duty(MOTOR_L_PWM, left);
-        P3OUT &= ~BIT1; //µÍ
-        P3OUT |= BIT0; //¸ß
+        P3OUT &= ~BIT1; // ä½Ž
+        P3OUT |= BIT0;  // é«˜
         left_dir = 1;
     }
     else
     {
         pwm_duty(MOTOR_L_PWM, -left);
 
-        P3OUT |=BIT1; //µÍ
-        P3OUT &= ~BIT0; //¸ß
+        P3OUT |= BIT1;  // ä½Ž
+        P3OUT &= ~BIT0; // é«˜
         left_dir = -1;
     }
 }
-
 
 void Motor_L_Control_Change_Integral(float setpoint, PID_2 *vPID, Motor_Para *Motor, int processValue)
 {
@@ -70,24 +65,24 @@ void Motor_L_Control_Change_Integral(float setpoint, PID_2 *vPID, Motor_Para *Mo
     float pError = 0;
     float iError = 0;
 
-    static float lasterror = 0; // Ç°Ò»ÅÄÆ«²î
+    static float lasterror = 0; // å‰ä¸€æ‹åå·®
 
-    thisError         = setpoint - processValue; // µÃµ½Æ«²îÖµ
-//    Motor->L_Change_P = Motor->L_Bas_KP + Motor->L_Gain_KP * (1 - 1.0 / FExp(Motor->L_Cp * Fabs(thisError)));
+    thisError = setpoint - processValue; // å¾—åˆ°åå·®å€¼
+                                         //    Motor->L_Change_P = Motor->L_Bas_KP + Motor->L_Gain_KP * (1 - 1.0 / FExp(Motor->L_Cp * Fabs(thisError)));
 
-//    Motor->L_Change_I = (1.0 / FExp(Motor->L_Ci * Fabs(thisError))) * Motor->L_Max_I;
+    //    Motor->L_Change_I = (1.0 / FExp(Motor->L_Ci * Fabs(thisError))) * Motor->L_Max_I;
 
     result = vPID->result;
 
-    iError = (thisError + lasterror) / 2.0; // Èç¹ûÉÏ´ÎÊä³ö½á¹û´¦ÓÚÕý³£·¶Î§ÄÚ£¬Õý³£»ý·Ö
+    iError = (thisError + lasterror) / 2.0; // å¦‚æžœä¸Šæ¬¡è¾“å‡ºç»“æžœå¤„äºŽæ­£å¸¸èŒƒå›´å†…ï¼Œæ­£å¸¸ç§¯åˆ†
 
-    pError      = thisError - lasterror;
+    pError = thisError - lasterror;
     vPID->P_out = Motor->L_Bas_KP * pError;
     vPID->I_out = Motor->L_Max_I * iError;
-    increment = vPID->P_out + vPID->I_out; // ±ä»ý·Ö²»ÓÃ»ý·Ö·ÖÀë£¬ÒòÎª»ý·Ö·ÖÀë±¾ÖÊ¾ÍÊÇ±ä»ý·ÖµÄÒ»ÖÖÌØÊâÇé¿ö
-    result    = result + increment;
+    increment = vPID->P_out + vPID->I_out; // å˜ç§¯åˆ†ä¸ç”¨ç§¯åˆ†åˆ†ç¦»ï¼Œå› ä¸ºç§¯åˆ†åˆ†ç¦»æœ¬è´¨å°±æ˜¯å˜ç§¯åˆ†çš„ä¸€ç§ç‰¹æ®Šæƒ…å†µ
+    result = result + increment;
 
-    lasterror    = thisError;
+    lasterror = thisError;
     vPID->result = MINMAX(result, -100, 100);
 }
 
@@ -96,24 +91,24 @@ void Motor_R_Control_Change_Integral(float setpoint, PID_2 *vPID, Motor_Para *Mo
     float thisError;
     float result;
     float increment;
-    float pError           = 0;
-    float iError           = 0;
-    static float lasterror = 0; // Ç°Ò»ÅÄÆ«²î
+    float pError = 0;
+    float iError = 0;
+    static float lasterror = 0; // å‰ä¸€æ‹åå·®
 
-    thisError         = setpoint - processValue; // µÃµ½Æ«²îÖµ
-//    Motor->R_Change_P = Motor->R_Bas_KP + Motor->R_Gain_KP * (1 - 1.0 / FExp(Motor->R_Cp * Fabs(thisError)));
-//    Motor->R_Change_I = (1.0 / FExp(Motor->R_Ci * Fabs(thisError))) * Motor->R_Max_I;
-    result            = vPID->result;
+    thisError = setpoint - processValue; // å¾—åˆ°åå·®å€¼
+                                         //    Motor->R_Change_P = Motor->R_Bas_KP + Motor->R_Gain_KP * (1 - 1.0 / FExp(Motor->R_Cp * Fabs(thisError)));
+                                         //    Motor->R_Change_I = (1.0 / FExp(Motor->R_Ci * Fabs(thisError))) * Motor->R_Max_I;
+    result = vPID->result;
 
-    iError = (thisError + lasterror) / 2.0; // Èç¹ûÉÏ´ÎÊä³ö½á¹û´¦ÓÚÕý³£·¶Î§ÄÚ£¬Õý³£»ý·Ö
+    iError = (thisError + lasterror) / 2.0; // å¦‚æžœä¸Šæ¬¡è¾“å‡ºç»“æžœå¤„äºŽæ­£å¸¸èŒƒå›´å†…ï¼Œæ­£å¸¸ç§¯åˆ†
 
     pError = thisError - lasterror;
 
     vPID->P_out = Motor->L_Bas_KP * pError;
     vPID->I_out = Motor->L_Max_I * iError;
     increment = vPID->P_out + vPID->I_out;
-    result    = result + increment;
+    result = result + increment;
 
-    lasterror    = thisError;
+    lasterror = thisError;
     vPID->result = MINMAX(result, -100, 100);
 }

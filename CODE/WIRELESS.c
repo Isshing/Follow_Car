@@ -4,7 +4,7 @@ unsigned long wireless_rx_index = 0;
 unsigned char wireless_rx_buffer;
 unsigned char wireless_receive_buffer[WIRELESS_BUFFER_SIZE];
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      ÎŞÏß×ª´®¿ÚÄ£¿é³õÊ¼»¯
+//  @brief      æ— çº¿è½¬ä¸²å£æ¨¡å—åˆå§‹åŒ–
 //  @param      NULL
 //  @return     void
 //  @since      v1.0
@@ -21,38 +21,37 @@ void wireless_init(void)
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      ÎŞÏß×ª´®¿ÚÄ£¿é ·¢ËÍº¯Êı
-//  @param      buff        ĞèÒª·¢ËÍµÄÊı¾İµØÖ·
-//  @param      len         ·¢ËÍ³¤¶È
-//  @return     uint32      Ê£ÓàÎ´·¢ËÍµÄ×Ö½ÚÊı
+//  @brief      æ— çº¿è½¬ä¸²å£æ¨¡å— å‘é€å‡½æ•°
+//  @param      buff        éœ€è¦å‘é€çš„æ•°æ®åœ°å€
+//  @param      len         å‘é€é•¿åº¦
+//  @return     uint32      å‰©ä½™æœªå‘é€çš„å­—èŠ‚æ•°
 //  @since      v1.0
 //  Sample usage:
 //  @note
 //-------------------------------------------------------------------------------------------------------------------
 unsigned long wireless_send_buff(unsigned char *buff, unsigned long len)
 {
-    while(len>30)
+    while (len > 30)
     {
-        while(P2IN & RTS_PIN);  //Èç¹ûRTSÎªµÍµçÆ½£¬Ôò¼ÌĞø·¢ËÍÊı¾İ
-
+        while (P2IN & RTS_PIN)
+            ; // å¦‚æœRTSä¸ºä½ç”µå¹³ï¼Œåˆ™ç»§ç»­å‘é€æ•°æ®
 
         uart_putbuff(WIRELESS_UART, buff, 30);
 
-        buff += 30; //µØÖ·Æ«ÒÆ
-        len -= 30;//ÊıÁ¿
+        buff += 30; // åœ°å€åç§»
+        len -= 30;  // æ•°é‡
     }
 
-
-    while(P2IN & RTS_PIN);  //Èç¹ûRTSÎªµÍµçÆ½£¬Ôò¼ÌĞø·¢ËÍÊı¾İ
+    while (P2IN & RTS_PIN)
+        ; // å¦‚æœRTSä¸ºä½ç”µå¹³ï¼Œåˆ™ç»§ç»­å‘é€æ•°æ®
 
     uart_putbuff(WIRELESS_UART, buff, len);
 
     return 0;
-
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      ÎŞÏß×ª´®¿ÚÄ£¿é ´®¿ÚÖĞ¶Ïº¯Êı
+//  @brief      æ— çº¿è½¬ä¸²å£æ¨¡å— ä¸²å£ä¸­æ–­å‡½æ•°
 //  @param      void
 //  @return     void
 //  @since      v1.0
@@ -61,15 +60,9 @@ unsigned long wireless_send_buff(unsigned char *buff, unsigned long len)
 //-------------------------------------------------------------------------------------------------------------------
 void wireless_uart_callback(unsigned char data)
 {
-//    wireless_send_buff(&data, 1);
-//    if (data == 9)
-//    {
-//        NormalSpeed = 20;
-//    }
+    //    wireless_send_buff(&data, 1);
+    //    if (data == 9)
+    //    {
+    //        NormalSpeed = 20;
+    //    }
 }
-
-
-
-
-
-

@@ -3,51 +3,45 @@
 #define _GY86_H_
 #include "headfile.h"
 
-
-
-
-#define SCL1 P4OUT |=BIT1
-#define SCL0 P4OUT &=~BIT1
+#define SCL1 P4OUT |= BIT1
+#define SCL0 P4OUT &= ~BIT1
 #define SCLOUT P4DIR |= BIT1
-#define SDA1 P4OUT |=BIT2
-#define SDA0 P4OUT &=~BIT2
-#define SDAIN P4DIR &=~BIT2
-#define SDAOUT P4DIR |=BIT2
+#define SDA1 P4OUT |= BIT2
+#define SDA0 P4OUT &= ~BIT2
+#define SDAIN P4DIR &= ~BIT2
+#define SDAOUT P4DIR |= BIT2
 #define SDADATA (P4IN & BIT2)
 #define SlaveAddress 0xD0
 
-#define PWR_MGMT_1  0x6B
-#define SMPLRT_DIV  0x19
-#define CONFIG   0x1A
-#define GYRO_CONFIG  0x1B
+#define PWR_MGMT_1 0x6B
+#define SMPLRT_DIV 0x19
+#define CONFIG 0x1A
+#define GYRO_CONFIG 0x1B
 #define ACCEL_CONFIG 0x1C
 
 #define ACCEL_XOUT_H 0x3B
 #define ACCEL_YOUT_H 0x3D
 #define ACCEL_ZOUT_H 0x3F
-#define GYRO_XOUT_H  0x43
-#define GYRO_YOUT_H  0x45
-#define GYRO_ZOUT_H  0x47
+#define GYRO_XOUT_H 0x43
+#define GYRO_YOUT_H 0x45
+#define GYRO_ZOUT_H 0x47
 
 #define CPU_F ((double)1000000)
-#define delayus(x) __delay_cycles((long)(CPU_F*(double)x/1000000.0))
+#define delayus(x) __delay_cycles((long)(CPU_F * (double)x / 1000000.0))
 
+/***************ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*****************/
 
-
-
-/***************±äÁ¿¶¨Òå*****************/
-
-extern float Yaw_IIC,Roll_IIC,Pitch_IIC;
-extern float accx,accy,accz;
-extern float gyrox,gyroy,gyroz;
-extern float anglex,angley,anglez;
+extern float Yaw_IIC, Roll_IIC, Pitch_IIC;
+extern float accx, accy, accz;
+extern float gyrox, gyroy, gyroz;
+extern float anglex, angley, anglez;
 
 /*************************************/
 
 extern void I2C_SendByte(unsigned char dat);
 extern void I2C_Stop(void);
 extern void I2C_Start(void);
-extern void Single_WriteI2C(unsigned char REG_Address,unsigned char REG_data);
+extern void Single_WriteI2C(unsigned char REG_Address, unsigned char REG_data);
 extern unsigned char I2C_RecvACK();
 extern void InitMPU6050();
 extern void mpupose(void);

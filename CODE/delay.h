@@ -6,10 +6,8 @@
 #define delay_us(x) __delay_cycles((long)((F_CPU * (double)x / 1000000.0)))
 #define delay_ms(x) __delay_cycles((long)((F_CPU * (double)x / 1000.0)))
 
-
 void delay(unsigned int ms);
 void set_clock(void);
-void clock_init(unsigned char Fre);//ÐÞ¸ÄÖ÷Æµ³ÌÐò
-
+void clock_init(unsigned char Fre); // ï¿½Þ¸ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½
 
 #endif /* CODE_DELAY_H_ */

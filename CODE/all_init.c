@@ -1,36 +1,33 @@
 
 #include "all_init.h"
 
-
 void init(void)
 {
-    //OLED³õÊ¼»¯
+    // OLEDåˆå§‹åŒ–
     delay(50);
     OLED_Init();
     OLED_Clear();
 
-    //°´¼ü³õÊ¼»¯
+    // æŒ‰é”®åˆå§‹åŒ–
     button_init();
 
-    //±àÂëÆ÷³õÊ¼»¯
+    // ç¼–ç å™¨åˆå§‹åŒ–
     encoder_init();
     light_init();
-    timer_init(20,20);
-    timer_init(11,20);
-    motor_init(MOTOR_L_PWM,MOTOR_R_PWM);
+    timer_init(20, 20);
+    timer_init(11, 20);
+    motor_init(MOTOR_L_PWM, MOTOR_R_PWM);
 
+    //    gpio_init();
 
-//    gpio_init();
-
-//    wireless_init();
-//    uart_init(LASER_UART);
+    //    wireless_init();
+    //    uart_init(LASER_UART);
 
     Control_Init();
-//    PID_LINE_SET(&LINECTL);
+    //    PID_LINE_SET(&LINECTL);
 
     __bis_SR_register(GIE); // Enter LPM0, interrupts enabled
     _EINT();
 
-//    InitMPU6050();
-
+    //    InitMPU6050();
 }

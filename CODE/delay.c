@@ -2,95 +2,95 @@
 
 void delay(unsigned int ms)
 {
-    int i,j;
-    for(j=0;j<ms;j++)
-    {
-        for(i=0;i<207;i++);
-    }
+  int i, j;
+  for (j = 0; j < ms; j++)
+  {
+    for (i = 0; i < 207; i++)
+      ;
+  }
 }
 
 void set_clock(void)
 {
   P1SEL &= ~BIT1;
   P1DIR |= BIT1;
-  P1SEL |= BIT0; //ACLK
+  P1SEL |= BIT0; // ACLK
   P1DIR |= BIT0;
-  P2SEL |= BIT2; //SMCLK
+  P2SEL |= BIT2; // SMCLK
   P2DIR |= BIT2;
-  P7SEL |= BIT7; //MCLK
+  P7SEL |= BIT7; // MCLK
   P7DIR |= BIT7;
-  P5SEL |= BIT4|BIT5;
+  P5SEL |= BIT4 | BIT5;
 
-  UCSCTL6 |= XCAP_3;//¿ªÆô  SMCLKÊ±ÖÓ   Ñ¡ÔñµçÈÝ
-  UCSCTL6 &= ~XT1OFF;//´ò¿ª XT1£¬·ñÔò XT1LFOFFG ¿ÉÄÜ±¨´í
-//  PMMCTL0_H = 0xA5;
-//  PMMCTL0 |=PMMPW+ PMMCOREV_3;
+  UCSCTL6 |= XCAP_3;  // å¼€å¯  SMCLKæ—¶é’Ÿ   é€‰æ‹©ç”µå®¹
+  UCSCTL6 &= ~XT1OFF; // æ‰“å¼€ XT1ï¼Œå¦åˆ™ XT1LFOFFG å¯èƒ½æŠ¥é”™
+  //  PMMCTL0_H = 0xA5;
+  //  PMMCTL0 |=PMMPW+ PMMCOREV_3;
 
-      PMMCTL0_H = 0xA5;                                         //¿ªPMMµçÔ´¹ÜÀí
-       SVSMLCTL |= SVSMLRRL_1 + SVMLE;                            //ÅäÖÃSVMLµçÑ¹
-       PMMCTL0 =  PMMPW + PMMCOREV_2;                             //ÅäÖÃÄÚºËµçÑ¹
-       while((PMMIFG & SVSMLDLYIFG ) == 0);                       //µÈ´ýÉèÖÃÍê³É
-       PMMIFG &= ~(SVMLVLRIFG + SVMLIFG + SVSMLDLYIFG);
-       if((PMMIFG & SVMLIFG) == 1)                                //ÅÐ¶ÏÄÚºËµçÑ¹ÊÇ·ñÉÏÉýµ½VSVML
-             while((PMMIFG & SVMLVLRIFG) == 0);                   //Èç¹ûÃ»ÓÐµÈ´ý
-  SVSMLCTL &= ~SVMLE;                                        //¹ØµôSVMLÄ£¿é
-  PMMCTL0_H = 0X00;                                          //Ëø´æÅäÖÃ
+  PMMCTL0_H = 0xA5;               // å¼€PMMç”µæºç®¡ç†
+  SVSMLCTL |= SVSMLRRL_1 + SVMLE; // é…ç½®SVMLç”µåŽ‹
+  PMMCTL0 = PMMPW + PMMCOREV_2;   // é…ç½®å†…æ ¸ç”µåŽ‹
+  while ((PMMIFG & SVSMLDLYIFG) == 0)
+    ; // ç­‰å¾…è®¾ç½®å®Œæˆ
+  PMMIFG &= ~(SVMLVLRIFG + SVMLIFG + SVSMLDLYIFG);
+  if ((PMMIFG & SVMLIFG) == 1) // åˆ¤æ–­å†…æ ¸ç”µåŽ‹æ˜¯å¦ä¸Šå‡åˆ°VSVML
+    while ((PMMIFG & SVMLVLRIFG) == 0)
+      ;               // å¦‚æžœæ²¡æœ‰ç­‰å¾…
+  SVSMLCTL &= ~SVMLE; // å…³æŽ‰SVMLæ¨¡å—
+  PMMCTL0_H = 0X00;   // é”å­˜é…ç½®
 
-  __bis_SR_register(SCG0);//¸ÃÓï·¨Îª¹Ì¶¨¸ñÊ½£¬ÒâÎª½«À¨ºÅÄÚµÄ±äÁ¿ÖÃÎ»£¬SCG0ÓëÏµÍ³¹¤×÷Ä£Ê½ÓÐ¹Ø£¬´ËÊ± MCLK ÔÝÍ£¹¤×÷
-  UCSCTL0 = 0; //ÏÈÇåÁã£¬FLL ÔËÐÐÊ±£¬¸Ã¼Ä´æÆ÷ÏµÍ³»á×Ô¶¯ÅäÖÃ£¬²»ÓÃ¹Ü
-  UCSCTL1 = DCORSEL_6;//×Ô¶¯ÐÞÕý
-  UCSCTL2 = FLLD_1 | 380;//FLLD=1,FLLN=380,ÔòÆµÂÊÎª2*£¨380+1£©*32.768=24.969MHZ
+  __bis_SR_register(SCG0); // è¯¥è¯­æ³•ä¸ºå›ºå®šæ ¼å¼ï¼Œæ„ä¸ºå°†æ‹¬å·å†…çš„å˜é‡ç½®ä½ï¼ŒSCG0ä¸Žç³»ç»Ÿå·¥ä½œæ¨¡å¼æœ‰å…³ï¼Œæ­¤æ—¶ MCLK æš‚åœå·¥ä½œ
+  UCSCTL0 = 0;             // å…ˆæ¸…é›¶ï¼ŒFLL è¿è¡Œæ—¶ï¼Œè¯¥å¯„å­˜å™¨ç³»ç»Ÿä¼šè‡ªåŠ¨é…ç½®ï¼Œä¸ç”¨ç®¡
+  UCSCTL1 = DCORSEL_6;     // è‡ªåŠ¨ä¿®æ­£
+  UCSCTL2 = FLLD_1 | 380;  // FLLD=1,FLLN=380,åˆ™é¢‘çŽ‡ä¸º2*ï¼ˆ380+1ï¼‰*32.768=24.969MHZ
   __bic_SR_register(SCG0);
-  __delay_cycles(782000);//ÏµÍ³×Ô´øµÄ¾«È·ÑÓÊ±£¬µ¥Î» us
-  while(SFRIFG1 & OFIFG)
+  __delay_cycles(782000); // ç³»ç»Ÿè‡ªå¸¦çš„ç²¾ç¡®å»¶æ—¶ï¼Œå•ä½ us
+  while (SFRIFG1 & OFIFG)
   {
     UCSCTL7 &= ~(XT2OFFG + XT1LFOFFG + DCOFFG);
     SFRIFG1 &= ~OFIFG;
   }
-  UCSCTL4 = UCSCTL4&(~(SELS_7|SELM_7))|SELS_3|SELM_3;
-  ///MCLK=24M   SMCLK=24MH   ACLK   32.768K
+  UCSCTL4 = UCSCTL4 & (~(SELS_7 | SELM_7)) | SELS_3 | SELM_3;
+  /// MCLK=24M   SMCLK=24MH   ACLK   32.768K
 }
 
-
-
-void clock_init(unsigned char Fre)//ÐÞ¸ÄÖ÷Æµ³ÌÐò
+void clock_init(unsigned char Fre) // ä¿®æ”¹ä¸»é¢‘ç¨‹åº
 {
-    P5SEL |= BIT2|BIT3|BIT4|BIT5;//¿ªÆôÍâ²¿Á½¸öÊ±ÖÓ
+  P5SEL |= BIT2 | BIT3 | BIT4 | BIT5; // å¼€å¯å¤–éƒ¨ä¸¤ä¸ªæ—¶é’Ÿ
 
-    UCSCTL6 |= XCAP_3|XT1OFF;          // XT1 Ïà¹Ø ÅäÖÃ
-    UCSCTL6 |= XT2DRIVE_0 | XT2OFF;     // XT2 Ïà¹Ø ÅäÖÃ
-//ÒÔÏÂÊÇÌáÉýºËÐÄµçÑ¹²¿·ÖµÄ´úÂë
-    PMMCTL0_H = 0xA5;                                         //¿ªPMMµçÔ´¹ÜÀí
-    SVSMLCTL |= SVSMLRRL_1 + SVMLE;                            //ÅäÖÃSVMLµçÑ¹
-    PMMCTL0 =  PMMPW + PMMCOREV_3;                             //ÅäÖÃÄÚºËµçÑ¹
-    while((PMMIFG & SVSMLDLYIFG ) == 0);                       //µÈ´ýÉèÖÃÍê³É
-    PMMIFG &= ~(SVMLVLRIFG + SVMLIFG + SVSMLDLYIFG);
-    if((PMMIFG & SVMLIFG) == 1)                                //ÅÐ¶ÏÄÚºËµçÑ¹ÊÇ·ñÉÏÉýµ½VSVML
-         while((PMMIFG & SVMLVLRIFG) == 0);                    //Èç¹ûÃ»ÓÐµÈ´ý
-    SVSMLCTL &= ~SVMLE;                                        //¹ØµôSVMLÄ£¿é
-    PMMCTL0_H = 0X00;
+  UCSCTL6 |= XCAP_3 | XT1OFF;     // XT1 ç›¸å…³ é…ç½®
+  UCSCTL6 |= XT2DRIVE_0 | XT2OFF; // XT2 ç›¸å…³ é…ç½®
+                                  // ä»¥ä¸‹æ˜¯æå‡æ ¸å¿ƒç”µåŽ‹éƒ¨åˆ†çš„ä»£ç 
+  PMMCTL0_H = 0xA5;               // å¼€PMMç”µæºç®¡ç†
+  SVSMLCTL |= SVSMLRRL_1 + SVMLE; // é…ç½®SVMLç”µåŽ‹
+  PMMCTL0 = PMMPW + PMMCOREV_3;   // é…ç½®å†…æ ¸ç”µåŽ‹
+  while ((PMMIFG & SVSMLDLYIFG) == 0)
+    ; // ç­‰å¾…è®¾ç½®å®Œæˆ
+  PMMIFG &= ~(SVMLVLRIFG + SVMLIFG + SVSMLDLYIFG);
+  if ((PMMIFG & SVMLIFG) == 1) // åˆ¤æ–­å†…æ ¸ç”µåŽ‹æ˜¯å¦ä¸Šå‡åˆ°VSVML
+    while ((PMMIFG & SVMLVLRIFG) == 0)
+      ;               // å¦‚æžœæ²¡æœ‰ç­‰å¾…
+  SVSMLCTL &= ~SVMLE; // å…³æŽ‰SVMLæ¨¡å—
+  PMMCTL0_H = 0X00;
 
-    __bis_SR_register(SCG0);                 //¸ÃÓï·¨Îª¹Ì¶¨¸ñÊ½£¬ÒâÎª½«À¨ºÅÄÚµÄ±äÁ¿ÖÃÎ»£¬SCG0ÓëÏµÍ³¹¤×÷Ä£Ê½ÓÐ¹Ø£¬´ËÊ± MCLK ÔÝÍ£¹¤×÷
-    UCSCTL0 = 0;                             //ÏÈÇåÁã£¬FLL ÔËÐÐÊ±£¬¸Ã¼Ä´æÆ÷ÏµÍ³»á×Ô¶¯ÅäÖÃ£¬²»ÓÃ¹Ü
-    UCSCTL6 = (UCSCTL6&(~(XT2OFF|XT1OFF))|XCAP_3|XT2DRIVE_0);
-    UCSCTL3 = (5<<4)|(2<<0);                 // Ñ¡Ôñ XTAL2 µÄÊ±ÖÓÐÅºÅ×÷Îª²Î¿¼ÐÅºÅ ²¢ÇÒ·ÖÆµµ½1MHz
-    UCSCTL4|= SELA_5;
-    if(Fre < 5)
-        UCSCTL1 = DCORSEL_2;
-    else if(Fre<15)
-        UCSCTL1 = DCORSEL_4;
-    else
-        UCSCTL1 = DCORSEL_7;
-   UCSCTL2 = (Fre-1);
-    __bic_SR_register(SCG0);
-    __delay_cycles(782000);
-    while (SFRIFG1 & OFIFG) {                               // Check OFIFG fault flag
-      UCSCTL7 &= ~(XT2OFFG + XT1LFOFFG + DCOFFG);           // Clear OSC flaut Flags
-      SFRIFG1 &= ~OFIFG;                                    // Clear OFIFG fault flag
-    }
-    UCSCTL4 = UCSCTL4&(~(SELS_7|SELM_7))|SELS_3|SELM_3;
+  __bis_SR_register(SCG0); // è¯¥è¯­æ³•ä¸ºå›ºå®šæ ¼å¼ï¼Œæ„ä¸ºå°†æ‹¬å·å†…çš„å˜é‡ç½®ä½ï¼ŒSCG0ä¸Žç³»ç»Ÿå·¥ä½œæ¨¡å¼æœ‰å…³ï¼Œæ­¤æ—¶ MCLK æš‚åœå·¥ä½œ
+  UCSCTL0 = 0;             // å…ˆæ¸…é›¶ï¼ŒFLL è¿è¡Œæ—¶ï¼Œè¯¥å¯„å­˜å™¨ç³»ç»Ÿä¼šè‡ªåŠ¨é…ç½®ï¼Œä¸ç”¨ç®¡
+  UCSCTL6 = (UCSCTL6 & (~(XT2OFF | XT1OFF)) | XCAP_3 | XT2DRIVE_0);
+  UCSCTL3 = (5 << 4) | (2 << 0); // é€‰æ‹© XTAL2 çš„æ—¶é’Ÿä¿¡å·ä½œä¸ºå‚è€ƒä¿¡å· å¹¶ä¸”åˆ†é¢‘åˆ°1MHz
+  UCSCTL4 |= SELA_5;
+  if (Fre < 5)
+    UCSCTL1 = DCORSEL_2;
+  else if (Fre < 15)
+    UCSCTL1 = DCORSEL_4;
+  else
+    UCSCTL1 = DCORSEL_7;
+  UCSCTL2 = (Fre - 1);
+  __bic_SR_register(SCG0);
+  __delay_cycles(782000);
+  while (SFRIFG1 & OFIFG)
+  {                                             // Check OFIFG fault flag
+    UCSCTL7 &= ~(XT2OFFG + XT1LFOFFG + DCOFFG); // Clear OSC flaut Flags
+    SFRIFG1 &= ~OFIFG;                          // Clear OFIFG fault flag
+  }
+  UCSCTL4 = UCSCTL4 & (~(SELS_7 | SELM_7)) | SELS_3 | SELM_3;
 }
-
-
-
-

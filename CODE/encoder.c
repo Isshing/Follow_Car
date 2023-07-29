@@ -1,24 +1,22 @@
 #include "encoder.h"
 
-const int EncoderPerMeter   = 1350;
-int encoder_R = 0;       //2_4Òı½Å±àÂëÆ÷¼ÆÊı(ÓÒÂÖ)
-int encoder_L = 0;       //1_2Òı½Å±àÂëÆ÷¼ÆÊı(×óÂÖ)
-int encoder_RR = 0;       //2_4Òı½Å±àÂëÆ÷¼ÆÊı(ÓÒÂÖ)
-int encoder_LL = 0;       //1_2Òı½Å±àÂëÆ÷¼ÆÊı(×óÂÖ)
-int speed_R=0;
-int speed_L=0;
-int LeftMotor_TotalEncoder  = 0;
+const int EncoderPerMeter = 1350;
+int encoder_R = 0;  // 2_4å¼•è„šç¼–ç å™¨è®¡æ•°(å³è½®)
+int encoder_L = 0;  // 1_2å¼•è„šç¼–ç å™¨è®¡æ•°(å·¦è½®)
+int encoder_RR = 0; // 2_4å¼•è„šç¼–ç å™¨è®¡æ•°(å³è½®)
+int encoder_LL = 0; // 1_2å¼•è„šç¼–ç å™¨è®¡æ•°(å·¦è½®)
+int speed_R = 0;
+int speed_L = 0;
+int LeftMotor_TotalEncoder = 0;
 int RightMotor_TotalEncoder = 0;
-float Avg_speed =0;
-
-
+float Avg_speed = 0;
 
 void Get_Speed(void)
 {
 
-    encoder_RR = encoder_R; // »ñÈ¡±àÂëÆ÷¼ÆÊı
+    encoder_RR = encoder_R; // è·å–ç¼–ç å™¨è®¡æ•°
 
-    encoder_LL = encoder_L; // »ñÈ¡±àÂëÆ÷¼ÆÊı
+    encoder_LL = encoder_L; // è·å–ç¼–ç å™¨è®¡æ•°
 
     if (encoder_LL < 0)
         encoder_LL = -encoder_LL;
@@ -27,41 +25,39 @@ void Get_Speed(void)
 
     Avg_speed = (encoder_LL + encoder_RR) / 2.0;
 
-
-    encoder_R=0; // ¶¨Ê±Æ÷Çå¿Õ        ×óÂÖ
-    encoder_L=0;; // ¶¨Ê±Æ÷Çå¿Õ        ÓÒÂÖ
+    encoder_R = 0; // å®šæ—¶å™¨æ¸…ç©º        å·¦è½®
+    encoder_L = 0;
+    ; // å®šæ—¶å™¨æ¸…ç©º        å³è½®
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      ±àÂëÆ÷³õÊ¼»¯
+//  @brief      ç¼–ç å™¨åˆå§‹åŒ–
 //  @return     void
-//  @note       Òı½ÅP2_4ºÍ1_2
+//  @note       å¼•è„šP2_4å’Œ1_2
 //-------------------------------------------------------------------------------------------------------------------
 void encoder_init(void)
 {
     P2OUT &= ~(BIT4);
-    P2SEL |=  BIT4;
-    TA2CTL   = TASSEL__SMCLK + ID__8 + MC_2 + TACLR + TAIE;
-    TA2CCTL1 = CM_1 + SCS +CAP + CCIE + CCIS_0;
-
+    P2SEL |= BIT4;
+    TA2CTL = TASSEL__SMCLK + ID__8 + MC_2 + TACLR + TAIE;
+    TA2CCTL1 = CM_1 + SCS + CAP + CCIE + CCIS_0;
 
     P1OUT &= ~(BIT2);
-    P1SEL |=  BIT2;
-    TA0CTL   = TASSEL__SMCLK + ID__8 + MC_2 + TACLR + TAIE;
-    TA0CCTL1 = CM_1 + SCS +CAP + CCIE + CCIS_0;
+    P1SEL |= BIT2;
+    TA0CTL = TASSEL__SMCLK + ID__8 + MC_2 + TACLR + TAIE;
+    TA0CCTL1 = CM_1 + SCS + CAP + CCIE + CCIS_0;
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      ÏÔÊ¾±àÂëÆ÷¶ÁÊı
+//  @brief      æ˜¾ç¤ºç¼–ç å™¨è¯»æ•°
 //  @return     void
-//  @note       speed_rightÎªP2_4¶ÁÊı
-//              speed_leftÎªP1_2¶ÁÊı
+//  @note       speed_rightä¸ºP2_4è¯»æ•°
+//              speed_leftä¸ºP1_2è¯»æ•°
 //-------------------------------------------------------------------------------------------------------------------
-//void encoder_read(void)
+// void encoder_read(void)
 //{
 ////    OLED_ShowNum(14,1,speed_left,7,12);
-////    OLED_ShowNum(0,1,speed_right,7,12);//ÏÔÊ¾±àÂëÆ÷¶ÁÖµ
+////    OLED_ShowNum(0,1,speed_right,7,12);//æ˜¾ç¤ºç¼–ç å™¨è¯»å€¼
 //
 //    if(speed_left < 0){
 //        OLED_ShowChar(12,1,'-',12);
@@ -117,8 +113,7 @@ void encoder_init(void)
 ////    else OLED_ShowNum(14,1,speed_left,7,12);
 //}
 
-
-// ÓÃ±àÂëÆ÷¼ÆËãÀï³Ì
+// ç”¨ç¼–ç å™¨è®¡ç®—é‡Œç¨‹
 void EncoderCount(void)
 {
 
@@ -126,66 +121,67 @@ void EncoderCount(void)
     RightMotor_TotalEncoder += encoder_R;
 }
 
-// »ñÈ¡²âÀï³Ì(Ã×)
+// è·å–æµ‹é‡Œç¨‹(ç±³)
 float GetEncoder(void)
 {
     return (LeftMotor_TotalEncoder + RightMotor_TotalEncoder) / 2.0 / EncoderPerMeter;
 }
 void Encoder_clear(void)
 {
-    LeftMotor_TotalEncoder  = 0;
+    LeftMotor_TotalEncoder = 0;
     RightMotor_TotalEncoder = 0;
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      ¶¨Ê±Æ÷ÊäÈëÖĞ¶ÏTA0_1
+//  @brief      å®šæ—¶å™¨è¾“å…¥ä¸­æ–­TA0_1
 //  @return     void
-//  @note       ÓÃÓÚ±àÂëÆ÷P1_2
+//  @note       ç”¨äºç¼–ç å™¨P1_2
 //-------------------------------------------------------------------------------------------------------------------
-#pragma vector=TIMER0_A1_VECTOR
+#pragma vector = TIMER0_A1_VECTOR
 __interrupt void TIMER0_A1_ISR(void)
 {
-    switch(__even_in_range(TA0IV,2))
+    switch (__even_in_range(TA0IV, 2))
     {
-      case  0:break;
-      case  2:
-          if(P1IN & BIT2){
-              encoder_L++;
-          }else{
-              encoder_L--;
-          }
+    case 0:
+        break;
+    case 2:
+        if (P1IN & BIT2)
+        {
+            encoder_L++;
+        }
+        else
+        {
+            encoder_L--;
+        }
 
-
-//          OLED_ShowNum(10,6,encoder_count1_2,4,15);
-          break;
+        //          OLED_ShowNum(10,6,encoder_count1_2,4,15);
+        break;
     }
 }
 
-
 //-------------------------------------------------------------------------------------------------------------------
-//  @brief      ¶¨Ê±Æ÷ÊäÈëÖĞ¶ÏTA2_1
+//  @brief      å®šæ—¶å™¨è¾“å…¥ä¸­æ–­TA2_1
 //  @return     void
-//  @note       ÓÃÓÚ±àÂëÆ÷P2_4
+//  @note       ç”¨äºç¼–ç å™¨P2_4
 //-------------------------------------------------------------------------------------------------------------------
-#pragma vector=TIMER2_A1_VECTOR
+#pragma vector = TIMER2_A1_VECTOR
 __interrupt void TIMER2_A1_ISR(void)
 {
-    switch(__even_in_range(TA2IV,2))
+    switch (__even_in_range(TA2IV, 2))
     {
-      case  0:break;
-      case  2:
-          if(P2IN & BIT4){
-              encoder_R++;
-          }else{
-              encoder_R--;
-          }
+    case 0:
+        break;
+    case 2:
+        if (P2IN & BIT4)
+        {
+            encoder_R++;
+        }
+        else
+        {
+            encoder_R--;
+        }
 
-
-
-//          OLED_ShowNum(10,5,encoder_count2_4,4,15);
-          break;
+        //          OLED_ShowNum(10,5,encoder_count2_4,4,15);
+        break;
     }
 }
-
-

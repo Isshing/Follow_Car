@@ -2,53 +2,52 @@
 #define _BACK_WHEEL_H_
 #include "headfile.h"
 
+#define MOTOR_L_PWM 13 // DIR 8-1
+#define MOTOR_R_PWM 14 // DIR 8-2
 
-#define MOTOR_L_PWM 13//DIR 8-1
-#define MOTOR_R_PWM 14//DIR 8-2
-
-#define MIN(a, b)                 (((a) < (b)) ? (a) : (b))
-#define MAX(a, b)                 (((a) > (b)) ? (a) : (b))
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
 #define MINMAX(input, low, upper) MIN(MAX(input, low), upper)
 
 extern short right_dir;
 extern short left_dir;
 
-/*¶¨ÒåPID¶ÔÏóÀàÐÍ*/
-typedef struct // Î»ÖÃÐÍÆÕÍ¨PID
+/*ï¿½ï¿½ï¿½ï¿½PIDï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
+typedef struct // Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨PID
 {
-    float maximum;  /*Êä³öÖµÉÏÏÞ*/
-    float minimum;  /*Êä³öÖµÏÂÏÞ*/
-    float setpoint; // Éè¶¨Öµ
-    float result;   // Êä³öÖµ
-    float integral; // »ý·ÖÖµ
+    float maximum;  /*ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½*/
+    float minimum;  /*ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½*/
+    float setpoint; // ï¿½è¶¨Öµ
+    float result;   // ï¿½ï¿½ï¿½Öµ
+    float integral; // ï¿½ï¿½ï¿½ï¿½Öµ
 
 } PID_1;
 
-typedef struct // ÔöÁ¿ÐÍÆÕÍ¨PID
+typedef struct // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨PID
 {
-    float maximum;  /*Êä³öÖµÉÏÏÞ*/
-    float minimum;  /*Êä³öÖµÏÂÏÞ*/
-    float setpoint; // Éè¶¨Öµ
+    float maximum;  /*ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½*/
+    float minimum;  /*ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½*/
+    float setpoint; // ï¿½è¶¨Öµ
 
-    float result;     // Êä³öÖµ
-    float integral;   // »ý·ÖÖµ
-    float derivative; // Î¢·ÖÖµ
+    float result;     // ï¿½ï¿½ï¿½Öµ
+    float integral;   // ï¿½ï¿½ï¿½ï¿½Öµ
+    float derivative; // Î¢ï¿½ï¿½Öµ
 
     float P_out;
     float I_out;
 
 } PID_2;
 
-typedef struct // ºóÂÖ½á¹¹Ìå²ÎÊý
+typedef struct // ï¿½ï¿½ï¿½Ö½á¹¹ï¿½ï¿½ï¿½ï¿½ï¿½
 {
-    // ±ä»ý·Ö²ÎÊý
+    // ï¿½ï¿½ï¿½ï¿½Ö²ï¿½ï¿½ï¿½
     float L_Max_I;
     float L_Ci;
 
     float R_Max_I;
     float R_Ci;
 
-    // ±ä±ÈÀý²ÎÊý
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     float L_Bas_KP;
     float L_Gain_KP;
     float L_Cp;
@@ -65,15 +64,14 @@ typedef struct // ºóÂÖ½á¹¹Ìå²ÎÊý
 
 } Motor_Para;
 
-extern PID_2 Motor_Left;    // ×óÂÖ±äÁ¿
-extern PID_2 Motor_Right;   // ÓÒÂÖ±äÁ¿
-extern Motor_Para MOTOR;    // PID²ÎÊý½á¹¹Ìå
-extern Motor_Para LORDTEST; // PID²ÎÊý½á¹¹Ìå
+extern PID_2 Motor_Left;    // ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½
+extern PID_2 Motor_Right;   // ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½
+extern Motor_Para MOTOR;    // PIDï¿½ï¿½ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½
+extern Motor_Para LORDTEST; // PIDï¿½ï¿½ï¿½ï¿½ï¿½á¹¹ï¿½ï¿½
 
 void motor_init(int pwm_in_left, int pwm_in_right);
 void run(int left, int right);
 void Motor_L_Control_Change_Integral(float setpoint, PID_2 *vPID, Motor_Para *Motor, int processValue);
 void Motor_R_Control_Change_Integral(float setpoint, PID_2 *vPID, Motor_Para *Motor, int processValue);
-
 
 #endif /* HARDWARE_MOTOR_CTRL_H_ */

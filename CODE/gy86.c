@@ -1,29 +1,29 @@
 #include "gy86.h"
 
-
-//#define abs(a) (u32)(a>=0?a:-a)
+// #define abs(a) (u32)(a>=0?a:-a)
 
 float Yaw_IIC, Roll_IIC, Pitch_IIC;
 float accx, accy, accz;
 float gyrox, gyroy, gyroz;
 float anglex, angley, anglez;
 
-
 void InitMPU6050()
 {
-     Single_WriteI2C(PWR_MGMT_1, 0x00);
-     Single_WriteI2C(SMPLRT_DIV, 0x07);
-     Single_WriteI2C(CONFIG, 0x06);
-     Single_WriteI2C(GYRO_CONFIG, 0x18);
-     Single_WriteI2C(ACCEL_CONFIG, 0x01);
+    Single_WriteI2C(PWR_MGMT_1, 0x00);
+    Single_WriteI2C(SMPLRT_DIV, 0x07);
+    Single_WriteI2C(CONFIG, 0x06);
+    Single_WriteI2C(GYRO_CONFIG, 0x18);
+    Single_WriteI2C(ACCEL_CONFIG, 0x01);
 }
 
 void I2C_SendACK(unsigned char ack)
 {
     SDAOUT;
     SCLOUT;
-    if(ack) SDA1;
-    else SDA0;
+    if (ack)
+        SDA1;
+    else
+        SDA0;
     SCL1;
     delayus(2);
     SCL0;
@@ -38,13 +38,13 @@ unsigned char I2C_RecvACK()
 
     SDAIN;
     delayus(2);
-    if(SDADATA)
+    if (SDADATA)
     {
-        cy=1;
+        cy = 1;
     }
     else
     {
-        cy=0;
+        cy = 0;
     }
     SCL0;
     delayus(5);
@@ -52,8 +52,7 @@ unsigned char I2C_RecvACK()
     return cy;
 }
 
-
-void Single_WriteI2C(unsigned char REG_Address,unsigned char REG_data)
+void Single_WriteI2C(unsigned char REG_Address, unsigned char REG_data)
 {
     I2C_Start();
     I2C_SendByte(SlaveAddress);
@@ -89,21 +88,21 @@ void I2C_SendByte(unsigned char dat)
 {
     unsigned char i;
     SDAOUT;
-    for (i=0; i<8; i++)
+    for (i = 0; i < 8; i++)
     {
-    if((dat<<i)&0x80)
-    {
-        SDA1;
-    }
-    else
-    {
-        SDA0;
-    }
-    SCLOUT;
-    SCL1;
-    delayus(5);
-    SCL0;
-    delayus(5);
+        if ((dat << i) & 0x80)
+        {
+            SDA1;
+        }
+        else
+        {
+            SDA0;
+        }
+        SCLOUT;
+        SCL1;
+        delayus(5);
+        SCL0;
+        delayus(5);
     }
     I2C_RecvACK();
 }
@@ -111,68 +110,67 @@ void I2C_SendByte(unsigned char dat)
 unsigned char I2C_RecvByte()
 {
     unsigned char i;
-    unsigned char dat = 0,cy;
+    unsigned char dat = 0, cy;
 
     SDAOUT;
     SCLOUT;
     SDA1;
     SDAIN;
-    for (i=0; i<8; i++)
+    for (i = 0; i < 8; i++)
     {
-    dat<<= 1;
-    SCL1;
-    delayus(5);
-     if(SDADATA)
-     {
-        cy=1;
-     }
-     else
-     {
-        cy=0;
-     }
-    dat |= cy;
-    delayus(2);
+        dat <<= 1;
+        SCL1;
+        delayus(5);
+        if (SDADATA)
+        {
+            cy = 1;
+        }
+        else
+        {
+            cy = 0;
+        }
+        dat |= cy;
+        delayus(2);
     }
     SDAOUT;
     return dat;
-
 }
 
 void mpupose(void)
 {
-    accx=((float)GetData(ACCEL_XOUT_H));
-    accy=((float)GetData(ACCEL_YOUT_H));
-    accz=((float)GetData(ACCEL_ZOUT_H));
+    accx = ((float)GetData(ACCEL_XOUT_H));
+    accy = ((float)GetData(ACCEL_YOUT_H));
+    accz = ((float)GetData(ACCEL_ZOUT_H));
 
-//    gyrox=((float)GetData(GYRO_XOUT_H))/16.4;
-//    gyroy=((float)GetData(GYRO_YOUT_H))/16.4;
-//    gyroz=((float)GetData(GYRO_ZOUT_H))/16.4;
+    //    gyrox=((float)GetData(GYRO_XOUT_H))/16.4;
+    //    gyroy=((float)GetData(GYRO_YOUT_H))/16.4;
+    //    gyroz=((float)GetData(GYRO_ZOUT_H))/16.4;
 
-    Yaw_IIC=atan(accx / accz) * 57.2958;
-    Roll_IIC=atan(accy / accz) * 57.2958;
-    Pitch_IIC=atan(accz / accx) * 57.2958;
+    Yaw_IIC = atan(accx / accz) * 57.2958;
+    Roll_IIC = atan(accy / accz) * 57.2958;
+    Pitch_IIC = atan(accz / accx) * 57.2958;
 }
 
 int GetData(unsigned char REG_Address)
 {
-    char H,L;
-    H=MPU_Read_Byte(REG_Address);
-    L=MPU_Read_Byte(REG_Address+1);
-    return (H<<8)+L;
+    char H, L;
+    H = MPU_Read_Byte(REG_Address);
+    L = MPU_Read_Byte(REG_Address + 1);
+    return (H << 8) + L;
 }
 
 unsigned char MPU_Read_Byte(unsigned char reg)
 {
     unsigned char res;
     MPU_IIC_Start();
-    MPU_IIC_Send_Byte((0X68<<1)|0);
+    MPU_IIC_Send_Byte((0X68 << 1) | 0);
     MPU_IIC_Wait_Ack();
     MPU_IIC_Send_Byte(reg);
     MPU_IIC_Wait_Ack();
     MPU_IIC_Start();
-    MPU_IIC_Send_Byte((0X68<<1)|1);
+    MPU_IIC_Send_Byte((0X68 << 1) | 1);
     MPU_IIC_Wait_Ack();
-    res=MPU_IIC_Read_Byte(0);
+    res = MPU_IIC_Read_Byte(0);
     MPU_IIC_Stop();
     return res;
 }
@@ -195,28 +193,31 @@ void MPU_IIC_Send_Byte(unsigned char txd)
     unsigned char t;
     SDAOUT;
     SCL0;
-    for(t=0;t<8;t++)
+    for (t = 0; t < 8; t++)
     {
-        if(((txd&0x80)>>7)==1)
+        if (((txd & 0x80) >> 7) == 1)
             SDA1;
-        else SDA0;
-        txd<<=1;
-            SCL1;
-            MPU_IIC_Delay();
-            SCL0;
-            MPU_IIC_Delay();
+        else
+            SDA0;
+        txd <<= 1;
+        SCL1;
+        MPU_IIC_Delay();
+        SCL0;
+        MPU_IIC_Delay();
     }
 }
 unsigned char MPU_IIC_Wait_Ack(void)
 {
-    unsigned char ucErrTime=0;
+    unsigned char ucErrTime = 0;
     SDAIN;
-    SDA1;MPU_IIC_Delay();
-    SCL1;MPU_IIC_Delay();
-    while(SDADATA)
+    SDA1;
+    MPU_IIC_Delay();
+    SCL1;
+    MPU_IIC_Delay();
+    while (SDADATA)
     {
         ucErrTime++;
-        if(ucErrTime>250)
+        if (ucErrTime > 250)
         {
             MPU_IIC_Stop();
             return 1;
@@ -227,15 +228,16 @@ unsigned char MPU_IIC_Wait_Ack(void)
 }
 unsigned char MPU_IIC_Read_Byte(unsigned char ack)
 {
-    unsigned char i,receive=0;
+    unsigned char i, receive = 0;
     SDAIN;
-    for(i=0;i<8;i++ )
+    for (i = 0; i < 8; i++)
     {
         SCL0;
         MPU_IIC_Delay();
         SCL1;
-        receive<<=1;
-        if(SDADATA)receive++;
+        receive <<= 1;
+        if (SDADATA)
+            receive++;
         MPU_IIC_Delay();
     }
     if (!ack)
@@ -277,7 +279,7 @@ void MPU_IIC_Ack(void)
 
 void Data_show()
 {
-    OLED_ShowNum(0,0,Yaw_IIC,4,12);
-    OLED_ShowNum(0,10,Roll_IIC,4,12);
-    OLED_ShowNum(0,20,Pitch_IIC,4,12);
+    OLED_ShowNum(0, 0, Yaw_IIC, 4, 12);
+    OLED_ShowNum(0, 10, Roll_IIC, 4, 12);
+    OLED_ShowNum(0, 20, Pitch_IIC, 4, 12);
 }
