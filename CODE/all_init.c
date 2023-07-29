@@ -1,4 +1,3 @@
-
 #include "all_init.h"
 
 void init(void)

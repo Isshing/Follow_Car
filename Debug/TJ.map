@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v20.2.5                     
 ******************************************************************************
->> Linked Sun Jul 30 01:06:55 2023
+>> Linked Sun Jul 30 01:39:00 2023
 
 OUTPUT FILE NAME:   <TJ.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00004400
@@ -85,7 +85,7 @@ MEMORY CONFIGURATION
   INT61                 0000fffa   00000002  00000002  00000000  RWIX
   INT62                 0000fffc   00000002  00000002  00000000  RWIX
   RESET                 0000fffe   00000002  00000002  00000000  RWIX
-  FLASH2                00010000   000143f8  000028a2  00011b56  RWIX
+  FLASH2                00010000   000143f8  0000246c  00011f8c  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -231,157 +231,157 @@ SYSNMI     0    0000fffc    00000002
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430x_lc_rd_eabi.lib : boot.c.obj (.reset)
 
-.text      0    00010000    000028a2     
-                  00010000    00000950     PM_Control.obj (.text:KP_Fuzzy)
-                  00010950    00000322     Light.obj (.text:Light_Error)
-                  00010c72    000002c8     pwm.obj (.text:pwm_init)
-                  00010f3a    00000298     rts430x_lc_rd_eabi.lib : mpyd.c.obj (.text:__mspabi_mpyd)
-                  000111d2    000001b4     PM_Control.obj (.text:Kd_Fuzzy)
-                  00011386    00000164     rts430x_lc_rd_eabi.lib : frcmpyd.c.obj (.text:__TI_frcmpyd)
-                  000114ea    00000132                            : fs_add.asm.obj (.text)
-                  0001161c    0000010c     Back_Wheel.obj (.text:Motor_L_Control_Change_Integral)
-                  00011728    0000010c     Back_Wheel.obj (.text:Motor_R_Control_Change_Integral)
-                  00011834    000000fc     PM_Control.obj (.text:pid_diff)
-                  00011930    000000f6     pwm.obj (.text:pwm_duty)
-                  00011a26    000000de     Oled.obj (.text:OLED_Init)
-                  00011b04    000000da     PM_Control.obj (.text:Speed_Control)
-                  00011bde    000000b8     rts430x_lc_rd_eabi.lib : fs_mpy.asm.obj (.text)
-                  00011c96    000000b2                            : cvtdf.c.obj (.text:__mspabi_cvtdf)
-                  00011d48    00000090                            : fs_div.asm.obj (.text)
-                  00011dd8    00000080                            : fltuld.c.obj (.text:__mspabi_fltuld)
-                  00011e58    0000007a     timer.obj (.text:timer_init)
-                  00011ed2    00000076     rts430x_lc_rd_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
-                  00011f48    00000070     Back_Wheel.obj (.text:run)
-                  00011fb8    00000068     rts430x_lc_rd_eabi.lib : fixdul.c.obj (.text:__mspabi_fixdul)
-                  00012020    00000068                            : fs_toi.asm.obj (.text)
-                  00012088    00000064                            : cvtfd.c.obj (.text:__mspabi_cvtfd)
-                  000120ec    00000062     PM_Control.obj (.text:Control_Init)
-                  0001214e    00000060     Light.obj (.text:light_get)
-                  000121ae    0000005c     rts430x_lc_rd_eabi.lib : mult64_f5hw.asm.obj (.text:__mpyll)
-                  0001220a    0000005a     key.obj (.text:key_switch)
-                  00012264    00000056     all_init.obj (.text:init)
-                  000122ba    00000054     rts430x_lc_rd_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit_hold_wdt:__TI_auto_init_nobinit_nopinit_hold_wdt)
-                  0001230e    00000050     encoder.obj (.text:Get_Speed)
-                  0001235e    0000004a     rts430x_lc_rd_eabi.lib : fs_cmp.asm.obj (.text)
-                  000123a8    00000046     main.obj (.text:main)
-                  000123ee    00000044     Oled.obj (.text:OLED_Clear)
-                  00012432    00000044     Light.obj (.text:light_init)
-                  00012476    00000042     Back_Wheel.obj (.text:motor_init)
-                  000124b8    0000003e     rts430x_lc_rd_eabi.lib : asr32.asm.obj (.text:l_asr_const)
-                  000124f6    0000003e                            : lsl32.asm.obj (.text:l_lsl_const)
-                  00012534    0000003e                            : lsr32.asm.obj (.text:l_lsr_const)
-                  00012572    0000003a                            : lsl64.c.obj (.text:__mspabi_sllll)
-                  000125ac    0000003a                            : lsr64.c.obj (.text:__mspabi_srlll)
-                  000125e6    00000036                            : fs_itof.asm.obj (.text)
-                  0001261c    0000002e     Oled.obj (.text:Write_IIC_Byte)
-                  0001264a    0000002e     Oled.obj (.text:Write_IIC_Data)
-                  00012678    0000002e     encoder.obj (.text:encoder_init)
-                  000126a6    0000002c     Oled.obj (.text:Write_IIC_Command)
-                  000126d2    0000002c     rts430x_lc_rd_eabi.lib : mult3264_f5hw.asm.obj (.text:__mpyull)
-                  000126fe    00000024                            : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  00012722    00000024                            : fs_utof.asm.obj (.text)
-                  00012746    0000001e     delay.obj (.text:delay)
-                  00012764    0000001e     Light.obj (.text:light_clear)
-                  00012782    0000001a     button.obj (.text:button_init)
-                  0001279c    00000018     rts430x_lc_rd_eabi.lib : mult16_f5hw.asm.obj (.text)
-                  000127b4    00000016     Oled.obj (.text:IIC_Start)
-                  000127ca    00000016     rts430x_lc_rd_eabi.lib : memset.c.obj (.text:memset)
-                  000127e0    00000016                            : div16u.asm.obj (.text)
-                  000127f6    00000014     Oled.obj (.text:OLED_WR_Byte)
-                  0001280a    00000014     rts430x_lc_rd_eabi.lib : memcpy.c.obj (.text:memcpy)
-                  0001281e    00000012     Oled.obj (.text:IIC_Stop)
-                  00012830    00000012     rts430x_lc_rd_eabi.lib : fixdu.c.obj (.text:__mspabi_fixdu)
-                  00012842    00000012                            : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
-                  00012854    00000010                            : lsr32.asm.obj (.text:l_lsr)
-                  00012864    0000000e     encoder.obj (.text:EncoderCount)
-                  00012872    0000000a     Oled.obj (.text:IIC_Wait_Ack)
-                  0001287c    0000000a     rts430x_lc_rd_eabi.lib : abs.c.obj (.text:abs)
-                  00012886    0000000a                            : fs_neg.asm.obj (.text)
-                  00012890    00000006                            : fltud.c.obj (.text:__mspabi_fltud)
-                  00012896    00000006                            : exit.c.obj (.text:abort)
-                  0001289c    00000004                            : pre_init.c.obj (.text:_system_pre_init)
-                  000128a0    00000002                            : startup.c.obj (.text:_system_post_cinit)
+.text      0    00010000    0000246c     
+                  00010000    00000766     PM_Control.obj (.text:KP_Fuzzy)
+                  00010766    000002d6     Light.obj (.text:Light_Error)
+                  00010a3c    00000298     rts430x_lc_rd_eabi.lib : mpyd.c.obj (.text:__mspabi_mpyd)
+                  00010cd4    000001b6     PM_Control.obj (.text:Kd_Fuzzy)
+                  00010e8a    0000019a     pwm.obj (.text:pwm_init)
+                  00011024    00000164     rts430x_lc_rd_eabi.lib : frcmpyd.c.obj (.text:__TI_frcmpyd)
+                  00011188    00000132                            : fs_add.asm.obj (.text)
+                  000112ba    000000fc     PM_Control.obj (.text:pid_diff)
+                  000113b6    000000e4     Oled.obj (.text:OLED_Init)
+                  0001149a    000000de     Back_Wheel.obj (.text:Motor_L_Control_Change_Integral)
+                  00011578    000000de     Back_Wheel.obj (.text:Motor_R_Control_Change_Integral)
+                  00011656    000000cc     PM_Control.obj (.text:Speed_Control)
+                  00011722    000000b8     rts430x_lc_rd_eabi.lib : fs_mpy.asm.obj (.text)
+                  000117da    000000b2                            : cvtdf.c.obj (.text:__mspabi_cvtdf)
+                  0001188c    000000b0     pwm.obj (.text:pwm_duty)
+                  0001193c    00000090     rts430x_lc_rd_eabi.lib : fs_div.asm.obj (.text)
+                  000119cc    00000080                            : fltuld.c.obj (.text:__mspabi_fltuld)
+                  00011a4c    0000007a     timer.obj (.text:timer_init)
+                  00011ac6    00000076     rts430x_lc_rd_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00011b3c    00000070     Back_Wheel.obj (.text:run)
+                  00011bac    00000068     rts430x_lc_rd_eabi.lib : fixdul.c.obj (.text:__mspabi_fixdul)
+                  00011c14    00000068                            : fs_toi.asm.obj (.text)
+                  00011c7c    00000064                            : cvtfd.c.obj (.text:__mspabi_cvtfd)
+                  00011ce0    00000062     PM_Control.obj (.text:Control_Init)
+                  00011d42    00000060     Light.obj (.text:light_get)
+                  00011da2    0000005c     rts430x_lc_rd_eabi.lib : mult64_f5hw.asm.obj (.text:__mpyll)
+                  00011dfe    00000058     key.obj (.text:key_switch)
+                  00011e56    00000056     all_init.obj (.text:init)
+                  00011eac    00000054     rts430x_lc_rd_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit_hold_wdt:__TI_auto_init_nobinit_nopinit_hold_wdt)
+                  00011f00    0000004e     encoder.obj (.text:Get_Speed)
+                  00011f4e    0000004a     rts430x_lc_rd_eabi.lib : fs_cmp.asm.obj (.text)
+                  00011f98    00000046     main.obj (.text:main)
+                  00011fde    00000044     Light.obj (.text:light_init)
+                  00012022    00000042     Back_Wheel.obj (.text:motor_init)
+                  00012064    0000003e     rts430x_lc_rd_eabi.lib : asr32.asm.obj (.text:l_asr_const)
+                  000120a2    0000003e                            : lsl32.asm.obj (.text:l_lsl_const)
+                  000120e0    0000003e                            : lsr32.asm.obj (.text:l_lsr_const)
+                  0001211e    0000003c     Oled.obj (.text:OLED_Clear)
+                  0001215a    0000003a     rts430x_lc_rd_eabi.lib : lsl64.c.obj (.text:__mspabi_sllll)
+                  00012194    0000003a                            : lsr64.c.obj (.text:__mspabi_srlll)
+                  000121ce    00000036                            : fs_itof.asm.obj (.text)
+                  00012204    00000034     Oled.obj (.text:Write_IIC_Byte)
+                  00012238    0000002e     encoder.obj (.text:encoder_init)
+                  00012266    0000002c     Oled.obj (.text:Write_IIC_Data)
+                  00012292    0000002c     rts430x_lc_rd_eabi.lib : mult3264_f5hw.asm.obj (.text:__mpyull)
+                  000122be    0000002a     Oled.obj (.text:Write_IIC_Command)
+                  000122e8    00000024     rts430x_lc_rd_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  0001230c    00000024                            : fs_utof.asm.obj (.text)
+                  00012330    0000001e     Light.obj (.text:light_clear)
+                  0001234e    0000001a     button.obj (.text:button_init)
+                  00012368    00000018     rts430x_lc_rd_eabi.lib : mult16_f5hw.asm.obj (.text)
+                  00012380    00000016     Oled.obj (.text:IIC_Start)
+                  00012396    00000016     rts430x_lc_rd_eabi.lib : memset.c.obj (.text:memset)
+                  000123ac    00000016                            : div16u.asm.obj (.text)
+                  000123c2    00000014                            : memcpy.c.obj (.text:memcpy)
+                  000123d6    00000012     Oled.obj (.text:IIC_Stop)
+                  000123e8    00000012     rts430x_lc_rd_eabi.lib : fixdu.c.obj (.text:__mspabi_fixdu)
+                  000123fa    00000012                            : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  0001240c    00000010     Oled.obj (.text:OLED_WR_Byte)
+                  0001241c    00000010     rts430x_lc_rd_eabi.lib : lsr32.asm.obj (.text:l_lsr)
+                  0001242c    0000000e     encoder.obj (.text:EncoderCount)
+                  0001243a    0000000a     Oled.obj (.text:IIC_Wait_Ack)
+                  00012444    0000000a     rts430x_lc_rd_eabi.lib : abs.c.obj (.text:abs)
+                  0001244e    0000000a                            : fs_neg.asm.obj (.text)
+                  00012458    00000006                            : fltud.c.obj (.text:__mspabi_fltud)
+                  0001245e    00000006                            : exit.c.obj (.text:abort)
+                  00012464    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+                  00012468    00000002                            : startup.c.obj (.text:_system_post_cinit)
+                  0001246a    00000002     delay.obj (.text:delay)
 
 MODULE SUMMARY
 
-       Module                       code    ro data   rw data
-       ------                       ----    -------   -------
+       Module                       code   ro data   rw data
+       ------                       ----   -------   -------
     .\CODE\
-       PM_Control.obj               3388    130       124    
-       Light.obj                    996     0         92     
-       pwm.obj                      958     0         0      
-       Back_Wheel.obj               714     0         132    
-       Oled.obj                     496     0         0      
-       encoder.obj                  190     4         20     
-       timer.obj                    160     8         0      
-       key.obj                      90      0         20     
-       all_init.obj                 86      0         0      
-       main.obj                     70      0         0      
-       uart.obj                     34      4         2      
-       delay.obj                    30      0         0      
-       button.obj                   26      0         0      
-    +--+----------------------------+-------+---------+---------+
-       Total:                       7238    146       390    
-                                                             
+       PM_Control.obj               2886   130       124    
+       Light.obj                    920    0         92     
+       Back_Wheel.obj               622    0         132    
+       pwm.obj                      586    0         0      
+       Oled.obj                     492    0         0      
+       encoder.obj                  188    4         20     
+       timer.obj                    160    8         0      
+       key.obj                      88     0         20     
+       all_init.obj                 86     0         0      
+       main.obj                     70     0         0      
+       uart.obj                     34     4         2      
+       button.obj                   26     0         0      
+       delay.obj                    2      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       6160   146       390    
+                                                            
     E:\Ti\ccs\tools\compiler\ti-cgt-msp430_20.2.5.LTS\lib\rts430x_lc_rd_eabi.lib
-       mpyd.c.obj                   664     0         0      
-       frcmpyd.c.obj                356     0         0      
-       fs_add.asm.obj               306     0         0      
-       fs_mpy.asm.obj               184     0         0      
-       cvtdf.c.obj                  178     0         0      
-       fs_div.asm.obj               144     0         0      
-       fltuld.c.obj                 128     0         0      
-       copy_decompress_lzss.c.obj   118     0         0      
-       fixdul.c.obj                 104     0         0      
-       fs_toi.asm.obj               104     0         0      
-       cvtfd.c.obj                  100     0         0      
-       mult64_f5hw.asm.obj          92      0         0      
-       autoinit.c.obj               84      0         0      
-       lsr32.asm.obj                78      0         0      
-       fs_cmp.asm.obj               74      0         0      
-       asr32.asm.obj                62      0         0      
-       lsl32.asm.obj                62      0         0      
-       lsl64.c.obj                  58      0         0      
-       lsr64.c.obj                  58      0         0      
-       fs_itof.asm.obj              54      0         0      
-       mult3264_f5hw.asm.obj        44      0         0      
-       copy_zero_init.c.obj         36      0         0      
-       fs_utof.asm.obj              36      0         0      
-       boot.c.obj                   28      2         0      
-       mult16_f5hw.asm.obj          24      0         0      
-       div16u.asm.obj               22      0         0      
-       memset.c.obj                 22      0         0      
-       memcpy.c.obj                 20      0         0      
-       copy_decompress_none.c.obj   18      0         0      
-       fixdu.c.obj                  18      0         0      
-       abs.c.obj                    10      0         0      
-       fs_neg.asm.obj               10      0         0      
-       isr_trap.asm.obj             8       0         0      
-       exit.c.obj                   6       0         0      
-       fltud.c.obj                  6       0         0      
-       pre_init.c.obj               4       0         0      
-       int41.asm.obj                0       2         0      
-       int42.asm.obj                0       2         0      
-       int45.asm.obj                0       2         0      
-       int47.asm.obj                0       2         0      
-       int48.asm.obj                0       2         0      
-       int50.asm.obj                0       2         0      
-       int51.asm.obj                0       2         0      
-       int54.asm.obj                0       2         0      
-       int55.asm.obj                0       2         0      
-       int57.asm.obj                0       2         0      
-       int58.asm.obj                0       2         0      
-       int60.asm.obj                0       2         0      
-       int61.asm.obj                0       2         0      
-       int62.asm.obj                0       2         0      
-       startup.c.obj                2       0         0      
-    +--+----------------------------+-------+---------+---------+
-       Total:                       3322    30        0      
-                                                             
-       Stack:                       0       0         160    
-       Linker Generated:            0       114       0      
-    +--+----------------------------+-------+---------+---------+
-       Grand Total:                 10560   290       550    
+       mpyd.c.obj                   664    0         0      
+       frcmpyd.c.obj                356    0         0      
+       fs_add.asm.obj               306    0         0      
+       fs_mpy.asm.obj               184    0         0      
+       cvtdf.c.obj                  178    0         0      
+       fs_div.asm.obj               144    0         0      
+       fltuld.c.obj                 128    0         0      
+       copy_decompress_lzss.c.obj   118    0         0      
+       fixdul.c.obj                 104    0         0      
+       fs_toi.asm.obj               104    0         0      
+       cvtfd.c.obj                  100    0         0      
+       mult64_f5hw.asm.obj          92     0         0      
+       autoinit.c.obj               84     0         0      
+       lsr32.asm.obj                78     0         0      
+       fs_cmp.asm.obj               74     0         0      
+       asr32.asm.obj                62     0         0      
+       lsl32.asm.obj                62     0         0      
+       lsl64.c.obj                  58     0         0      
+       lsr64.c.obj                  58     0         0      
+       fs_itof.asm.obj              54     0         0      
+       mult3264_f5hw.asm.obj        44     0         0      
+       copy_zero_init.c.obj         36     0         0      
+       fs_utof.asm.obj              36     0         0      
+       boot.c.obj                   28     2         0      
+       mult16_f5hw.asm.obj          24     0         0      
+       div16u.asm.obj               22     0         0      
+       memset.c.obj                 22     0         0      
+       memcpy.c.obj                 20     0         0      
+       copy_decompress_none.c.obj   18     0         0      
+       fixdu.c.obj                  18     0         0      
+       abs.c.obj                    10     0         0      
+       fs_neg.asm.obj               10     0         0      
+       isr_trap.asm.obj             8      0         0      
+       exit.c.obj                   6      0         0      
+       fltud.c.obj                  6      0         0      
+       pre_init.c.obj               4      0         0      
+       int41.asm.obj                0      2         0      
+       int42.asm.obj                0      2         0      
+       int45.asm.obj                0      2         0      
+       int47.asm.obj                0      2         0      
+       int48.asm.obj                0      2         0      
+       int50.asm.obj                0      2         0      
+       int51.asm.obj                0      2         0      
+       int54.asm.obj                0      2         0      
+       int55.asm.obj                0      2         0      
+       int57.asm.obj                0      2         0      
+       int58.asm.obj                0      2         0      
+       int60.asm.obj                0      2         0      
+       int61.asm.obj                0      2         0      
+       int62.asm.obj                0      2         0      
+       startup.c.obj                2      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       3322   30        0      
+                                                            
+       Stack:                       0      0         160    
+       Linker Generated:            0      114       0      
+    +--+----------------------------+------+---------+---------+
+       Grand Total:                 9482   290       550    
 
 
 LINKER GENERATED COPY TABLES
@@ -486,7 +486,7 @@ address   name
 00000733  ADC12MEM9_H                            
 00000732  ADC12MEM9_L                            
 000024a4  Avg_speed                              
-00012896  C$$EXIT                                
+0001245e  C$$EXIT                                
 000008c0  CBCTL0                                 
 000008c1  CBCTL0_H                               
 000008c0  CBCTL0_L                               
@@ -515,7 +515,7 @@ address   name
 00000156  CRCRESR                                
 00000157  CRCRESR_H                              
 00000156  CRCRESR_L                              
-000120ec  Control_Init                           
+00011ce0  Control_Init                           
 0000245c  DFF                                    
 00000510  DMA0CTL                                
 00000516  DMA0DA                                 
@@ -549,7 +549,7 @@ address   name
 0000050e  DMAIV                                  
 00002574  Data_USCI_A0                           
 00002478  EFF                                    
-00012864  EncoderCount                           
+0001242c  EncoderCount                           
 00000140  FCTL1                                  
 00000141  FCTL1_H                                
 00000140  FCTL1_L                                
@@ -559,16 +559,16 @@ address   name
 00000146  FCTL4                                  
 00000147  FCTL4_H                                
 00000146  FCTL4_L                                
-0001230e  Get_Speed                              
-000127b4  IIC_Start                              
-0001281e  IIC_Stop                               
-00012872  IIC_Wait_Ack                           
+00011f00  Get_Speed                              
+00012380  IIC_Start                              
+000123d6  IIC_Stop                               
+0001243a  IIC_Wait_Ack                           
 00010000  KP_Fuzzy                               
-000111d2  Kd_Fuzzy                               
+00010cd4  Kd_Fuzzy                               
 00002502  LINECTL                                
 00002562  LINELIGHT                              
 000024a0  LeftMotor_TotalEncoder                 
-00010950  Light_Error                            
+00010766  Light_Error                            
 000004c4  MAC                                    
 000004da  MAC32H                                 
 000004db  MAC32H_H                               
@@ -609,13 +609,13 @@ address   name
 000004c2  MPYS_L                                 
 000004c1  MPY_H                                  
 000004c0  MPY_L                                  
-0001161c  Motor_L_Control_Change_Integral        
+0001149a  Motor_L_Control_Change_Integral        
 00002522  Motor_Left                             
-00011728  Motor_R_Control_Change_Integral        
+00011578  Motor_R_Control_Change_Integral        
 00002542  Motor_Right                            
-000123ee  OLED_Clear                             
-00011a26  OLED_Init                              
-000127f6  OLED_WR_Byte                           
+0001211e  OLED_Clear                             
+000113b6  OLED_Init                              
+0001240c  OLED_WR_Byte                           
 000004c8  OP2                                    
 000004e2  OP2H                                   
 000004e3  OP2H_H                                 
@@ -871,7 +871,7 @@ address   name
 0000019a  SYSUNIV_L                              
 00002576  SetLeft                                
 00002578  SetRight                               
-00011b04  Speed_Control                          
+00011656  Speed_Control                          
 00000352  TA0CCR0                                
 00000354  TA0CCR1                                
 00000356  TA0CCR2                                
@@ -1171,9 +1171,9 @@ address   name
 0000015c  WDTCTL                                 
 0000015d  WDTCTL_H                               
 0000015c  WDTCTL_L                               
-0001261c  Write_IIC_Byte                         
-000126a6  Write_IIC_Command                      
-0001264a  Write_IIC_Data                         
+00012204  Write_IIC_Byte                         
+000122be  Write_IIC_Command                      
+00012266  Write_IIC_Data                         
 00004400  __STACK_END                            
 000000a0  __STACK_SIZE                           
 00004582  __TI_CINIT_Base                        
@@ -1181,10 +1181,10 @@ address   name
 00004570  __TI_Handler_Table_Base                
 0000457c  __TI_Handler_Table_Limit               
 00004488  __TI_ISR_TRAP                          
-000122ba  __TI_auto_init_nobinit_nopinit_hold_wdt
-00011ed2  __TI_decompress_lzss                   
-00012842  __TI_decompress_none                   
-00011386  __TI_frcmpyd                           
+00011eac  __TI_auto_init_nobinit_nopinit_hold_wdt
+00011ac6  __TI_decompress_lzss                   
+000123fa  __TI_decompress_none                   
+00011024  __TI_frcmpyd                           
 0000ffd2  __TI_int41                             
 0000ffd4  __TI_int42                             
 0000ffd6  __TI_int43                             
@@ -1210,102 +1210,102 @@ address   name
 ffffffff  __TI_pprof_out_hndl                    
 ffffffff  __TI_prof_data_size                    
 ffffffff  __TI_prof_data_start                   
-000126fe  __TI_zero_init_nomemset                
+000122e8  __TI_zero_init_nomemset                
 ffffffff  __c_args__                             
-000114f0  __mspabi_addf                          
-0001235e  __mspabi_cmpf                          
-00011c96  __mspabi_cvtdf                         
-00012088  __mspabi_cvtfd                         
-00011d48  __mspabi_divf                          
-000127e0  __mspabi_divu                          
-00012830  __mspabi_fixdu                         
-00011fb8  __mspabi_fixdul                        
-00012020  __mspabi_fixfi                         
-000125e6  __mspabi_fltif                         
-00012890  __mspabi_fltud                         
-00012722  __mspabi_fltuf                         
-00011dd8  __mspabi_fltuld                        
-00010f3a  __mspabi_mpyd                          
-00011bde  __mspabi_mpyf                          
-0001279c  __mspabi_mpyi_f5hw                     
-000121ae  __mspabi_mpyll_f5hw                    
-000126d2  __mspabi_mpyull_f5hw                   
-00012886  __mspabi_negf                          
-000127e0  __mspabi_remu                          
-0001252e  __mspabi_slll_1                        
-0001250a  __mspabi_slll_10                       
-00012506  __mspabi_slll_11                       
-00012502  __mspabi_slll_12                       
-000124fe  __mspabi_slll_13                       
-000124fa  __mspabi_slll_14                       
-000124f6  __mspabi_slll_15                       
-0001252a  __mspabi_slll_2                        
-00012526  __mspabi_slll_3                        
-00012522  __mspabi_slll_4                        
-0001251e  __mspabi_slll_5                        
-0001251a  __mspabi_slll_6                        
-00012516  __mspabi_slll_7                        
-00012512  __mspabi_slll_8                        
-0001250e  __mspabi_slll_9                        
-00012572  __mspabi_sllll                         
-000124f0  __mspabi_sral_1                        
-000124cc  __mspabi_sral_10                       
-000124c8  __mspabi_sral_11                       
-000124c4  __mspabi_sral_12                       
-000124c0  __mspabi_sral_13                       
-000124bc  __mspabi_sral_14                       
-000124b8  __mspabi_sral_15                       
-000124ec  __mspabi_sral_2                        
-000124e8  __mspabi_sral_3                        
-000124e4  __mspabi_sral_4                        
-000124e0  __mspabi_sral_5                        
-000124dc  __mspabi_sral_6                        
-000124d8  __mspabi_sral_7                        
-000124d4  __mspabi_sral_8                        
-000124d0  __mspabi_sral_9                        
-00012854  __mspabi_srll                          
-0001256c  __mspabi_srll_1                        
-00012548  __mspabi_srll_10                       
-00012544  __mspabi_srll_11                       
-00012540  __mspabi_srll_12                       
-0001253c  __mspabi_srll_13                       
-00012538  __mspabi_srll_14                       
-00012534  __mspabi_srll_15                       
-00012568  __mspabi_srll_2                        
-00012564  __mspabi_srll_3                        
-00012560  __mspabi_srll_4                        
-0001255c  __mspabi_srll_5                        
-00012558  __mspabi_srll_6                        
-00012554  __mspabi_srll_7                        
-00012550  __mspabi_srll_8                        
-0001254c  __mspabi_srll_9                        
-000125ac  __mspabi_srlll                         
-000114ea  __mspabi_subf                          
+0001118e  __mspabi_addf                          
+00011f4e  __mspabi_cmpf                          
+000117da  __mspabi_cvtdf                         
+00011c7c  __mspabi_cvtfd                         
+0001193c  __mspabi_divf                          
+000123ac  __mspabi_divu                          
+000123e8  __mspabi_fixdu                         
+00011bac  __mspabi_fixdul                        
+00011c14  __mspabi_fixfi                         
+000121ce  __mspabi_fltif                         
+00012458  __mspabi_fltud                         
+0001230c  __mspabi_fltuf                         
+000119cc  __mspabi_fltuld                        
+00010a3c  __mspabi_mpyd                          
+00011722  __mspabi_mpyf                          
+00012368  __mspabi_mpyi_f5hw                     
+00011da2  __mspabi_mpyll_f5hw                    
+00012292  __mspabi_mpyull_f5hw                   
+0001244e  __mspabi_negf                          
+000123ac  __mspabi_remu                          
+000120da  __mspabi_slll_1                        
+000120b6  __mspabi_slll_10                       
+000120b2  __mspabi_slll_11                       
+000120ae  __mspabi_slll_12                       
+000120aa  __mspabi_slll_13                       
+000120a6  __mspabi_slll_14                       
+000120a2  __mspabi_slll_15                       
+000120d6  __mspabi_slll_2                        
+000120d2  __mspabi_slll_3                        
+000120ce  __mspabi_slll_4                        
+000120ca  __mspabi_slll_5                        
+000120c6  __mspabi_slll_6                        
+000120c2  __mspabi_slll_7                        
+000120be  __mspabi_slll_8                        
+000120ba  __mspabi_slll_9                        
+0001215a  __mspabi_sllll                         
+0001209c  __mspabi_sral_1                        
+00012078  __mspabi_sral_10                       
+00012074  __mspabi_sral_11                       
+00012070  __mspabi_sral_12                       
+0001206c  __mspabi_sral_13                       
+00012068  __mspabi_sral_14                       
+00012064  __mspabi_sral_15                       
+00012098  __mspabi_sral_2                        
+00012094  __mspabi_sral_3                        
+00012090  __mspabi_sral_4                        
+0001208c  __mspabi_sral_5                        
+00012088  __mspabi_sral_6                        
+00012084  __mspabi_sral_7                        
+00012080  __mspabi_sral_8                        
+0001207c  __mspabi_sral_9                        
+0001241c  __mspabi_srll                          
+00012118  __mspabi_srll_1                        
+000120f4  __mspabi_srll_10                       
+000120f0  __mspabi_srll_11                       
+000120ec  __mspabi_srll_12                       
+000120e8  __mspabi_srll_13                       
+000120e4  __mspabi_srll_14                       
+000120e0  __mspabi_srll_15                       
+00012114  __mspabi_srll_2                        
+00012110  __mspabi_srll_3                        
+0001210c  __mspabi_srll_4                        
+00012108  __mspabi_srll_5                        
+00012104  __mspabi_srll_6                        
+00012100  __mspabi_srll_7                        
+000120fc  __mspabi_srll_8                        
+000120f8  __mspabi_srll_9                        
+00012194  __mspabi_srlll                         
+00011188  __mspabi_subf                          
 00004400  _c_int00_noargs                        
 0000fffe  _reset_vector                          
 00004360  _stack                                 
-000128a0  _system_post_cinit                     
-0001289c  _system_pre_init                       
-00012896  abort                                  
-0001287c  abs                                    
+00012468  _system_post_cinit                     
+00012464  _system_pre_init                       
+0001245e  abort                                  
+00012444  abs                                    
 00002454  apoint_count                           
 00002456  apoint_time                            
 00002452  apoint_times                           
 00002438  beeb_flag                              
-00012782  button_init                            
+0001234e  button_init                            
 00002434  check_corner                           
 0000244e  circle_time                            
 0000243a  corner_enter                           
 00002436  corner_flag                            
 0000244a  corner_inner_flag                      
 0000244c  corner_outter_flag                     
-00012746  delay                                  
+0001246a  delay                                  
 00002458  dxd                                    
 00002496  encoder_L                              
 0000249a  encoder_LL                             
 00002494  encoder_R                              
 00002498  encoder_RR                             
-00012678  encoder_init                           
+00012238  encoder_init                           
 00002432  end                                    
 00002450  force_out                              
 0000240e  fuzzy_D_out                            
@@ -1315,7 +1315,7 @@ ffffffff  __c_args__
 00002422  fuzzy_ki                               
 00002416  fuzzy_kp                               
 0000241e  fuzzy_kp_bas                           
-00012264  init                                   
+00011e56  init                                   
 00002406  kd_m                                   
 0000257a  key1_flag                              
 0000257c  key1_last_status                       
@@ -1327,7 +1327,7 @@ ffffffff  __c_args__
 000024c6  key3_status                            
 00002584  key4_flag                              
 000024c8  key4_status                            
-0001220a  key_switch                             
+00011dfe  key_switch                             
 00002402  kp_m                                   
 0000243c  l0_enable                              
 0000243e  l1_enable                              
@@ -1337,24 +1337,24 @@ ffffffff  __c_args__
 00002446  l5_enable                              
 00002448  l6_enable                              
 000024b6  left_dir                               
-00012764  light_clear                            
-0001214e  light_get                              
-00012432  light_init                             
+00012330  light_clear                            
+00011d42  light_get                              
+00011fde  light_init                             
 00002570  light_posi_1                           
-000123a8  main                                   
-0001280a  memcpy                                 
-000127ca  memset                                 
-00012476  motor_init                             
-00011834  pid_diff                               
-00011930  pwm_duty                               
-00010c72  pwm_init                               
+00011f98  main                                   
+000123c2  memcpy                                 
+00012396  memset                                 
+00012022  motor_init                             
+000112ba  pid_diff                               
+0001188c  pwm_duty                               
+00010e8a  pwm_init                               
 000024b8  right_dir                              
 000024a8  rule_d                                 
-00011f48  run                                    
+00011b3c  run                                    
 0000249e  speed_L                                
 0000249c  speed_R                                
 00002400  start_flag                             
-00011e58  timer_init                             
+00011a4c  timer_init                             
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -2196,119 +2196,119 @@ address   name
 0000fffc  __TI_int62                             
 0000fffe  _reset_vector                          
 00010000  KP_Fuzzy                               
-00010950  Light_Error                            
-00010c72  pwm_init                               
-00010f3a  __mspabi_mpyd                          
-000111d2  Kd_Fuzzy                               
-00011386  __TI_frcmpyd                           
-000114ea  __mspabi_subf                          
-000114f0  __mspabi_addf                          
-0001161c  Motor_L_Control_Change_Integral        
-00011728  Motor_R_Control_Change_Integral        
-00011834  pid_diff                               
-00011930  pwm_duty                               
-00011a26  OLED_Init                              
-00011b04  Speed_Control                          
-00011bde  __mspabi_mpyf                          
-00011c96  __mspabi_cvtdf                         
-00011d48  __mspabi_divf                          
-00011dd8  __mspabi_fltuld                        
-00011e58  timer_init                             
-00011ed2  __TI_decompress_lzss                   
-00011f48  run                                    
-00011fb8  __mspabi_fixdul                        
-00012020  __mspabi_fixfi                         
-00012088  __mspabi_cvtfd                         
-000120ec  Control_Init                           
-0001214e  light_get                              
-000121ae  __mspabi_mpyll_f5hw                    
-0001220a  key_switch                             
-00012264  init                                   
-000122ba  __TI_auto_init_nobinit_nopinit_hold_wdt
-0001230e  Get_Speed                              
-0001235e  __mspabi_cmpf                          
-000123a8  main                                   
-000123ee  OLED_Clear                             
-00012432  light_init                             
-00012476  motor_init                             
-000124b8  __mspabi_sral_15                       
-000124bc  __mspabi_sral_14                       
-000124c0  __mspabi_sral_13                       
-000124c4  __mspabi_sral_12                       
-000124c8  __mspabi_sral_11                       
-000124cc  __mspabi_sral_10                       
-000124d0  __mspabi_sral_9                        
-000124d4  __mspabi_sral_8                        
-000124d8  __mspabi_sral_7                        
-000124dc  __mspabi_sral_6                        
-000124e0  __mspabi_sral_5                        
-000124e4  __mspabi_sral_4                        
-000124e8  __mspabi_sral_3                        
-000124ec  __mspabi_sral_2                        
-000124f0  __mspabi_sral_1                        
-000124f6  __mspabi_slll_15                       
-000124fa  __mspabi_slll_14                       
-000124fe  __mspabi_slll_13                       
-00012502  __mspabi_slll_12                       
-00012506  __mspabi_slll_11                       
-0001250a  __mspabi_slll_10                       
-0001250e  __mspabi_slll_9                        
-00012512  __mspabi_slll_8                        
-00012516  __mspabi_slll_7                        
-0001251a  __mspabi_slll_6                        
-0001251e  __mspabi_slll_5                        
-00012522  __mspabi_slll_4                        
-00012526  __mspabi_slll_3                        
-0001252a  __mspabi_slll_2                        
-0001252e  __mspabi_slll_1                        
-00012534  __mspabi_srll_15                       
-00012538  __mspabi_srll_14                       
-0001253c  __mspabi_srll_13                       
-00012540  __mspabi_srll_12                       
-00012544  __mspabi_srll_11                       
-00012548  __mspabi_srll_10                       
-0001254c  __mspabi_srll_9                        
-00012550  __mspabi_srll_8                        
-00012554  __mspabi_srll_7                        
-00012558  __mspabi_srll_6                        
-0001255c  __mspabi_srll_5                        
-00012560  __mspabi_srll_4                        
-00012564  __mspabi_srll_3                        
-00012568  __mspabi_srll_2                        
-0001256c  __mspabi_srll_1                        
-00012572  __mspabi_sllll                         
-000125ac  __mspabi_srlll                         
-000125e6  __mspabi_fltif                         
-0001261c  Write_IIC_Byte                         
-0001264a  Write_IIC_Data                         
-00012678  encoder_init                           
-000126a6  Write_IIC_Command                      
-000126d2  __mspabi_mpyull_f5hw                   
-000126fe  __TI_zero_init_nomemset                
-00012722  __mspabi_fltuf                         
-00012746  delay                                  
-00012764  light_clear                            
-00012782  button_init                            
-0001279c  __mspabi_mpyi_f5hw                     
-000127b4  IIC_Start                              
-000127ca  memset                                 
-000127e0  __mspabi_divu                          
-000127e0  __mspabi_remu                          
-000127f6  OLED_WR_Byte                           
-0001280a  memcpy                                 
-0001281e  IIC_Stop                               
-00012830  __mspabi_fixdu                         
-00012842  __TI_decompress_none                   
-00012854  __mspabi_srll                          
-00012864  EncoderCount                           
-00012872  IIC_Wait_Ack                           
-0001287c  abs                                    
-00012886  __mspabi_negf                          
-00012890  __mspabi_fltud                         
-00012896  C$$EXIT                                
-00012896  abort                                  
-0001289c  _system_pre_init                       
-000128a0  _system_post_cinit                     
+00010766  Light_Error                            
+00010a3c  __mspabi_mpyd                          
+00010cd4  Kd_Fuzzy                               
+00010e8a  pwm_init                               
+00011024  __TI_frcmpyd                           
+00011188  __mspabi_subf                          
+0001118e  __mspabi_addf                          
+000112ba  pid_diff                               
+000113b6  OLED_Init                              
+0001149a  Motor_L_Control_Change_Integral        
+00011578  Motor_R_Control_Change_Integral        
+00011656  Speed_Control                          
+00011722  __mspabi_mpyf                          
+000117da  __mspabi_cvtdf                         
+0001188c  pwm_duty                               
+0001193c  __mspabi_divf                          
+000119cc  __mspabi_fltuld                        
+00011a4c  timer_init                             
+00011ac6  __TI_decompress_lzss                   
+00011b3c  run                                    
+00011bac  __mspabi_fixdul                        
+00011c14  __mspabi_fixfi                         
+00011c7c  __mspabi_cvtfd                         
+00011ce0  Control_Init                           
+00011d42  light_get                              
+00011da2  __mspabi_mpyll_f5hw                    
+00011dfe  key_switch                             
+00011e56  init                                   
+00011eac  __TI_auto_init_nobinit_nopinit_hold_wdt
+00011f00  Get_Speed                              
+00011f4e  __mspabi_cmpf                          
+00011f98  main                                   
+00011fde  light_init                             
+00012022  motor_init                             
+00012064  __mspabi_sral_15                       
+00012068  __mspabi_sral_14                       
+0001206c  __mspabi_sral_13                       
+00012070  __mspabi_sral_12                       
+00012074  __mspabi_sral_11                       
+00012078  __mspabi_sral_10                       
+0001207c  __mspabi_sral_9                        
+00012080  __mspabi_sral_8                        
+00012084  __mspabi_sral_7                        
+00012088  __mspabi_sral_6                        
+0001208c  __mspabi_sral_5                        
+00012090  __mspabi_sral_4                        
+00012094  __mspabi_sral_3                        
+00012098  __mspabi_sral_2                        
+0001209c  __mspabi_sral_1                        
+000120a2  __mspabi_slll_15                       
+000120a6  __mspabi_slll_14                       
+000120aa  __mspabi_slll_13                       
+000120ae  __mspabi_slll_12                       
+000120b2  __mspabi_slll_11                       
+000120b6  __mspabi_slll_10                       
+000120ba  __mspabi_slll_9                        
+000120be  __mspabi_slll_8                        
+000120c2  __mspabi_slll_7                        
+000120c6  __mspabi_slll_6                        
+000120ca  __mspabi_slll_5                        
+000120ce  __mspabi_slll_4                        
+000120d2  __mspabi_slll_3                        
+000120d6  __mspabi_slll_2                        
+000120da  __mspabi_slll_1                        
+000120e0  __mspabi_srll_15                       
+000120e4  __mspabi_srll_14                       
+000120e8  __mspabi_srll_13                       
+000120ec  __mspabi_srll_12                       
+000120f0  __mspabi_srll_11                       
+000120f4  __mspabi_srll_10                       
+000120f8  __mspabi_srll_9                        
+000120fc  __mspabi_srll_8                        
+00012100  __mspabi_srll_7                        
+00012104  __mspabi_srll_6                        
+00012108  __mspabi_srll_5                        
+0001210c  __mspabi_srll_4                        
+00012110  __mspabi_srll_3                        
+00012114  __mspabi_srll_2                        
+00012118  __mspabi_srll_1                        
+0001211e  OLED_Clear                             
+0001215a  __mspabi_sllll                         
+00012194  __mspabi_srlll                         
+000121ce  __mspabi_fltif                         
+00012204  Write_IIC_Byte                         
+00012238  encoder_init                           
+00012266  Write_IIC_Data                         
+00012292  __mspabi_mpyull_f5hw                   
+000122be  Write_IIC_Command                      
+000122e8  __TI_zero_init_nomemset                
+0001230c  __mspabi_fltuf                         
+00012330  light_clear                            
+0001234e  button_init                            
+00012368  __mspabi_mpyi_f5hw                     
+00012380  IIC_Start                              
+00012396  memset                                 
+000123ac  __mspabi_divu                          
+000123ac  __mspabi_remu                          
+000123c2  memcpy                                 
+000123d6  IIC_Stop                               
+000123e8  __mspabi_fixdu                         
+000123fa  __TI_decompress_none                   
+0001240c  OLED_WR_Byte                           
+0001241c  __mspabi_srll                          
+0001242c  EncoderCount                           
+0001243a  IIC_Wait_Ack                           
+00012444  abs                                    
+0001244e  __mspabi_negf                          
+00012458  __mspabi_fltud                         
+0001245e  C$$EXIT                                
+0001245e  abort                                  
+00012464  _system_pre_init                       
+00012468  _system_post_cinit                     
+0001246a  delay                                  
 ffffffff  __TI_pprof_out_hndl                    
 ffffffff  __TI_prof_data_size                    
 ffffffff  __TI_prof_data_start                   

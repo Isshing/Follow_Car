@@ -127,20 +127,21 @@ void PID_LINE_SET(LineErrPID *pid)
 void Light_Error(LIGHT *light, LineErrPID *pid)
 {
 
-    short sum = 0;     // 绱姞鍣�1
-    short sum2 = 0;    // 绱姞鍣�2
-    beeb_flag = 0;     // 璨屼技涓鸿渹楦ｅ櫒鐨勬爣蹇椾綅
-    pid->line_err = 0; // 涓嚎鍋忓樊
+    short sum = 0;     // 累加器1
+    short sum2 = 0;    // 累加器2
+    beeb_flag = 0;     // 貌似为蜂鸣器的标志位
+    pid->line_err = 0; // 中线偏差
 
     light_posi_1[0] = 100;
     light_posi_1[1] = 100;
 
-    /***************浜旇矾鐏板害浼犳劅鍣ㄧ殑绾㈢嚎鍒ゆ柇****************
-     * 鐏板害缂栧彿锛�0 1 2 3 4
-     * 绗�2璺负涓棿浼犳劅鍣�
-     * 鍒ゆ柇椤哄簭锛氫粠2寮�濮� 1 3  0 4
-     * pid鎺у埗鍐嶅啓涓�涓�
+    /***************七路灰度传感器的红线判断****************
+     * 灰度编号：0 1 2 3 4 5 6
+     * 第3路为中间传感器
+     * 判断顺序：从2开始 1 3  0 4
+     * pid控制再写一下
      ****************************************************/
+    // 最中间灰度不设置偏差
     if (light->c_3 == 1 && l3_enable == 1)
     {
         pid->line_err = -pid->line_err_last * 0.99;
@@ -153,7 +154,7 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
     }
     if (light->c_2 == 1 && l2_enable == 1)
     {
-        pid->line_err -= 8;
+        pid->line_err -= 8; //  偏差赋值
         if (sum < 2)
         {
             light_posi_1[sum] = 2;
@@ -303,27 +304,27 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
     //       }
     //   }
 
-    // 鐏板害娌℃湁浠讳綍鍊硷紝淇濇寔宸＄嚎
+    // 灰度没有任何值，保持巡线
     if (sum == 0)
     {
         sum = 1;
         pid->line_err = pid->line_err_last;
     }
 
-    // 杩涜鎷愮偣鍒ゆ柇
+    // 进行拐点判断
     if ((sum > 1) || (sum2 > 1))
     {
         if (1)
         {
 
-            // 鍒ゆ柇鍐呭鍦堢壒寰�
+            // 判断内外圈特征
             if (((abs(light_posi_1[0] - light_posi_1[1]) > 1) && (sum == 2)) /* ||
                  ((abs(light_posi_2[0] - light_posi_2[1]) > 1) && (sum2 == 2))*/
             )
             {
                 check_corner++;
                 force_out = 0;
-                // 杩炵画妫�娴嬪埌涓ゆ
+                // 连续检测到两次
                 if (check_corner >= 2)
                 {
                     if (corner_enter > 210)
@@ -344,7 +345,7 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
             beeb_flag = 0;
         }
 
-        // 灏忛棶閫夋嫨
+        // 小问选择
         //            if (problem == 1 || problem == 2)
         //            {
         if (corner_flag == 1 || corner_flag == 3)
@@ -408,7 +409,7 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
         //                }
         //            }
 
-        // 杩炵画涓変釜浼犳劅鍣ㄦ帰娴嬪埌鐏板害鍊间笖闂撮殧涓�娈垫椂闂�
+        // 连续三个传感器探测到灰度值且间隔一段时间
         //            if (((light->c_0 == 1 && light->c_1 == 1 && light->c_2 == 1) ||
         //                 (light->c_1 == 1 && light->c_2 == 1 && light->c_3 == 1) ||
         //                 (light->c_2 == 1 && light->c_3 == 1 && light->c_4 == 1) ||
@@ -522,7 +523,7 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
     //            //      corner_flag = 0;
     //        }
 
-    // 濡傛灉閫夋嫨璧板鍦� 鍙︿竴渚х伆搴﹀叧闂�
+    // 如果选择走外圈 另一侧灰度关闭
     if (corner_outter_flag != 0 && corner_enter < 95)
     {
         pid->line_err = 1;
@@ -530,7 +531,7 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
         l1_enable = 0;
         l2_enable = 0;
     }
-    // 閫夋嫨鍐呭湀锛屽閮ㄧ伆搴﹀叧闂�
+    // 选择内圈，外部灰度关闭
     if (corner_inner_flag != 0 && corner_enter < 95)
     {
         pid->line_err = -40;
@@ -538,7 +539,7 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
         l5_enable = 0;
         l6_enable = 0;
     }
-    // 杞集鏃朵娇鐢ㄥ畾鏃跺櫒锛�95娆¤浆寮粨鏉熷悗鎭㈠姝ｅ父宸＄嚎
+    // 转弯时使用定时器，95次转弯结束后恢复正常巡线
     if ((corner_enter >= 95) && (l0_enable * l1_enable * l2_enable * l3_enable * l4_enable * l5_enable * l6_enable == 0))
     {
         l0_enable = 1;
