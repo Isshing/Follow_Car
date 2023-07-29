@@ -68,17 +68,17 @@ void Motor_L_Control_Change_Integral(float setpoint, PID_2 *vPID, Motor_Para *Mo
     static float lasterror = 0; // 前一拍偏差
 
     thisError = setpoint - processValue; // 得到偏差值
-                                         //    Motor->L_Change_P = Motor->L_Bas_KP + Motor->L_Gain_KP * (1 - 1.0 / FExp(Motor->L_Cp * Fabs(thisError)));
+    Motor->L_Change_P = Motor->L_Bas_KP + Motor->L_Gain_KP * (1 - 1.0 / expf(Motor->L_Cp * Fabs(thisError)));
 
-    //    Motor->L_Change_I = (1.0 / FExp(Motor->L_Ci * Fabs(thisError))) * Motor->L_Max_I;
+    Motor->L_Change_I = (1.0 / expf(Motor->L_Ci * Fabs(thisError))) * Motor->L_Max_I;
 
     result = vPID->result;
 
     iError = (thisError + lasterror) / 2.0; // 如果上次输出结果处于正常范围内，正常积分
 
     pError = thisError - lasterror;
-    vPID->P_out = Motor->L_Bas_KP * pError;
-    vPID->I_out = Motor->L_Max_I * iError;
+    vPID->P_out = Motor->L_Change_P * pError;
+    vPID->I_out = Motor->L_Change_I * iError;
     increment = vPID->P_out + vPID->I_out; // 变积分不用积分分离，因为积分分离本质就是变积分的一种特殊情况
     result = result + increment;
 
@@ -96,16 +96,16 @@ void Motor_R_Control_Change_Integral(float setpoint, PID_2 *vPID, Motor_Para *Mo
     static float lasterror = 0; // 前一拍偏差
 
     thisError = setpoint - processValue; // 得到偏差值
-                                         //    Motor->R_Change_P = Motor->R_Bas_KP + Motor->R_Gain_KP * (1 - 1.0 / FExp(Motor->R_Cp * Fabs(thisError)));
-                                         //    Motor->R_Change_I = (1.0 / FExp(Motor->R_Ci * Fabs(thisError))) * Motor->R_Max_I;
+    Motor->R_Change_P = Motor->R_Bas_KP + Motor->R_Gain_KP * (1 - 1.0 / expf(Motor->R_Cp * Fabs(thisError)));
+    Motor->R_Change_I = (1.0 / expf(Motor->R_Ci * Fabs(thisError))) * Motor->R_Max_I;
     result = vPID->result;
 
     iError = (thisError + lasterror) / 2.0; // 如果上次输出结果处于正常范围内，正常积分
 
     pError = thisError - lasterror;
 
-    vPID->P_out = Motor->L_Bas_KP * pError;
-    vPID->I_out = Motor->L_Max_I * iError;
+    vPID->P_out = Motor->R_Change_P * pError;
+    vPID->I_out = Motor->R_Change_I * iError;
     increment = vPID->P_out + vPID->I_out;
     result = result + increment;
 

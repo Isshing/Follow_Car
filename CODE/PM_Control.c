@@ -27,9 +27,15 @@ void Control_Init(void)
     MOTOR.R_Max_I = 1;
     MOTOR.L_Bas_KP = 2;
     MOTOR.R_Bas_KP = 2;
+    MOTOR.L_Gain_KP =1;
+    MOTOR.R_Gain_KP =1;
+    MOTOR.L_Cp =0.2;
+    MOTOR.R_Cp =0.2;
+    MOTOR.L_Ci =0.2;
+    MOTOR.R_Ci =0.2;
+
     kp_m = 0.145;
     kd_m = 0.14;
-    //    fuzzy_ki =0.01;
     fuzzy_kp_bas = 0.02;
 }
 
