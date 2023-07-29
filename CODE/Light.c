@@ -40,8 +40,14 @@ int apoint_time = 0;
 //int sent4_flag = 0;
 //char hold4 = 9;
 
+float dxd =0;
+
 void light_init(void)
 {
+
+    P3DIR &= ~(BIT6);
+    P3OUT &= ~(BIT6);
+    P3REN |= ( BIT6);
 
     P6DIR &= ~(BIT1 + BIT2 + BIT0 + BIT6);
     P6OUT &= ~(BIT1 + BIT2 + BIT0 + BIT6);
@@ -50,6 +56,10 @@ void light_init(void)
     P1DIR &= ~(BIT6 );
     P1OUT &= ~(BIT6 );
     P1REN |= ( BIT6 );
+
+    P7DIR &= ~(BIT0);
+    P7OUT &= ~(BIT0);
+    P7REN |= ( BIT0);
 
 }
 
@@ -60,6 +70,8 @@ void light_get(void)
     LINELIGHT.c_2=C_2_VAL>GET_VAL?1:0;
     LINELIGHT.c_3=C_3_VAL>GET_VAL?1:0;
     LINELIGHT.c_4=C_4_VAL>GET_VAL?1:0;
+    LINELIGHT.c_5=C_5_VAL>GET_VAL?1:0;
+    LINELIGHT.c_6=C_6_VAL>GET_VAL?1:0;
 //
 //    if (C_0_VAL == GET_VAL)
 //    {
@@ -118,13 +130,21 @@ void light_clear(void)
     LINELIGHT.c_2 = 0;
     LINELIGHT.c_3 = 0;
     LINELIGHT.c_4 = 0;
+    LINELIGHT.c_5 = 0;
+    LINELIGHT.c_6 = 0;
 }
 
 void PID_LINE_SET(LineErrPID *pid)
 {
-    pid->Ki = 0.04;
-    pid->Kp = 0.69;
-    pid->kd = 0;
+/*10*/
+//    pid->Ki = 0.01;
+//    pid->Kp = 0.085;
+//    pid->kd = 0.09;
+
+/*15*/
+    pid->Ki = 0.01;
+    pid->Kp = 0.1;
+    pid->kd = 0.15;
 
 //    if(ProblemNo == 1)
 //    {
@@ -172,57 +192,102 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
          * 鍒ゆ柇椤哄簭锛氫粠2寮�濮� 1 3  0 4
          * pid鎺у埗鍐嶅啓涓�涓�
          ****************************************************/
-
-        //鏈�涓棿鐏板害涓嶈缃亸宸�
-        if (light->c_2 == 1 && l2_enable == 1)
-        {
-            pid->line_err = -pid->line_err_last * 0.98;
-            if (sum < 2)
-            {
-                light_posi_1[sum] = 2;
-            }
-            sum++;
-            pid->intergral = 0;
-        }
-
-
-        if (light->c_1 == 1 && l1_enable == 1)
-        {
-
-            pid->line_err -= 8; //  鍋忓樊璧嬪��
-            if (sum < 2)
-            {
-                light_posi_1[sum] = 1;
-            }
-            sum++;
-        }
         if (light->c_3 == 1 && l3_enable == 1)
-        {
-            pid->line_err += 16;
-            if (sum < 2)
             {
-                light_posi_1[sum] = 3;
+                pid->line_err = -pid->line_err_last*0.99;
+                if (sum<2)
+                {
+                    light_posi_1[sum] = 3;
+                }
+                sum++;
+                pid->intergral = 0;
             }
-            sum++;
-        }
-        if (light->c_0 == 1 && l0_enable == 1)
-        {
-            pid->line_err -= 21;
-            if (sum < 2)
+            if (light->c_2 == 1 && l2_enable == 1)
             {
-                light_posi_1[sum] = 0;
+                pid->line_err -= 8;
+                if (sum<2)
+                {
+                    light_posi_1[sum] = 2;
+                }
+                sum++;
             }
-            sum++;
-        }
-        if (light->c_4 == 1 && l4_enable == 1)
-        {
-            pid->line_err += 29;
-            if (sum < 2)
+            if (light->c_4 == 1 && l4_enable == 1)
             {
-                light_posi_1[sum] = 4;
+                pid->line_err += 16;
+                if (sum<2)
+                {
+                    light_posi_1[sum] = 4;
+                }
+                sum++;
             }
-            sum++;
-        }
+            if (light->c_1 == 1 && l1_enable == 1)
+            {
+
+                    pid->line_err -= 21;
+
+                if (sum<2)
+                {
+                    light_posi_1[sum] = 1;
+                }
+                sum++;
+            }
+            if (light->c_5 == 1 && l5_enable == 1)
+            {
+
+                    pid->line_err += 27;
+
+//                    if(ProblemNo == 2 || ProblemNo == 3)
+//                    {
+//                        pid->line_err += 4;
+//                    }
+
+                if (sum<2)
+                {
+                    light_posi_1[sum] = 5;
+                }
+                sum++;
+            }
+            if (light->c_0 == 1 && l0_enable == 1)
+            {
+                pid->line_err -= 33;
+
+//                if(ProblemNo == 2)
+//                {
+//                    pid->line_err -= 6;
+//                }
+//
+//                if(ProblemNo == 2 || ProblemNo == 3)
+//                {
+//                    pid->line_err -= 8;
+//                }
+
+
+
+                if (sum<2)
+                {
+                    light_posi_1[sum] = 0;
+                }
+                sum++;
+            }
+            if (light->c_6 == 1 && l6_enable == 1)
+            {
+
+
+                pid->line_err += 37;
+
+//                if(ProblemNo == 2 || ProblemNo == 3)
+//                {
+//                    pid->line_err -= 1;
+//                }
+
+
+                if (sum<2)
+                {
+                    light_posi_1[sum] = 6;
+                }
+                sum++;
+            }
+
 
 //        /*********************渚ц竟鐏板害**************************
 //         * 10鍒�16璺�
@@ -341,15 +406,15 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
                 {
                     corner_outter_flag = 1;
                     corner_inner_flag = 0;
-                    P1OUT |= BIT0;  // 璁剧疆寮曡剼涓洪珮鐢靛钩
-                    P4OUT &= ~BIT7; // 璁剧疆寮曡剼涓轰綆鐢靛钩
+//                    P1OUT |= BIT0;  // 璁剧疆寮曡剼涓洪珮鐢靛钩
+//                    P4OUT &= ~BIT7; // 璁剧疆寮曡剼涓轰綆鐢靛钩
                 }
                 if (corner_flag == 2 || corner_flag == 4)
                 {
                     corner_outter_flag = 1;
                     corner_inner_flag = 0;
-                    P1OUT &= ~BIT0; // 璁剧疆涓や釜寮曡剼涓洪珮鐢靛钩
-                    P4OUT &= ~BIT7;
+//                    P1OUT &= ~BIT0; // 璁剧疆涓や釜寮曡剼涓洪珮鐢靛钩
+//                    P4OUT &= ~BIT7;
                 }
 //            }
 //            if (problem == 3)
@@ -514,7 +579,7 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
 
             //濡傛灉閫夋嫨璧板鍦� 鍙︿竴渚х伆搴﹀叧闂�
         if (corner_outter_flag != 0 && corner_enter < 95)
-        {
+        {  pid->line_err = 1;
             l0_enable = 0;
             l1_enable = 0;
             l2_enable = 0;
@@ -539,14 +604,21 @@ void Light_Error(LIGHT *light, LineErrPID *pid)
         }
 
         pid->line_err = pid->line_err / sum;
-        pid->intergral += pid->line_err;
+
+        dxd =pid->line_err -pid->line_err_last;
+
+
+//        pid->intergral += (pid->line_err +pid->line_err_last)/2.0;
+
+
+//        pid->intergral = MINMAX(pid->intergral, -10, +10);
+//        pid->out_val = pid->Kp * pid->line_err + pid->Ki * pid->intergral+ pid->kd *(pid->line_err -pid->line_err_last) ;
+//        pid->out_val=MINMAX(pid->out_val, -20, 20);
+
         pid->line_err_last = pid->line_err;
 
-        pid->intergral = MINMAX(pid->intergral, -10, +10);
-        pid->out_val = pid->Kp * pid->line_err + pid->Ki * pid->intergral;
-        pid->out_val=MINMAX(pid->out_val, -15, 15);
-        //    OLED_ShowNum(50, 6, LINECTL.line_err, 7, 12);
-        //    OLED_ShowNum(50, 5, sum, 2, 12);
+
+        pid_diff();
 
 }
 

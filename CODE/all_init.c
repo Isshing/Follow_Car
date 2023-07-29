@@ -26,6 +26,7 @@ void init(void)
 //    uart_init(LASER_UART);
 
     Control_Init();
+//    PID_LINE_SET(&LINECTL);
 
     __bis_SR_register(GIE); // Enter LPM0, interrupts enabled
     _EINT();

@@ -4,11 +4,13 @@
 
 #define GET_VAL 0
 
-#define C_0_VAL (P6IN&BIT6)
-#define C_1_VAL (P6IN&BIT1)
-#define C_2_VAL (P6IN&BIT2)
-#define C_3_VAL (P6IN&BIT0)
-#define C_4_VAL (P1IN&BIT6)
+#define C_0_VAL (P3IN&BIT6)
+#define C_1_VAL (P6IN&BIT6)
+#define C_2_VAL (P6IN&BIT1)
+#define C_3_VAL (P6IN&BIT2)
+#define C_4_VAL (P6IN&BIT0)
+#define C_5_VAL (P1IN&BIT6)
+#define C_6_VAL (P7IN&BIT0)
 typedef struct
 {
     short c_0;
@@ -16,6 +18,8 @@ typedef struct
     short c_2;
     short c_3;
     short c_4;
+    short c_5;
+    short c_6;
 
 } LIGHT;
 
@@ -45,6 +49,8 @@ extern int force_out;
 extern int corner_find;
 extern int problem;
 extern int apoint_time;
+
+extern float dxd;
 
 void light_init(void);
 void light_clear(void);
