@@ -16,13 +16,13 @@ void start_sampling(void)
     ADC12CTL0 |= ADC12SC;
 }
 
-__interrupt void ADC12_ISR(void)
+__interrupt void ADC12_ISR(void)  //adc中断，这里写具体操作
 {
     // static uint8_t cnt = 0;
     int data_plus, data_minus;
     switch (__even_in_range(ADC12IV, 34))
     {
-    case 0x06:
+    case 0x06:  //中断向量6
 
 
         data_plus = ADC12MEM0;
