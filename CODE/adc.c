@@ -16,6 +16,13 @@ void start_sampling(void)
     ADC12CTL0 |= ADC12SC;
 }
 
+
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector=ADC12_VECTOR
+__interrupt
+#elif defined(__GNUC__)
+__attribute__((interrupt(ADC12_VECTOR)))
+#endif
 __interrupt void ADC12_ISR(void)  //adc中断，这里写具体操作
 {
     // static uint8_t cnt = 0;
