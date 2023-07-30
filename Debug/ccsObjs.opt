@@ -7,6 +7,7 @@
 "./CODE/QMath.obj"
 "./CODE/TOF.obj"
 "./CODE/WIRELESS.obj"
+"./CODE/adc.obj"
 "./CODE/all_init.obj"
 "./CODE/button.obj"
 "./CODE/delay.obj"

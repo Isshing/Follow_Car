@@ -36,6 +36,7 @@ CODE/WIRELESS.obj: ../CODE/Beep.h
 CODE/WIRELESS.obj: ../CODE/button.h
 CODE/WIRELESS.obj: ../CODE/key.h
 CODE/WIRELESS.obj: ../CODE/Light.h
+CODE/WIRELESS.obj: ../CODE/adc.h
 
 ../CODE/WIRELESS.c:
 
@@ -108,4 +109,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/key.h:
 
 ../CODE/Light.h:
+
+../CODE/adc.h:
 

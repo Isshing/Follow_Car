@@ -19,6 +19,7 @@ ORDERED_OBJS += \
 "./CODE/QMath.obj" \
 "./CODE/TOF.obj" \
 "./CODE/WIRELESS.obj" \
+"./CODE/adc.obj" \
 "./CODE/all_init.obj" \
 "./CODE/button.obj" \
 "./CODE/delay.obj" \
@@ -164,8 +165,8 @@ TJ.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "CODE\Back_Wheel.obj" "CODE\Beep.obj" "CODE\Light.obj" "CODE\NRF24L01.obj" "CODE\Oled.obj" "CODE\PM_Control.obj" "CODE\QMath.obj" "CODE\TOF.obj" "CODE\WIRELESS.obj" "CODE\all_init.obj" "CODE\button.obj" "CODE\delay.obj" "CODE\distance.obj" "CODE\encoder.obj" "CODE\gy86.obj" "CODE\gyroscope.obj" "CODE\key.obj" "CODE\main.obj" "CODE\pwm.obj" "CODE\timer.obj" "CODE\uart.obj" 
-	-$(RM) "CODE\Back_Wheel.d" "CODE\Beep.d" "CODE\Light.d" "CODE\NRF24L01.d" "CODE\Oled.d" "CODE\PM_Control.d" "CODE\QMath.d" "CODE\TOF.d" "CODE\WIRELESS.d" "CODE\all_init.d" "CODE\button.d" "CODE\delay.d" "CODE\distance.d" "CODE\encoder.d" "CODE\gy86.d" "CODE\gyroscope.d" "CODE\key.d" "CODE\main.d" "CODE\pwm.d" "CODE\timer.d" "CODE\uart.d" 
+	-$(RM) "CODE\Back_Wheel.obj" "CODE\Beep.obj" "CODE\Light.obj" "CODE\NRF24L01.obj" "CODE\Oled.obj" "CODE\PM_Control.obj" "CODE\QMath.obj" "CODE\TOF.obj" "CODE\WIRELESS.obj" "CODE\adc.obj" "CODE\all_init.obj" "CODE\button.obj" "CODE\delay.obj" "CODE\distance.obj" "CODE\encoder.obj" "CODE\gy86.obj" "CODE\gyroscope.obj" "CODE\key.obj" "CODE\main.obj" "CODE\pwm.obj" "CODE\timer.obj" "CODE\uart.obj" 
+	-$(RM) "CODE\Back_Wheel.d" "CODE\Beep.d" "CODE\Light.d" "CODE\NRF24L01.d" "CODE\Oled.d" "CODE\PM_Control.d" "CODE\QMath.d" "CODE\TOF.d" "CODE\WIRELESS.d" "CODE\adc.d" "CODE\all_init.d" "CODE\button.d" "CODE\delay.d" "CODE\distance.d" "CODE\encoder.d" "CODE\gy86.d" "CODE\gyroscope.d" "CODE\key.d" "CODE\main.d" "CODE\pwm.d" "CODE\timer.d" "CODE\uart.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

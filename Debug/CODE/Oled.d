@@ -37,6 +37,7 @@ CODE/Oled.obj: ../CODE/Beep.h
 CODE/Oled.obj: ../CODE/button.h
 CODE/Oled.obj: ../CODE/key.h
 CODE/Oled.obj: ../CODE/Light.h
+CODE/Oled.obj: ../CODE/adc.h
 
 ../CODE/Oled.c:
 
@@ -111,4 +112,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/key.h:
 
 ../CODE/Light.h:
+
+../CODE/adc.h:
 

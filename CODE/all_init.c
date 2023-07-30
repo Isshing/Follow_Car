@@ -188,6 +188,7 @@ bool increaseVCoreToLevel2(void)
     return (status);
 }
 
+
 void init(void)
 {
     increaseVCoreToLevel2();

@@ -36,6 +36,7 @@ CODE/all_init.obj: ../CODE/Beep.h
 CODE/all_init.obj: ../CODE/button.h
 CODE/all_init.obj: ../CODE/key.h
 CODE/all_init.obj: ../CODE/Light.h
+CODE/all_init.obj: ../CODE/adc.h
 
 ../CODE/all_init.c:
 
@@ -108,4 +109,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/key.h:
 
 ../CODE/Light.h:
+
+../CODE/adc.h:
 

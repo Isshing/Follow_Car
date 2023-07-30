@@ -35,6 +35,7 @@ CODE/main.obj: ../CODE/Beep.h
 CODE/main.obj: ../CODE/button.h
 CODE/main.obj: ../CODE/key.h
 CODE/main.obj: ../CODE/Light.h
+CODE/main.obj: ../CODE/adc.h
 
 ../CODE/main.c:
 
@@ -105,4 +106,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/key.h:
 
 ../CODE/Light.h:
+
+../CODE/adc.h:
 

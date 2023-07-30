@@ -24,5 +24,6 @@
 #include "button.h"
 #include "key.h"
 #include "Light.h"
+#include "adc.h"
 
 #endif /* HARDWARE_HEADFILE_H_ */

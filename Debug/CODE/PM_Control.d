@@ -36,6 +36,7 @@ CODE/PM_Control.obj: ../CODE/Beep.h
 CODE/PM_Control.obj: ../CODE/button.h
 CODE/PM_Control.obj: ../CODE/key.h
 CODE/PM_Control.obj: ../CODE/Light.h
+CODE/PM_Control.obj: ../CODE/adc.h
 
 ../CODE/PM_Control.c:
 
@@ -108,4 +109,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/key.h:
 
 ../CODE/Light.h:
+
+../CODE/adc.h:
 

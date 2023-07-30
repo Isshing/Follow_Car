@@ -36,6 +36,7 @@ CODE/gy86.obj: ../CODE/Beep.h
 CODE/gy86.obj: ../CODE/button.h
 CODE/gy86.obj: ../CODE/key.h
 CODE/gy86.obj: ../CODE/Light.h
+CODE/gy86.obj: ../CODE/adc.h
 
 ../CODE/gy86.c:
 
@@ -108,4 +109,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/key.h:
 
 ../CODE/Light.h:
+
+../CODE/adc.h:
 

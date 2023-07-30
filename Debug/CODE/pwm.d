@@ -36,6 +36,7 @@ CODE/pwm.obj: ../CODE/Beep.h
 CODE/pwm.obj: ../CODE/button.h
 CODE/pwm.obj: ../CODE/key.h
 CODE/pwm.obj: ../CODE/Light.h
+CODE/pwm.obj: ../CODE/adc.h
 
 ../CODE/pwm.c:
 
@@ -108,4 +109,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/key.h:
 
 ../CODE/Light.h:
+
+../CODE/adc.h:
 

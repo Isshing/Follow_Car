@@ -15,6 +15,7 @@ C_SRCS += \
 ../CODE/QMath.c \
 ../CODE/TOF.c \
 ../CODE/WIRELESS.c \
+../CODE/adc.c \
 ../CODE/all_init.c \
 ../CODE/button.c \
 ../CODE/delay.c \
@@ -38,6 +39,7 @@ C_DEPS += \
 ./CODE/QMath.d \
 ./CODE/TOF.d \
 ./CODE/WIRELESS.d \
+./CODE/adc.d \
 ./CODE/all_init.d \
 ./CODE/button.d \
 ./CODE/delay.d \
@@ -61,6 +63,7 @@ OBJS += \
 ./CODE/QMath.obj \
 ./CODE/TOF.obj \
 ./CODE/WIRELESS.obj \
+./CODE/adc.obj \
 ./CODE/all_init.obj \
 ./CODE/button.obj \
 ./CODE/delay.obj \
@@ -84,6 +87,7 @@ OBJS__QUOTED += \
 "CODE\QMath.obj" \
 "CODE\TOF.obj" \
 "CODE\WIRELESS.obj" \
+"CODE\adc.obj" \
 "CODE\all_init.obj" \
 "CODE\button.obj" \
 "CODE\delay.obj" \
@@ -107,6 +111,7 @@ C_DEPS__QUOTED += \
 "CODE\QMath.d" \
 "CODE\TOF.d" \
 "CODE\WIRELESS.d" \
+"CODE\adc.d" \
 "CODE\all_init.d" \
 "CODE\button.d" \
 "CODE\delay.d" \
@@ -130,6 +135,7 @@ C_SRCS__QUOTED += \
 "../CODE/QMath.c" \
 "../CODE/TOF.c" \
 "../CODE/WIRELESS.c" \
+"../CODE/adc.c" \
 "../CODE/all_init.c" \
 "../CODE/button.c" \
 "../CODE/delay.c" \
