@@ -26,7 +26,7 @@
 #define GYRO_YOUT_H 0x45
 #define GYRO_ZOUT_H 0x47
 
-#define CPU_F ((double)1000000)
+#define CPU_F ((double)15990784)
 #define delayus(x) __delay_cycles((long)(CPU_F * (double)x / 1000000.0))
 
 /***************��������*****************/
@@ -35,6 +35,11 @@ extern float Yaw_IIC, Roll_IIC, Pitch_IIC;
 extern float accx, accy, accz;
 extern float gyrox, gyroy, gyroz;
 extern float anglex, angley, anglez;
+
+extern float gyro_z_0, gyro_y_0;
+extern float g_z, yaw_angle, pitch_angle, last_icm_gyro_z, Kalman_pitch_angle, last_icm_gyro_y;
+
+extern float Merge_Pitch;
 
 /*************************************/
 
@@ -56,4 +61,6 @@ extern void MPU_IIC_Stop(void);
 extern void MPU_IIC_NAck(void);
 extern void MPU_IIC_Ack(void);
 extern void Data_show(void);
+void gyro_calculate(void);
+void ramp_ang(void);
 #endif /* HARDWARE_GY86_H_ */

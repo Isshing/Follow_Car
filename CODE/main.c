@@ -52,6 +52,17 @@ int main(void)
 
 		//	    OLED_ShowNum(14,2,(int)Vd,10,12);
 
+		//		OLED_ShowNum(14,1,encoder_LL,10,12);
+		//		OLED_ShowNum(14,2,encoder_RR,10,12);
+
+//		OLED_ShowNum(14, 3, Yaw_IIC, 10, 12);
+//		OLED_ShowNum(14, 4, Roll_IIC, 10, 12);
+//		OLED_ShowNum(14, 5, Pitch_IIC, 10, 12);
+
+//        OLED_ShowNum(14, 3, (int)gyrox, 10, 12);
+//        OLED_ShowNum(14, 4, (int)gyroy, 10, 12);
+//        OLED_ShowNum(14, 5, (int)gyroz, 10, 12);
+		Data_show();
 		light_clear();
 
 		if (key1_flag)

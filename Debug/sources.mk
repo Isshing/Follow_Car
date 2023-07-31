@@ -113,4 +113,5 @@ PDE_DEPS__QUOTED :=
 SUBDIRS := \
 . \
 CODE \
+driverlib/MSP430F5xx_6xx \
 

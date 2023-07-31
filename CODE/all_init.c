@@ -192,7 +192,7 @@ bool increaseVCoreToLevel2(void)
 void init(void)
 {
     increaseVCoreToLevel2();
-    // initClockTo16MHz(); //记得改F_CPU 为 15990784
+     initClockTo16MHz(); //记得改F_CPU 为 15990784
 
     // OLED初始化
     delay(50);
@@ -206,8 +206,10 @@ void init(void)
     encoder_init();
     light_init();
     timer_init(20, 20);
-    timer_init(11, 20);
+    timer_init(11, 100);
     motor_init(MOTOR_L_PWM, MOTOR_R_PWM);
+
+    InitMPU6050();
 
     //    gpio_init();
 
@@ -220,5 +222,4 @@ void init(void)
     //    __bis_SR_register(GIE); // Enter LPM0, interrupts enabled
     _EINT();
 
-    //    InitMPU6050();
 }

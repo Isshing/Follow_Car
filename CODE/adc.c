@@ -61,3 +61,9 @@ __interrupt void ADC12_ISR(void)  //adc中断，这里写具体操作
 //        __bis_SR_register(LPM0_bits + GIE);
 //    }
 //}
+
+
+
+
+
+

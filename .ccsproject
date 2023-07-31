@@ -11,7 +11,7 @@
 	<linkerCommandFile value="lnk_msp430f5529.cmd"/>
 	<rts value="libc.a"/>
 	<createSlaveProjects value=""/>
-	<templateProperties value="id=com.ti.common.project.core.emptyProjectWithMainTemplate_msp430"/>
+	<templateProperties value="id=com.ti.mcu.msp430.driverlib.example_1,products=com.ti.mcu.msp430.driverlib"/>
 	<filesToOpen value="main.c"/>
 	<origin value="E:/Ti/workspace/TJ"/>
 	<isTargetManual value="false"/>

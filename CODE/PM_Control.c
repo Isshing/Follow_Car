@@ -23,16 +23,16 @@ void Control_Init(void)
 {
     Motor_Left.setpoint = 15; // 20pwm ~ 0.75m/s
     Motor_Right.setpoint = 15;
-    MOTOR.L_Max_I = 1;
-    MOTOR.R_Max_I = 1;
+    MOTOR.L_Max_I = 2;
+    MOTOR.R_Max_I = 2;
     MOTOR.L_Bas_KP = 2;
     MOTOR.R_Bas_KP = 2;
-    MOTOR.L_Gain_KP =1;
-    MOTOR.R_Gain_KP =1;
-    MOTOR.L_Cp =0.2;
-    MOTOR.R_Cp =0.2;
-    MOTOR.L_Ci =0.2;
-    MOTOR.R_Ci =0.2;
+    MOTOR.L_Gain_KP = 3;
+    MOTOR.R_Gain_KP = 3;
+    MOTOR.L_Cp = 0.2;
+    MOTOR.R_Cp = 0.2;
+    MOTOR.L_Ci = 0.2;
+    MOTOR.R_Ci = 0.2;
 
     kp_m = 0.145;
     kd_m = 0.14;
@@ -41,6 +41,7 @@ void Control_Init(void)
 
 void Speed_Control(void) //
 {
+
     //        SetLeft  = Motor_Left.setpoint+LINECTL.out_val;
     //        SetRight = Motor_Right.setpoint-LINECTL.out_val;
     SetLeft = Motor_Left.setpoint - Vd;
@@ -52,7 +53,8 @@ void Speed_Control(void) //
     Motor_L_Control_Change_Integral(SetLeft, &Motor_Left, &MOTOR, encoder_LL);
     Motor_R_Control_Change_Integral(SetRight, &Motor_Right, &MOTOR, encoder_RR);
 
-    run(Motor_Left.result, Motor_Right.result);
+    run(-Motor_Left.result, -Motor_Right.result);
+
 }
 
 void Turn_Left(void)

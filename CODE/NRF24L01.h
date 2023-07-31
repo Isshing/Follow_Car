@@ -74,7 +74,7 @@
 #define TX_OK 0x20  // TX发送完成中断
 #define RX_OK 0x40  // 接收到数据中断
 
-#define CPU_F ((double)1000000)
+#define CPU_F ((double)15990784)
 
 extern uchar tx_buf[TX_PLOAD_WIDTH];
 extern uchar rx_buf[RX_PLOAD_WIDTH];

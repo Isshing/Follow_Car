@@ -2,10 +2,21 @@
 
 // #define abs(a) (u32)(a>=0?a:-a)
 
-float Yaw_IIC, Roll_IIC, Pitch_IIC;
+float Yaw_IIC = 0;
+float Roll_IIC = 0;
+float Pitch_IIC = 0;
 float accx, accy, accz;
 float gyrox, gyroy, gyroz;
 float anglex, angley, anglez;
+float dt = 0.1;
+
+float gyro_z_0 = -1.2; //! 值要自己确定
+float gyro_y_0 = 3.86;
+float g_z, last_g_z, yaw_angle = 0, last_icm_gyro_z, Kalman_pitch_angle, last_icm_gyro_y;
+float g_y;
+float pitch_angle = 0;
+float Merge_Pitch =0;
+
 
 void InitMPU6050()
 {
@@ -138,17 +149,28 @@ unsigned char I2C_RecvByte()
 
 void mpupose(void)
 {
+    float a =0.1;
+
+    static float last_pitch =0;
     accx = ((float)GetData(ACCEL_XOUT_H));
     accy = ((float)GetData(ACCEL_YOUT_H));
     accz = ((float)GetData(ACCEL_ZOUT_H));
 
-    //    gyrox=((float)GetData(GYRO_XOUT_H))/16.4;
-    //    gyroy=((float)GetData(GYRO_YOUT_H))/16.4;
-    //    gyroz=((float)GetData(GYRO_ZOUT_H))/16.4;
+    gyrox = ((float)GetData(GYRO_XOUT_H)) / 16.4;
+    gyroy = ((float)GetData(GYRO_YOUT_H)) / 16.4;
+    gyroz = ((float)GetData(GYRO_ZOUT_H)) / 16.4;
 
     Yaw_IIC = atan(accx / accz) * 57.2958;
-    Roll_IIC = atan(accy / accz) * 57.2958;
+//    Roll_IIC = atan(accy / accz) * 57.2958;
     Pitch_IIC = atan(accz / accx) * 57.2958;
+
+    pitch_angle += (gyroy -gyro_y_0)*dt;
+    yaw_angle += (accz -gyro_z_0) *dt;
+
+    Merge_Pitch=(last_pitch+pitch_angle)*(1-a)+a*Pitch_IIC;
+    last_pitch=Merge_Pitch;
+
+
 }
 
 int GetData(unsigned char REG_Address)
@@ -279,7 +301,142 @@ void MPU_IIC_Ack(void)
 
 void Data_show()
 {
-    OLED_ShowNum(0, 0, Yaw_IIC, 4, 12);
-    OLED_ShowNum(0, 10, Roll_IIC, 4, 12);
-    OLED_ShowNum(0, 20, Pitch_IIC, 4, 12);
+    // OLED_ShowNum(1, 0, (uint32)Yaw_IIC, 10, 12);
+    // OLED_ShowNum(1, 1, (uint32)Roll_IIC, 10, 12);
+    // OLED_ShowNum(1, 2, (uint32)Pitch_IIC, 10, 12);
+
+    // OLED_ShowNum(1, 0, (uint32)Yaw_IIC, 10, 12);
+    // OLED_ShowNum(1, 1, (uint32)Roll_IIC, 10, 12);
+    // OLED_ShowNum(1, 2, (uint32)Pitch_IIC, 10, 12);
+
+    if (Yaw_IIC >= 0)
+    {
+
+        OLED_ShowString(1, 2, "+", 2);
+        OLED_ShowNum(14, 2, Fabs(Yaw_IIC), 10, 12);
+    }
+    else
+    {
+
+        OLED_ShowString(1, 2, "-", 2);
+        OLED_ShowNum(14, 2, Fabs((Yaw_IIC)), 10, 12);
+    }
+
+    if (pitch_angle >= 0)
+    {
+
+        OLED_ShowString(1, 3, "+", 2);
+        OLED_ShowNum(14, 3, Fabs(pitch_angle), 10, 12);
+    }
+    else
+    {
+
+        OLED_ShowString(1, 3, "-", 2);
+        OLED_ShowNum(14, 3, Fabs(pitch_angle), 10, 12);
+    }
+    //    if (Roll_IIC >= 0)
+    //    {
+    //
+    //        OLED_ShowString(1, 4, "+", 2);
+    //        OLED_ShowNum(14, 4, Fabs(Roll_IIC), 10, 12);
+    //    }
+    //    else
+    //    {
+    //
+    //        OLED_ShowString(1, 4, "-", 2);
+    //        OLED_ShowNum(14, 4, Fabs(Roll_IIC), 10, 12);
+    //    }
 }
+
+//float gz_Kalman_Filter(float angle_m, float gyro_m)
+//{
+//    float P[2][2] = {{1, 0},
+//                     {0, 1}};
+//    static float q_bias;
+//    static float K_0;
+//    static float K_1;
+//    static float angle_kalman;
+//    static uint8 first_angle;
+//    static float Q_angle = 0.000001;
+//    static float Q_gyro = 0.05;
+//    static float R_angle = 8.0; // 8  10
+//    if (first_angle == 0)
+//    {
+//        angle_kalman = angle_m;
+//        q_bias = 0;
+//        first_angle = 1;
+//    }
+//    angle_kalman += (gyro_m - q_bias) * dt;
+//    P[0][0] += Q_angle - (P[0][1] + P[1][0]) * dt;
+//    P[0][1] -= P[1][1] * dt;
+//    P[1][0] -= P[1][1] * dt;
+//    P[1][1] += Q_gyro;
+//    K_0 = P[0][0] / (P[0][0] + R_angle);
+//    K_1 = P[1][0] / (P[1][0] + R_angle);
+//    angle_kalman = angle_kalman + K_0 * (angle_m - angle_kalman);
+//    q_bias = q_bias + K_1 * (angle_m - angle_kalman);
+//    P[0][0] -= K_0 * P[0][0];
+//    P[0][1] -= K_0 * P[0][1];
+//    P[1][0] -= K_1 * P[0][0];
+//    P[1][1] -= K_1 * P[0][1];
+//    return angle_kalman;
+//}
+//
+//float gy_Kalman_Filter(float angle_m, float gyro_m)
+//{
+//    float P[2][2] = {{1, 0},
+//                     {0, 1}};
+//    static float q_bias;
+//    static float K_0;
+//    static float K_1;
+//    static float angle_kalman;
+//    static uint8 first_angle = 0;
+//    static float Q_angle = 0.0003;
+//    static float Q_gyro = 0.001;
+//    static float R_angle = 1;
+//    if (first_angle == 0)
+//    {
+//        angle_kalman = angle_m;
+//        q_bias = 0;
+//        first_angle = 1;
+//    }
+//    angle_kalman += (gyro_m - q_bias) * dt;
+//    P[0][0] += Q_angle - (P[0][1] + P[1][0]) * dt;
+//    P[0][1] -= P[1][1] * dt;
+//    P[1][0] -= P[1][1] * dt;
+//    P[1][1] += Q_gyro;
+//    K_0 = P[0][0] / (P[0][0] + R_angle);
+//    K_1 = P[1][0] / (P[1][0] + R_angle);
+//    angle_kalman = angle_kalman + K_0 * (angle_m - angle_kalman);
+//    q_bias = q_bias + K_1 * (angle_m - angle_kalman);
+//    P[0][0] -= K_0 * P[0][0];
+//    P[0][1] -= K_0 * P[0][1];
+//    P[1][0] -= K_1 * P[0][0];
+//    P[1][1] -= K_1 * P[0][1];
+//    return angle_kalman;
+//}
+
+// void gyro_calculate(void)
+//{
+//     static float gz;
+//     gz = (float)gyroz;
+//     gz = gz - gyro_z_0;
+//     g_z = gz_Kalman_Filter(gz, gz - last_icm_gyro_z);
+//     last_icm_gyro_z = gz;
+//     yaw_angle += g_z * dt;
+//     if (yaw_angle >= 360 || yaw_angle <= -360)
+//         yaw_angle = 0;
+// }
+
+// void ramp_ang(void)
+//{
+//
+//     static float gy;
+//     gy = (float)gyroy;
+//     gy = gy - gyro_y_0;
+//     g_y = gy_Kalman_Filter(gy, gy - last_icm_gyro_y);
+//     last_icm_gyro_y = gy;
+//     pitch_angle += g_y * dt;
+//     if (pitch_angle >= 90 || pitch_angle <= -90)
+//         pitch_angle = 0;
+// }
