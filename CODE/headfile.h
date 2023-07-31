@@ -26,4 +26,4 @@
 #include "Light.h"
 #include "adc.h"
 
-#endif /* HARDWARE_HEADFILE_H_ */
+#endif

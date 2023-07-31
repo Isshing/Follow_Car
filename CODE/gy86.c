@@ -15,9 +15,8 @@ float gyro_y_0 = 1.25;
 float g_z, last_g_z, yaw_angle = 0, last_icm_gyro_z, Kalman_pitch_angle, last_icm_gyro_y;
 float g_y;
 float pitch_angle = 0;
-float Merge_Pitch =0;
-float Merge_Yaw =0;
-
+float Merge_Pitch = 0;
+float Merge_Yaw = 0;
 
 void InitMPU6050()
 {
@@ -150,11 +149,11 @@ unsigned char I2C_RecvByte()
 
 void mpupose(void)
 {
-    float a =0.0001;
-    float b =0.0001;
+    float a = 0.0001;
+    float b = 0.0001;
 
-    static float last_pitch =0;
-    static float last_yaw =0;
+    static float last_pitch = 0;
+    static float last_yaw = 0;
     accx = ((float)GetData(ACCEL_XOUT_H));
     accy = ((float)GetData(ACCEL_YOUT_H));
     accz = ((float)GetData(ACCEL_ZOUT_H));
@@ -164,17 +163,15 @@ void mpupose(void)
     gyroz = ((float)GetData(GYRO_ZOUT_H)) / 16.4;
 
     Yaw_IIC = atan(accx / accz) * 57.2958;
-//    Roll_IIC = atan(accy / accz) * 57.2958;
+    //    Roll_IIC = atan(accy / accz) * 57.2958;
     Pitch_IIC = atan(accz / accx) * 57.2958;
 
-    pitch_angle = (gyroy -gyro_y_0)*dt;
-    yaw_angle = (gyroz -gyro_z_0) *dt;
+    pitch_angle = (gyroy - gyro_y_0) * dt;
+    yaw_angle = (gyroz - gyro_z_0) * dt;
 
-    Merge_Pitch=(last_pitch+pitch_angle)*(1-a)+a*Pitch_IIC;
+    Merge_Pitch = (last_pitch + pitch_angle) * (1 - a) + a * Pitch_IIC;
 
-
-    Merge_Yaw =(last_yaw+yaw_angle)*(1-b)+b*Yaw_IIC;
-
+    Merge_Yaw = (last_yaw + yaw_angle) * (1 - b) + b * Yaw_IIC;
 
     if (Merge_Yaw >= 360 || Merge_Yaw <= -360)
         Merge_Yaw = 0;
@@ -182,7 +179,7 @@ void mpupose(void)
     if (Merge_Pitch >= 90 || Merge_Pitch <= -90)
         Merge_Pitch = 0;
 
-    last_pitch=Merge_Pitch;
+    last_pitch = Merge_Pitch;
     last_yaw = Merge_Yaw;
 }
 
@@ -312,6 +309,20 @@ void MPU_IIC_Ack(void)
     SCL0;
 }
 
+// // 二阶互补滤波
+// float K2 = 0.2; // 对加速度计取值的权重
+// float x1, x2, y1;
+// float dt = 0.02; // 注意：dt的取值为滤波器采样时间
+// float angle2;
+
+// void Erjielvbo(float angle_m, float gyro_m) // 采集后计算的角度和角加速度
+// {
+//     x1 = (angle_m - angle2)(1 - K2)(1 - K2);
+//     y1 = y1 + x1 * dt;
+//     x2 = y1 + 2 * (1 - K2) * (angle_m - angle2) + gyro_m;
+//     angle2 = angle2 + x2 * dt;
+// }
+
 void Data_show()
 {
     // OLED_ShowNum(1, 0, (uint32)Yaw_IIC, 10, 12);
@@ -322,106 +333,10 @@ void Data_show()
     // OLED_ShowNum(1, 1, (uint32)Roll_IIC, 10, 12);
     // OLED_ShowNum(1, 2, (uint32)Pitch_IIC, 10, 12);
 
+    OLED_ShowBNum(14, 2, (Merge_Yaw), 10, 12);
 
+    OLED_ShowBNum(14, 3, (Merge_Pitch), 10, 12);
 
-        OLED_ShowBNum(14, 2, (Merge_Yaw), 10, 12);
-
-        OLED_ShowBNum(14, 3, (Merge_Pitch), 10, 12);
-
-        OLED_ShowBNum(14, 4, gyroy, 10, 12);
-        OLED_ShowBNum(14, 5, gyroz, 10, 12);
-
+    OLED_ShowBNum(14, 4, gyroy, 10, 12);
+    OLED_ShowBNum(14, 5, gyroz, 10, 12);
 }
-
-//float gz_Kalman_Filter(float angle_m, float gyro_m)
-//{
-//    float P[2][2] = {{1, 0},
-//                     {0, 1}};
-//    static float q_bias;
-//    static float K_0;
-//    static float K_1;
-//    static float angle_kalman;
-//    static uint8 first_angle;
-//    static float Q_angle = 0.000001;
-//    static float Q_gyro = 0.05;
-//    static float R_angle = 8.0; // 8  10
-//    if (first_angle == 0)
-//    {
-//        angle_kalman = angle_m;
-//        q_bias = 0;
-//        first_angle = 1;
-//    }
-//    angle_kalman += (gyro_m - q_bias) * dt;
-//    P[0][0] += Q_angle - (P[0][1] + P[1][0]) * dt;
-//    P[0][1] -= P[1][1] * dt;
-//    P[1][0] -= P[1][1] * dt;
-//    P[1][1] += Q_gyro;
-//    K_0 = P[0][0] / (P[0][0] + R_angle);
-//    K_1 = P[1][0] / (P[1][0] + R_angle);
-//    angle_kalman = angle_kalman + K_0 * (angle_m - angle_kalman);
-//    q_bias = q_bias + K_1 * (angle_m - angle_kalman);
-//    P[0][0] -= K_0 * P[0][0];
-//    P[0][1] -= K_0 * P[0][1];
-//    P[1][0] -= K_1 * P[0][0];
-//    P[1][1] -= K_1 * P[0][1];
-//    return angle_kalman;
-//}
-//
-//float gy_Kalman_Filter(float angle_m, float gyro_m)
-//{
-//    float P[2][2] = {{1, 0},
-//                     {0, 1}};
-//    static float q_bias;
-//    static float K_0;
-//    static float K_1;
-//    static float angle_kalman;
-//    static uint8 first_angle = 0;
-//    static float Q_angle = 0.0003;
-//    static float Q_gyro = 0.001;
-//    static float R_angle = 1;
-//    if (first_angle == 0)
-//    {
-//        angle_kalman = angle_m;
-//        q_bias = 0;
-//        first_angle = 1;
-//    }
-//    angle_kalman += (gyro_m - q_bias) * dt;
-//    P[0][0] += Q_angle - (P[0][1] + P[1][0]) * dt;
-//    P[0][1] -= P[1][1] * dt;
-//    P[1][0] -= P[1][1] * dt;
-//    P[1][1] += Q_gyro;
-//    K_0 = P[0][0] / (P[0][0] + R_angle);
-//    K_1 = P[1][0] / (P[1][0] + R_angle);
-//    angle_kalman = angle_kalman + K_0 * (angle_m - angle_kalman);
-//    q_bias = q_bias + K_1 * (angle_m - angle_kalman);
-//    P[0][0] -= K_0 * P[0][0];
-//    P[0][1] -= K_0 * P[0][1];
-//    P[1][0] -= K_1 * P[0][0];
-//    P[1][1] -= K_1 * P[0][1];
-//    return angle_kalman;
-//}
-
-// void gyro_calculate(void)
-//{
-//     static float gz;
-//     gz = (float)gyroz;
-//     gz = gz - gyro_z_0;
-//     g_z = gz_Kalman_Filter(gz, gz - last_icm_gyro_z);
-//     last_icm_gyro_z = gz;
-//     yaw_angle += g_z * dt;
-//     if (yaw_angle >= 360 || yaw_angle <= -360)
-//         yaw_angle = 0;
-// }
-
-// void ramp_ang(void)
-//{
-//
-//     static float gy;
-//     gy = (float)gyroy;
-//     gy = gy - gyro_y_0;
-//     g_y = gy_Kalman_Filter(gy, gy - last_icm_gyro_y);
-//     last_icm_gyro_y = gy;
-//     pitch_angle += g_y * dt;
-//     if (pitch_angle >= 90 || pitch_angle <= -90)
-//         pitch_angle = 0;
-// }
