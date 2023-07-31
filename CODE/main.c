@@ -62,7 +62,7 @@ int main(void)
 //        OLED_ShowNum(14, 3, (int)gyrox, 10, 12);
 //        OLED_ShowNum(14, 4, (int)gyroy, 10, 12);
 //        OLED_ShowNum(14, 5, (int)gyroz, 10, 12);
-		Data_show();
+//		Data_show();
 		light_clear();
 
 		if (key1_flag)

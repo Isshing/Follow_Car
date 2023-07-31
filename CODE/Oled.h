@@ -44,4 +44,5 @@ void Write_IIC_Command(unsigned char IIC_Command);
 void Write_IIC_Data(unsigned char IIC_Data);
 void Write_IIC_Byte(unsigned char IIC_Byte);
 void IIC_Wait_Ack();
+void OLED_ShowBNum(u8 x, u8 y, float num, u8 len, u8 size2) ;
 #endif

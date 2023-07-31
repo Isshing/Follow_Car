@@ -206,7 +206,7 @@ void init(void)
     encoder_init();
     light_init();
     timer_init(20, 20);
-    timer_init(11, 100);
+    timer_init(11, 20);
     motor_init(MOTOR_L_PWM, MOTOR_R_PWM);
 
     InitMPU6050();

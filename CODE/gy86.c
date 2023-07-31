@@ -8,14 +8,15 @@ float Pitch_IIC = 0;
 float accx, accy, accz;
 float gyrox, gyroy, gyroz;
 float anglex, angley, anglez;
-float dt = 0.1;
+float dt = 0.02;
 
-float gyro_z_0 = -1.2; //! 值要自己确定
-float gyro_y_0 = 3.86;
+float gyro_z_0 = -3.0; //! 值要自己确定
+float gyro_y_0 = 1.25;
 float g_z, last_g_z, yaw_angle = 0, last_icm_gyro_z, Kalman_pitch_angle, last_icm_gyro_y;
 float g_y;
 float pitch_angle = 0;
 float Merge_Pitch =0;
+float Merge_Yaw =0;
 
 
 void InitMPU6050()
@@ -149,9 +150,11 @@ unsigned char I2C_RecvByte()
 
 void mpupose(void)
 {
-    float a =0.1;
+    float a =0.0001;
+    float b =0.0001;
 
     static float last_pitch =0;
+    static float last_yaw =0;
     accx = ((float)GetData(ACCEL_XOUT_H));
     accy = ((float)GetData(ACCEL_YOUT_H));
     accz = ((float)GetData(ACCEL_ZOUT_H));
@@ -164,13 +167,23 @@ void mpupose(void)
 //    Roll_IIC = atan(accy / accz) * 57.2958;
     Pitch_IIC = atan(accz / accx) * 57.2958;
 
-    pitch_angle += (gyroy -gyro_y_0)*dt;
-    yaw_angle += (accz -gyro_z_0) *dt;
+    pitch_angle = (gyroy -gyro_y_0)*dt;
+    yaw_angle = (gyroz -gyro_z_0) *dt;
 
     Merge_Pitch=(last_pitch+pitch_angle)*(1-a)+a*Pitch_IIC;
+
+
+    Merge_Yaw =(last_yaw+yaw_angle)*(1-b)+b*Yaw_IIC;
+
+
+    if (Merge_Yaw >= 360 || Merge_Yaw <= -360)
+        Merge_Yaw = 0;
+
+    if (Merge_Pitch >= 90 || Merge_Pitch <= -90)
+        Merge_Pitch = 0;
+
     last_pitch=Merge_Pitch;
-
-
+    last_yaw = Merge_Yaw;
 }
 
 int GetData(unsigned char REG_Address)
@@ -309,43 +322,15 @@ void Data_show()
     // OLED_ShowNum(1, 1, (uint32)Roll_IIC, 10, 12);
     // OLED_ShowNum(1, 2, (uint32)Pitch_IIC, 10, 12);
 
-    if (Yaw_IIC >= 0)
-    {
 
-        OLED_ShowString(1, 2, "+", 2);
-        OLED_ShowNum(14, 2, Fabs(Yaw_IIC), 10, 12);
-    }
-    else
-    {
 
-        OLED_ShowString(1, 2, "-", 2);
-        OLED_ShowNum(14, 2, Fabs((Yaw_IIC)), 10, 12);
-    }
+        OLED_ShowBNum(14, 2, (Merge_Yaw), 10, 12);
 
-    if (pitch_angle >= 0)
-    {
+        OLED_ShowBNum(14, 3, (Merge_Pitch), 10, 12);
 
-        OLED_ShowString(1, 3, "+", 2);
-        OLED_ShowNum(14, 3, Fabs(pitch_angle), 10, 12);
-    }
-    else
-    {
+        OLED_ShowBNum(14, 4, gyroy, 10, 12);
+        OLED_ShowBNum(14, 5, gyroz, 10, 12);
 
-        OLED_ShowString(1, 3, "-", 2);
-        OLED_ShowNum(14, 3, Fabs(pitch_angle), 10, 12);
-    }
-    //    if (Roll_IIC >= 0)
-    //    {
-    //
-    //        OLED_ShowString(1, 4, "+", 2);
-    //        OLED_ShowNum(14, 4, Fabs(Roll_IIC), 10, 12);
-    //    }
-    //    else
-    //    {
-    //
-    //        OLED_ShowString(1, 4, "-", 2);
-    //        OLED_ShowNum(14, 4, Fabs(Roll_IIC), 10, 12);
-    //    }
 }
 
 //float gz_Kalman_Filter(float angle_m, float gyro_m)

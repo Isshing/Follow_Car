@@ -40,6 +40,7 @@ extern float gyro_z_0, gyro_y_0;
 extern float g_z, yaw_angle, pitch_angle, last_icm_gyro_z, Kalman_pitch_angle, last_icm_gyro_y;
 
 extern float Merge_Pitch;
+extern float Merge_Yaw;
 
 /*************************************/
 
