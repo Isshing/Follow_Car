@@ -1,6 +1,6 @@
 #include "all_init.h"
 
-void initClockTo16MHz(void)
+void distance_init(void)
 {
     UCSCTL3 |= SELREF_2;     // Set DCO FLL reference = REFO
     UCSCTL4 |= SELA_2;       // Set ACLK = REFO
@@ -191,7 +191,7 @@ bool increaseVCoreToLevel2(void)
 void init(void)
 {
     increaseVCoreToLevel2();
-    initClockTo16MHz(); // 记得改F_CPU 为 15990784
+    distance_init();
 
     // OLED初始化
     delay(50);

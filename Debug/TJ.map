@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v21.6.1                     
 ******************************************************************************
->> Linked Tue Aug  1 16:42:58 2023
+>> Linked Tue Aug  1 16:53:47 2023
 
 OUTPUT FILE NAME:   <TJ.out>
 ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000442a
@@ -291,7 +291,7 @@ SYSNMI     0    0000fffc    00000002
                   00013d8e    0000004e     encoder.obj (.text:Get_Speed)
                   00013ddc    0000004e     gy86.obj (.text:I2C_SendByte)
                   00013e2a    0000004c     Oled.obj (.text:Write_IIC_Data)
-                  00013e76    0000004c     all_init.obj (.text:initClockTo16MHz)
+                  00013e76    0000004c     all_init.obj (.text:distance_init)
                   00013ec2    0000004a     Oled.obj (.text:Write_IIC_Command)
                   00013f0c    0000004a     rts430x_lc_rd_eabi.lib : fs_cmp.asm.obj (.text)
                   00013f56    00000048     gy86.obj (.text:MPU_IIC_Read_Byte)
@@ -1397,6 +1397,7 @@ ffffffff  __c_args__
 0000247a  corner_inner_flag                      
 0000247c  corner_outter_flag                     
 00014784  delay                                  
+00013e76  distance_init                          
 0000243e  dt                                     
 00002488  dxd                                    
 000024c6  encoder_L                              
@@ -1422,7 +1423,6 @@ ffffffff  __c_args__
 0001444a  increaseVCoreToLevel2                  
 000024fa  index                                  
 00013b68  init                                   
-00013e76  initClockTo16MHz                       
 00002406  kd_m                                   
 000025cc  key1_flag                              
 000025ce  key1_last_status                       
@@ -2379,7 +2379,7 @@ address   name
 00013d8e  Get_Speed                              
 00013ddc  I2C_SendByte                           
 00013e2a  Write_IIC_Data                         
-00013e76  initClockTo16MHz                       
+00013e76  distance_init                          
 00013ec2  Write_IIC_Command                      
 00013f0c  __mspabi_cmpf                          
 00013f56  MPU_IIC_Read_Byte                      
