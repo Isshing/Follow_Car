@@ -18,6 +18,19 @@ float pitch_angle = 0;
 float Merge_Pitch = 0;
 float Merge_Yaw = 0;
 
+// 二阶互补滤波
+//float K2_pitch = 0.2; // 对加速度计取值的权重
+//float K2_yaw = 0.2;   // 对加速度计取值的权重
+//
+//void Erjielvbo(float angle_m, float gyro_m) // 采集后计算的角度和角加速度
+//{
+//    float x1, x2, y1;
+//    x1 = (angle_m - angle2)(1 - K2)(1 - K2);
+//    y1 = y1 + x1 * dt;
+//    x2 = y1 + 2 * (1 - K2) * (angle_m - angle2) + gyro_m;
+//    angle2 = angle2 + x2 * dt;
+//}
+
 void InitMPU6050()
 {
     Single_WriteI2C(PWR_MGMT_1, 0x00);
@@ -308,20 +321,6 @@ void MPU_IIC_Ack(void)
     MPU_IIC_Delay();
     SCL0;
 }
-
-// // 二阶互补滤波
-// float K2 = 0.2; // 对加速度计取值的权重
-// float x1, x2, y1;
-// float dt = 0.02; // 注意：dt的取值为滤波器采样时间
-// float angle2;
-
-// void Erjielvbo(float angle_m, float gyro_m) // 采集后计算的角度和角加速度
-// {
-//     x1 = (angle_m - angle2)(1 - K2)(1 - K2);
-//     y1 = y1 + x1 * dt;
-//     x2 = y1 + 2 * (1 - K2) * (angle_m - angle2) + gyro_m;
-//     angle2 = angle2 + x2 * dt;
-// }
 
 void Data_show()
 {

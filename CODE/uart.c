@@ -7,7 +7,7 @@ int Data_USCI_A1_int;   // USCI_A1接收内容int形式
 char Data_USCI_A0_char; // USCI_A0接收内容char形式
 char Data_USCI_A1_char; // USCI_A1接收内容char形式
 
-#define BUF_SIZE 10 // 数组大小
+
 
 volatile unsigned char buffer[BUF_SIZE]; // 存储接收到的数据
 volatile unsigned int index = 0; // 数组索引
@@ -26,8 +26,8 @@ void uart_init(unsigned int uart_pin)
         P3SEL |= BIT3 + BIT4;          // P3.3,4 = USCI_A0 TXD/RXD
         UCA0CTL1 |= UCSWRST;           // **Put state machine in reset**
         UCA0CTL1 |= UCSSEL_2;          // SMCLK
-        UCA0BR0 = 9;                   // 1MHz 115200 (see User's Guide)
-        UCA0BR1 = 0;                   // 1MHz 115200
+        UCA0BR0 = 138;                   // 16MHz 115200 (see User's Guide)
+        UCA0BR1 = 0;                   // 16MHz 115200
         UCA0MCTL |= UCBRS_1 + UCBRF_0; // Modulation UCBRSx=1, UCBRFx=0
         UCA0CTL1 &= ~UCSWRST;          // **Initialize USCI state machine**
         UCA0IE |= UCRXIE;              // Enable USCI_A0 RX interrupt
@@ -37,7 +37,7 @@ void uart_init(unsigned int uart_pin)
         P4SEL |= BIT4 + BIT5;          // P4.4,5 = USCI_A1 TXD/RXD
         UCA1CTL1 |= UCSWRST;           // **Put state machine in reset**
         UCA1CTL1 |= UCSSEL_2;          // SMCLK
-        UCA1BR0 = 9;                   // 1MHz 115200 (see User's Guide)
+        UCA1BR0 = 138;                 // 1MHz 115200 (see User's Guide)
         UCA1BR1 = 0;                   // 1MHz 115200
         UCA1MCTL |= UCBRS_1 + UCBRF_0; // Modulation UCBRSx=1, UCBRFx=0
         UCA1CTL1 &= ~UCSWRST;          // **Initialize USCI state machine**
@@ -118,14 +118,22 @@ __interrupt void USCI_A0_ISR(void)
 //        Data_USCI_A0 = UCA0RXBUF;
         //            uart_read(10);
         //            gyroscope_read_A0();
-        //            wireless_uart_callback(UCA0RXBUF);
+//                    wireless_uart_callback(UCA0RXBUF);
 
         //            Laser_Uart_Callback(UCA0RXBUF);
-        buffer[index++] = UCA0RXBUF; // 将接收到的数据存储到数组中
 
-        if (index >= BUF_SIZE) {
-            index = 0; // 重置索引，溢出时重新开始存储
+
+        while (!(UCA1IFG & UCTXIFG))
+        {
+            buffer[index++] = UCA0RXBUF; // 将接收到的数据存储到数组中
+
+            if (index >= BUF_SIZE) {
+                index = 0; // 重置索引，溢出时重新开始存储
+            }
+
+            UCA0IFG &= ~UCRXIFG;
         }
+
         break;
 
     case 4:
@@ -151,7 +159,7 @@ __interrupt void USCI_A1_ISR(void)
         break; // Vector 0 - no interrupt
     case 2:    // Vector 2 - RXIFG
         while (!(UCA1IFG & UCTXIFG))
-            ; // USCI_A1 TX buffer ready?
+            // USCI_A1 TX buffer ready?
               //            uart_read(11);
               //            Data_USCI_A1=UCA1RXBUF;
               //            Laser_Uart_Callback(UCA1RXBUF);
