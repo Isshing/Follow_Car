@@ -20,7 +20,6 @@ CODE/Light.obj: ../CODE/all_init.h
 CODE/Light.obj: ../CODE/headfile.h
 CODE/Light.obj: ../CODE/delay.h
 CODE/Light.obj: ../CODE/encoder.h
-CODE/Light.obj: ../CODE/gyroscope.h
 CODE/Light.obj: ../CODE/Oled.h
 CODE/Light.obj: ../CODE/Oled_type.h
 CODE/Light.obj: ../CODE/pwm.h
@@ -77,8 +76,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/delay.h:
 
 ../CODE/encoder.h:
-
-../CODE/gyroscope.h:
 
 ../CODE/Oled.h:
 

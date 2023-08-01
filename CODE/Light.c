@@ -92,9 +92,9 @@ void PID_LINE_SET(LineErrPID *pid)
     //    pid->kd = 0.09;
 
     /*15*/
-    pid->Ki = 0.01;
-    pid->Kp = 0.1;
-    pid->kd = 0.15;
+//    pid->Ki = 0.01;
+//    pid->Kp = 0.1;
+//    pid->kd = 0.15;
 
     //    if(ProblemNo == 1)
     //    {

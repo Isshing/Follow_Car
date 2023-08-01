@@ -22,7 +22,6 @@ C_SRCS += \
 ../CODE/distance.c \
 ../CODE/encoder.c \
 ../CODE/gy86.c \
-../CODE/gyroscope.c \
 ../CODE/key.c \
 ../CODE/main.c \
 ../CODE/pwm.c \
@@ -46,7 +45,6 @@ C_DEPS += \
 ./CODE/distance.d \
 ./CODE/encoder.d \
 ./CODE/gy86.d \
-./CODE/gyroscope.d \
 ./CODE/key.d \
 ./CODE/main.d \
 ./CODE/pwm.d \
@@ -70,7 +68,6 @@ OBJS += \
 ./CODE/distance.obj \
 ./CODE/encoder.obj \
 ./CODE/gy86.obj \
-./CODE/gyroscope.obj \
 ./CODE/key.obj \
 ./CODE/main.obj \
 ./CODE/pwm.obj \
@@ -94,7 +91,6 @@ OBJS__QUOTED += \
 "CODE\distance.obj" \
 "CODE\encoder.obj" \
 "CODE\gy86.obj" \
-"CODE\gyroscope.obj" \
 "CODE\key.obj" \
 "CODE\main.obj" \
 "CODE\pwm.obj" \
@@ -118,7 +114,6 @@ C_DEPS__QUOTED += \
 "CODE\distance.d" \
 "CODE\encoder.d" \
 "CODE\gy86.d" \
-"CODE\gyroscope.d" \
 "CODE\key.d" \
 "CODE\main.d" \
 "CODE\pwm.d" \
@@ -142,7 +137,6 @@ C_SRCS__QUOTED += \
 "../CODE/distance.c" \
 "../CODE/encoder.c" \
 "../CODE/gy86.c" \
-"../CODE/gyroscope.c" \
 "../CODE/key.c" \
 "../CODE/main.c" \
 "../CODE/pwm.c" \

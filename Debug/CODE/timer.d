@@ -20,7 +20,6 @@ CODE/timer.obj: ../CODE/all_init.h
 CODE/timer.obj: ../CODE/headfile.h
 CODE/timer.obj: ../CODE/delay.h
 CODE/timer.obj: ../CODE/encoder.h
-CODE/timer.obj: ../CODE/gyroscope.h
 CODE/timer.obj: ../CODE/Oled.h
 CODE/timer.obj: ../CODE/Oled_type.h
 CODE/timer.obj: ../CODE/pwm.h
@@ -77,8 +76,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/delay.h:
 
 ../CODE/encoder.h:
-
-../CODE/gyroscope.h:
 
 ../CODE/Oled.h:
 

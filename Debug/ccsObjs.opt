@@ -14,7 +14,6 @@
 "./CODE/distance.obj"
 "./CODE/encoder.obj"
 "./CODE/gy86.obj"
-"./CODE/gyroscope.obj"
 "./CODE/key.obj"
 "./CODE/main.obj"
 "./CODE/pwm.obj"

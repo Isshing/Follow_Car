@@ -20,7 +20,6 @@ CODE/NRF24L01.obj: ../CODE/all_init.h
 CODE/NRF24L01.obj: ../CODE/headfile.h
 CODE/NRF24L01.obj: ../CODE/delay.h
 CODE/NRF24L01.obj: ../CODE/encoder.h
-CODE/NRF24L01.obj: ../CODE/gyroscope.h
 CODE/NRF24L01.obj: ../CODE/Oled.h
 CODE/NRF24L01.obj: ../CODE/Oled_type.h
 CODE/NRF24L01.obj: ../CODE/pwm.h
@@ -77,8 +76,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/delay.h:
 
 ../CODE/encoder.h:
-
-../CODE/gyroscope.h:
 
 ../CODE/Oled.h:
 

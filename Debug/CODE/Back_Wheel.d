@@ -20,7 +20,6 @@ CODE/Back_Wheel.obj: ../CODE/all_init.h
 CODE/Back_Wheel.obj: ../CODE/headfile.h
 CODE/Back_Wheel.obj: ../CODE/delay.h
 CODE/Back_Wheel.obj: ../CODE/encoder.h
-CODE/Back_Wheel.obj: ../CODE/gyroscope.h
 CODE/Back_Wheel.obj: ../CODE/Oled.h
 CODE/Back_Wheel.obj: ../CODE/Oled_type.h
 CODE/Back_Wheel.obj: ../CODE/pwm.h
@@ -77,8 +76,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/delay.h:
 
 ../CODE/encoder.h:
-
-../CODE/gyroscope.h:
 
 ../CODE/Oled.h:
 

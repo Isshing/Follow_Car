@@ -1,6 +1,5 @@
 #include "headfile.h"
 
-float32 nuu = 0;
 int main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD; // stop watchdog timer

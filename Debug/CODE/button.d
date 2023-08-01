@@ -20,7 +20,6 @@ CODE/button.obj: ../CODE/all_init.h
 CODE/button.obj: ../CODE/headfile.h
 CODE/button.obj: ../CODE/delay.h
 CODE/button.obj: ../CODE/encoder.h
-CODE/button.obj: ../CODE/gyroscope.h
 CODE/button.obj: ../CODE/Oled.h
 CODE/button.obj: ../CODE/Oled_type.h
 CODE/button.obj: ../CODE/pwm.h
@@ -77,8 +76,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/delay.h:
 
 ../CODE/encoder.h:
-
-../CODE/gyroscope.h:
 
 ../CODE/Oled.h:
 

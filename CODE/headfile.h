@@ -7,7 +7,6 @@
 #include "all_init.h"
 #include "delay.h"
 #include "encoder.h"
-#include "gyroscope.h"
 #include "Oled.h"
 #include "Oled_type.h"
 #include "pwm.h"

@@ -20,7 +20,6 @@ CODE/QMath.obj: ../CODE/all_init.h
 CODE/QMath.obj: ../CODE/headfile.h
 CODE/QMath.obj: ../CODE/delay.h
 CODE/QMath.obj: ../CODE/encoder.h
-CODE/QMath.obj: ../CODE/gyroscope.h
 CODE/QMath.obj: ../CODE/Oled.h
 CODE/QMath.obj: ../CODE/Oled_type.h
 CODE/QMath.obj: ../CODE/pwm.h
@@ -77,8 +76,6 @@ E:/Ti/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include/machine/_limits.h:
 ../CODE/delay.h:
 
 ../CODE/encoder.h:
-
-../CODE/gyroscope.h:
 
 ../CODE/Oled.h:
 

@@ -211,7 +211,7 @@ void init(void)
     InitMPU6050();
 
     //    wireless_init();
-    //    uart_init(LASER_UART);
+    uart_init(10);
 
     Control_Init();
 

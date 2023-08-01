@@ -7,6 +7,11 @@ int Data_USCI_A1_int;   // USCI_A1接收内容int形式
 char Data_USCI_A0_char; // USCI_A0接收内容char形式
 char Data_USCI_A1_char; // USCI_A1接收内容char形式
 
+#define BUF_SIZE 10 // 数组大小
+
+volatile unsigned char buffer[BUF_SIZE]; // 存储接收到的数据
+volatile unsigned int index = 0; // 数组索引
+
 //-------------------------------------------------------------------------------------------------------------------
 //  @brief      uart串口初始化
 //  @param      uart_pin        USCI_A0或USCI_A1
@@ -110,13 +115,17 @@ __interrupt void USCI_A0_ISR(void)
     case 0:
         break; // Vector 0 - no interrupt
     case 2:    // Vector 2 - RXIFG
-        Data_USCI_A0 = UCA0RXBUF;
+//        Data_USCI_A0 = UCA0RXBUF;
         //            uart_read(10);
         //            gyroscope_read_A0();
         //            wireless_uart_callback(UCA0RXBUF);
 
         //            Laser_Uart_Callback(UCA0RXBUF);
+        buffer[index++] = UCA0RXBUF; // 将接收到的数据存储到数组中
 
+        if (index >= BUF_SIZE) {
+            index = 0; // 重置索引，溢出时重新开始存储
+        }
         break;
 
     case 4:
